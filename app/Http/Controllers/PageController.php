@@ -8,7 +8,59 @@ class PageController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | CGEG Division Data
+    | Placeholder image helper
+    | Uses picsum.photos (free, no attribution required, stable URLs)
+    | Format: https://picsum.photos/seed/{seed}/W/H
+    | Replace any src with the real client asset when ready.
+    |--------------------------------------------------------------------------
+    */
+    public static function placeholderImg(string $seed, int $w, int $h): string
+    {
+        return "https://picsum.photos/seed/{$seed}/{}/{}";
+    }
+
+    private function img(string $seed, int $w, int $h): string
+    {
+        return "https://picsum.photos/seed/{$seed}/{$w}/{$h}";
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Leadership team — updated from 2026 Corporate Profile
+    |--------------------------------------------------------------------------
+    */
+    private function teamData(): array
+    {
+        return [
+            'founder' => [
+                'name'       => 'Prof. Clemence Jaricha',
+                'title'      => 'Founder & Chairman',
+                'bio'        => 'A visionary Zimbabwean-born entrepreneur, academic, and global business leader, Prof. Clemence Jaricha founded CJ Global Express Group Unlimited in 1997 with a single logistics operation. Under his leadership, CGEG has grown into one of Africa\'s most dynamic multi-sector business empires, operating across 56 countries on six continents with nine distinct divisions.',
+                'quote'      => 'We must build businesses that feed families, not just balance sheets.',
+                'image'      => $this->img('founder-cj', 500, 600),
+            ],
+            'directors' => [
+                ['name' => 'Dr. Chris Grant',       'title' => 'Finance Director',           'image' => $this->img('director-grant',   400, 400)],
+                ['name' => 'Mr. M. Munodawafa',     'title' => 'Director of Operations',     'image' => $this->img('director-ops',     400, 400)],
+                ['name' => 'Mr. L. Hadebe',          'title' => 'Director of Loss Control',   'image' => $this->img('director-hadebe',  400, 400)],
+                ['name' => 'Mr. Kris Cly',           'title' => 'General Manager',            'image' => $this->img('director-cly',     400, 400)],
+            ],
+            'management' => [
+                ['name' => 'Dr. E. Kapongo',   'title' => 'Group Accountant',              'image' => $this->img('mgmt-kapongo', 400, 400)],
+                ['name' => 'Mr. D. Nyathi',    'title' => 'HR Manager',                    'image' => $this->img('mgmt-nyathi',  400, 400)],
+                ['name' => 'Ms. C. Zulu',      'title' => 'Secretary',                     'image' => $this->img('mgmt-zulu',    400, 400)],
+                ['name' => 'Ms. Lorcadia Phiri','title' => 'Personal Assistant to the CEO','image' => $this->img('mgmt-phiri',   400, 400)],
+            ],
+            'oversight' => [
+                ['name' => 'Dr. Vee Jaricha',    'title' => 'Divisional Oversight — All Divisions', 'image' => $this->img('oversight-vee', 400, 400)],
+                ['name' => 'Dr. C. Junior Jaricha','title' => 'Divisional Oversight — All Divisions','image' => $this->img('oversight-cj',  400, 400)],
+            ],
+        ];
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Division data — updated from 2026 Corporate Profile
     |--------------------------------------------------------------------------
     */
     private function divisionsData(): array
@@ -20,106 +72,91 @@ class PageController extends Controller
                 'tagline'     => 'Building the Infrastructure of Tomorrow',
                 'icon'        => 'ti-building-skyscraper',
                 'color_accent'=> null,
-                'description' => 'Large-scale infrastructure and commercial development across Southern Africa and beyond. From residential estates to major civil engineering projects, CJ Global Construction delivers with precision, integrity, and scale.',
-                'body'        => 'CJ Global Construction is the foundational pillar of the CGEG group. Operating across Southern Africa and beyond, we bring together engineering expertise, project management excellence, and a commitment to delivering infrastructure that lasts generations. Our portfolio spans government contracts, private sector developments, and public-private partnerships across the continent.',
+                'description' => 'Commercial, residential, and infrastructure projects across Southern Africa and beyond. CIDB-registered with a portfolio spanning government and private sector builds.',
+                'body'        => 'CJ Global Construction is the foundational pillar of the CGEG group. Flagship development: Sandton Hydon Park Mall, Harare — a two-floor mixed-use retail and commercial hub. Our operations combine engineering expertise, project management excellence, and a commitment to delivering infrastructure that lasts generations.',
                 'stats'       => [
-                    ['num' => '13+',    'label' => 'Years Operating'],
-                    ['num' => '50+',    'label' => 'Projects Delivered'],
+                    ['num' => '25+',    'label' => 'Years Operating'],
+                    ['num' => '56',     'label' => 'Countries Footprint'],
                     ['num' => 'CIDB',   'label' => 'Certified'],
                     ['num' => 'Level 1','label' => 'BBBEE Rated'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-map-pin',      'title' => 'Southern Africa Focus',    'desc' => 'Primary operations across South Africa, Zimbabwe, Botswana, and Zambia.'],
-                    ['icon' => 'ti-certificate',  'title' => 'CIDB Certified',            'desc' => 'Registered with the Construction Industry Development Board.'],
-                    ['icon' => 'ti-users',        'title' => 'Local Employment',          'desc' => 'Committed to creating local jobs and skills transfer on every project.'],
+                    ['icon' => 'ti-building-skyscraper', 'title' => 'Sandton Hydon Park Mall', 'desc' => 'Flagship two-floor mixed-use retail, office, and fuel station development west of Harare — CGEG\'s landmark return to Zimbabwe after 17 years.'],
+                    ['icon' => 'ti-certificate',  'title' => 'CIDB Registered',     'desc' => 'Certified with the Construction Industry Development Board across all relevant grading designations.'],
+                    ['icon' => 'ti-users',        'title' => '25,000+ Jobs Impact', 'desc' => 'Committed to creating local jobs and skills transfer — every project evaluated for its employment impact.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-building',       'title' => 'Commercial Development',  'desc' => 'Office parks, retail centres, and mixed-use commercial developments.'],
-                    ['icon' => 'ti-road',           'title' => 'Civil Infrastructure',    'desc' => 'Roads, bridges, drainage, and public infrastructure projects.'],
-                    ['icon' => 'ti-home',           'title' => 'Residential Estates',     'desc' => 'Premium housing developments, estates, and residential complexes.'],
-                    ['icon' => 'ti-certificate',    'title' => 'Project Management',      'desc' => 'End-to-end construction management, scheduling, and consulting.'],
+                    ['icon' => 'ti-building',    'title' => 'Commercial Development', 'desc' => 'Office parks, retail centres, and mixed-use commercial developments.'],
+                    ['icon' => 'ti-road',        'title' => 'Civil Infrastructure',   'desc' => 'Roads, bridges, drainage, and public infrastructure projects.'],
+                    ['icon' => 'ti-home',        'title' => 'Residential Estates',    'desc' => 'Premium housing developments, estates, and residential complexes.'],
+                    ['icon' => 'ti-certificate', 'title' => 'Project Management',     'desc' => 'End-to-end construction management, scheduling, and consulting.'],
                 ],
+                'hero_img'    => $this->img('construction-hero',    1920, 900),
+                'overview_img'=> $this->img('construction-overview', 800, 700),
+                'services_img'=> $this->img('construction-services', 600, 500),
+                'action_imgs' => [$this->img('construction-a1',700,450), $this->img('construction-a2',700,450), $this->img('construction-a3',700,450)],
             ],
 
             'mining' => [
                 'slug'        => 'mining',
                 'name'        => 'CJ Global Mining',
-                'tagline'     => 'Unlocking Africa\'s Natural Wealth',
+                'tagline'     => 'Unlocking Africa\'s Natural Wealth Responsibly',
                 'icon'        => 'ti-pick',
                 'color_accent'=> null,
-                'description' => 'Strategic mineral extraction and mining operations across the African continent. CJ Global Mining operates with a commitment to environmental stewardship, community benefit, and sustainable resource development.',
-                'body'        => 'Africa holds an estimated 30% of the world\'s mineral reserves — and CJ Global Mining is positioned at the heart of responsible extraction across the continent. Our operations combine modern mining technology with deep respect for the communities and ecosystems we operate within. We partner with governments, local communities, and global commodity markets to deliver value that is both commercially significant and ethically grounded.',
+                'description' => 'Mineral extraction and processing operations across Southern Africa. Positioned to support Africa\'s resource economies with responsible, compliant mining practices.',
+                'body'        => 'Africa holds an estimated 30% of the world\'s mineral reserves — and CJ Global Mining is positioned at the heart of responsible extraction. Our operations combine modern mining technology with deep respect for the communities and ecosystems we operate within, delivering commercially significant and ethically grounded value.',
                 'stats'       => [
-                    ['num' => '32+',  'label' => 'Countries Footprint'],
-                    ['num' => 'ISO',  'label' => 'Standards Aligned'],
-                    ['num' => '100%', 'label' => 'COIDA Compliant'],
+                    ['num' => '56',   'label' => 'Country Footprint'],
                     ['num' => 'ESG',  'label' => 'Committed'],
+                    ['num' => '100%', 'label' => 'COIDA Compliant'],
+                    ['num' => 'ZA·ZW','label' => 'Primary Markets'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-leaf',        'title' => 'Environmental Stewardship', 'desc' => 'All operations conducted with mandatory environmental impact assessments and rehabilitation plans.'],
-                    ['icon' => 'ti-users',       'title' => 'Community Benefit',         'desc' => 'Local procurement, employment, and skills development embedded in every contract.'],
-                    ['icon' => 'ti-shield-check','title' => 'Safety First',              'desc' => 'Zero-harm safety culture with COIDA compliance across all operational sites.'],
+                    ['icon' => 'ti-leaf',        'title' => 'Responsible Mining',   'desc' => 'All operations with mandatory environmental impact assessments and comprehensive land rehabilitation plans.'],
+                    ['icon' => 'ti-users',       'title' => 'Community First',       'desc' => 'Local procurement, employment, and skills development embedded in every contract and operation.'],
+                    ['icon' => 'ti-shield-check','title' => 'Safety Culture',        'desc' => 'Zero-harm safety philosophy with full COIDA compliance across all active mining sites.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-diamond',   'title' => 'Mineral Extraction',      'desc' => 'Gold, chrome, coal, platinum, and precious mineral extraction operations.'],
-                    ['icon' => 'ti-search',    'title' => 'Geological Exploration',  'desc' => 'Geological surveys, drilling, and prospecting services.'],
-                    ['icon' => 'ti-truck',     'title' => 'Mining Logistics',        'desc' => 'Ore transport, processing chain management, and bulk handling.'],
-                    ['icon' => 'ti-leaf',      'title' => 'Environmental Compliance','desc' => 'Sustainable mining practices and land rehabilitation programmes.'],
+                    ['icon' => 'ti-diamond',  'title' => 'Mineral Extraction',      'desc' => 'Gold, chrome, coal, platinum, and precious mineral extraction operations.'],
+                    ['icon' => 'ti-search',   'title' => 'Geological Exploration',  'desc' => 'Geological surveys, drilling, and prospecting services.'],
+                    ['icon' => 'ti-truck',    'title' => 'Mining Logistics',         'desc' => 'Ore transport, processing chain management, and bulk handling.'],
+                    ['icon' => 'ti-leaf',     'title' => 'Rehabilitation',           'desc' => 'Sustainable mining practices and post-operation land rehabilitation.'],
                 ],
+                'hero_img'    => $this->img('mining-hero',    1920, 900),
+                'overview_img'=> $this->img('mining-overview', 800, 700),
+                'services_img'=> $this->img('mining-services', 600, 500),
+                'action_imgs' => [$this->img('mining-a1',700,450), $this->img('mining-a2',700,450), $this->img('mining-a3',700,450)],
             ],
 
             'logistics' => [
                 'slug'        => 'logistics',
-                'name'        => 'CJ Global Logistics',
-                'tagline'     => 'Moving Africa, Connecting the World',
+                'name'        => 'CGEG Unl. Logistics',
+                'tagline'     => 'The Original Division. Moving 56 Countries.',
                 'icon'        => 'ti-truck-delivery',
                 'color_accent'=> null,
-                'description' => 'End-to-end supply chain, freight, and logistics solutions operating across 32+ countries. From last-mile delivery to cross-border freight, CJ Global Logistics keeps commerce moving.',
-                'body'        => 'In a continent as vast and dynamic as Africa, logistics is the backbone of commerce. CJ Global Logistics provides reliable, efficient, and scalable supply chain solutions that connect businesses to their markets — whether across a city, a border, or an ocean. With a footprint spanning 32+ countries, we understand the terrain, the regulations, and the relationships that make African logistics work.',
+                'description' => 'End-to-end supply chain, freight, and transport solutions operating across 56 countries. The original founding division and the backbone of the Group\'s continental reach.',
+                'body'        => 'Logistics is where CGEG began in 1997. What started as a single logistics operation has grown into a continent-spanning supply chain network covering 56 countries. CJ Global Logistics understands the terrain, the regulations, and the relationships that make African logistics work — and we have 25+ years of proof.',
                 'stats'       => [
-                    ['num' => '32+',  'label' => 'Countries Served'],
-                    ['num' => '4',    'label' => 'Freight Modes'],
+                    ['num' => '56',   'label' => 'Countries Served'],
+                    ['num' => '1997', 'label' => 'Founding Division'],
+                    ['num' => '25+',  'label' => 'Years Experience'],
                     ['num' => '24/7', 'label' => 'Operations'],
-                    ['num' => 'CSD',  'label' => 'Registered'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-world',       'title' => 'Pan-African Network',   'desc' => 'Established routes and partnerships across 32+ African countries and internationally.'],
-                    ['icon' => 'ti-clock',       'title' => '24/7 Operations',       'desc' => 'Round-the-clock logistics management and cargo tracking capabilities.'],
-                    ['icon' => 'ti-shield-check','title' => 'Customs Expertise',     'desc' => 'Deep knowledge of cross-border customs, documentation, and compliance requirements.'],
+                    ['icon' => 'ti-world',       'title' => 'Pan-African Network',  'desc' => 'Established routes and partnerships across all 56 CGEG operating countries.'],
+                    ['icon' => 'ti-history',     'title' => 'The Founding Division','desc' => 'Started in 1997 — logistics is the backbone that made everything else possible.'],
+                    ['icon' => 'ti-shield-check','title' => 'Customs Expertise',    'desc' => 'Deep knowledge of cross-border customs, documentation, and compliance requirements.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-truck',    'title' => 'Road Freight',    'desc' => 'Cross-border and domestic trucking across Southern and East Africa.'],
-                    ['icon' => 'ti-plane',    'title' => 'Air Freight',     'desc' => 'Time-critical cargo, express courier, and perishable goods logistics.'],
-                    ['icon' => 'ti-ship',     'title' => 'Sea Freight',     'desc' => 'Container shipping, breakbulk, and port logistics management.'],
-                    ['icon' => 'ti-package',  'title' => 'Warehousing',     'desc' => 'Secure storage, inventory management, and fulfilment services.'],
+                    ['icon' => 'ti-truck',   'title' => 'Road Freight',  'desc' => 'Cross-border and domestic trucking across Southern and East Africa.'],
+                    ['icon' => 'ti-plane',   'title' => 'Air Freight',   'desc' => 'Time-critical cargo, express courier, and perishable goods logistics.'],
+                    ['icon' => 'ti-ship',    'title' => 'Sea Freight',   'desc' => 'Container shipping, breakbulk, and port logistics management.'],
+                    ['icon' => 'ti-package', 'title' => 'Warehousing',   'desc' => 'Secure storage, inventory management, and fulfilment services.'],
                 ],
-            ],
-
-            'properties' => [
-                'slug'        => 'properties',
-                'name'        => 'CJ Global Properties',
-                'tagline'     => 'Premium Real Estate Across Three Continents',
-                'icon'        => 'ti-building-community',
-                'color_accent'=> null,
-                'description' => 'A diverse portfolio of commercial, residential, and mixed-use properties spanning South Africa, Zimbabwe, the United Kingdom, and the United States. CJ Global Properties delivers premium real estate value across three continents.',
-                'body'        => 'CJ Global Properties manages a growing portfolio of high-value real estate assets across Africa, Europe, and the Americas. From commercial office parks in South Africa to luxury residential developments in Zimbabwe, and operational property assets in London and Chicago — our portfolio reflects both the scale of CGEG\'s ambition and the diversification of its geographic reach. We acquire, develop, and manage properties that generate long-term value for the group and our partners.',
-                'stats'       => [
-                    ['num' => '3',       'label' => 'Continents'],
-                    ['num' => '4+',      'label' => 'Countries'],
-                    ['num' => '$200M+',  'label' => 'Portfolio Value'],
-                    ['num' => 'ZA·ZW·UK·US', 'label' => 'Markets'],
-                ],
-                'highlights'  => [
-                    ['icon' => 'ti-world',      'title' => 'Multi-Continental',    'desc' => 'Active portfolio across South Africa, Zimbabwe, United Kingdom, and the United States.'],
-                    ['icon' => 'ti-trending-up','title' => 'Capital Growth',        'desc' => 'Strategic acquisition of high-growth real estate across key African and international markets.'],
-                    ['icon' => 'ti-key',        'title' => 'Full-Service Mgmt',    'desc' => 'End-to-end property management from acquisition to tenant relations and maintenance.'],
-                ],
-                'services'    => [
-                    ['icon' => 'ti-building',    'title' => 'Commercial Properties','desc' => 'Office buildings, retail spaces, commercial parks, and mixed-use developments.'],
-                    ['icon' => 'ti-home',        'title' => 'Residential Portfolio','desc' => 'Luxury homes, apartment complexes, and premium residential estates.'],
-                    ['icon' => 'ti-chart-bar',   'title' => 'Property Investment',  'desc' => 'Strategic acquisition, valuation, and real estate portfolio management.'],
-                    ['icon' => 'ti-key',         'title' => 'Property Management',  'desc' => 'Full-service management including leasing, maintenance, and tenant relations.'],
-                ],
+                'hero_img'    => $this->img('logistics-hero',    1920, 900),
+                'overview_img'=> $this->img('logistics-overview', 800, 700),
+                'services_img'=> $this->img('logistics-services', 600, 500),
+                'action_imgs' => [$this->img('logistics-a1',700,450), $this->img('logistics-a2',700,450), $this->img('logistics-a3',700,450)],
             ],
 
             'mall' => [
@@ -128,79 +165,122 @@ class PageController extends Controller
                 'tagline'     => 'Redefining Retail in Africa',
                 'icon'        => 'ti-shopping-bag',
                 'color_accent'=> null,
-                'description' => 'World-class retail and lifestyle destinations anchored by the landmark US$10–15M Sandton Hydon Park Mall development near Harare — a project set to create up to 5,000 jobs and transform the region.',
-                'body'        => 'CJ Global Mall is at the forefront of Africa\'s retail renaissance. As consumer markets across the continent grow rapidly, the need for premium, well-managed retail environments has never been greater. Our flagship development — the Sandton Hydon Park Mall west of Harare, Zimbabwe — is a statement of that conviction. Developed in partnership with Delatfin Investment, this US$10–15M project will anchor a new commercial hub and create between 2,000 and 5,000 direct and indirect jobs upon completion.',
+                'description' => 'Retail mall development and management. The Sandton Hydon Park Mall (Harare) marks the Group\'s strategic re-entry into Zimbabwe — a two-floor mixed-use retail and commercial hub.',
+                'body'        => 'CJ Global Mall is at the forefront of Africa\'s retail renaissance. Our flagship: the Sandton Hydon Park Mall, a landmark US$670M two-floor development west of Harare featuring retail, office space, and a fuel station — CGEG\'s first major investment in Zimbabwe in 17 years. Developed in partnership with Delatfin Investment and projected to create 2,000–5,000 jobs.',
                 'stats'       => [
-                    ['num' => 'US$10–15M', 'label' => 'Flagship Dev. Value'],
-                    ['num' => '5,000',     'label' => 'Jobs Projected'],
-                    ['num' => '2024',      'label' => 'Development Started'],
-                    ['num' => 'ZW',        'label' => 'First Market'],
+                    ['num' => 'US$670M', 'label' => 'Flagship Investment'],
+                    ['num' => '5,000',   'label' => 'Jobs Projected'],
+                    ['num' => '2-Floor', 'label' => 'Mixed-Use Hub'],
+                    ['num' => '17yr',    'label' => 'Return to Zimbabwe'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-building-store','title' => 'Sandton Hydon Park', 'desc' => 'US$10–15M landmark mall development west of Harare, Zimbabwe, in partnership with Delatfin Investment.'],
-                    ['icon' => 'ti-users',         'title' => '5,000 Jobs Impact',  'desc' => 'Projected 2,000–5,000 direct and indirect jobs created on completion.'],
-                    ['icon' => 'ti-arrow-back',    'title' => 'Return to Zimbabwe', 'desc' => 'Marking CGEG\'s landmark return to Zimbabwe after nearly 17 years.'],
+                    ['icon' => 'ti-building-store','title' => 'Sandton Hydon Park',  'desc' => 'US$670M two-floor mixed-use mall with retail, office space, and fuel station — west of Harare City.'],
+                    ['icon' => 'ti-users',         'title' => '5,000 Jobs Impact',   'desc' => 'Projected 2,000–5,000 direct and indirect jobs created on completion.'],
+                    ['icon' => 'ti-flag',          'title' => 'Zimbabwe Re-Entry',   'desc' => 'CGEG\'s landmark return after 17 years — designed to inspire further foreign investment.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-shopping-cart','title' => 'Retail Leasing',   'desc' => 'Premium retail space for national and international brands.'],
-                    ['icon' => 'ti-building',     'title' => 'Mall Development',  'desc' => 'End-to-end development of retail and lifestyle centres.'],
-                    ['icon' => 'ti-users',        'title' => 'Mall Management',   'desc' => 'Operations, security, cleaning, and tenant relations.'],
-                    ['icon' => 'ti-star',         'title' => 'Anchor Tenants',    'desc' => 'Strategic anchor tenant acquisition and long-term leasing.'],
+                    ['icon' => 'ti-shopping-cart','title' => 'Retail Leasing',  'desc' => 'Premium retail space for national and international brands.'],
+                    ['icon' => 'ti-building',     'title' => 'Mall Development', 'desc' => 'End-to-end development of retail and lifestyle centres.'],
+                    ['icon' => 'ti-users',        'title' => 'Mall Management',  'desc' => 'Operations, security, cleaning, and tenant relations.'],
+                    ['icon' => 'ti-gas-station',  'title' => 'Mixed-Use Assets', 'desc' => 'Fuel station, office space, and commercial hub management.'],
                 ],
+                'hero_img'    => $this->img('mall-hero',    1920, 900),
+                'overview_img'=> $this->img('mall-overview', 800, 700),
+                'services_img'=> $this->img('mall-services', 600, 500),
+                'action_imgs' => [$this->img('mall-a1',700,450), $this->img('mall-a2',700,450), $this->img('mall-a3',700,450)],
             ],
 
             'hospitality' => [
                 'slug'        => 'hospitality',
-                'name'        => 'CJ Restaurants & Nightclubs',
-                'tagline'     => 'Experiences Worth Celebrating',
+                'name'        => 'CJ Nightclubs & Restaurants',
+                'tagline'     => 'African Excellence on the Global Stage',
                 'icon'        => 'ti-glass-full',
                 'color_accent'=> null,
-                'description' => 'Premium dining, entertainment, and nightlife experiences across our operational footprint. CJ Restaurants & Nightclubs curates exceptional hospitality with an African soul and a global standard.',
-                'body'        => 'Great hospitality is about more than food and music — it is about creating moments that stay with people. CJ Restaurants & Nightclubs brings together culinary excellence, sophisticated design, and an energetic atmosphere to deliver premium experiences across our operational locations. From intimate fine dining to high-energy entertainment venues, our hospitality division sets the benchmark for premium African lifestyle experiences.',
+                'description' => 'Premium dining and entertainment venues in South Africa, Zimbabwe, and now London — a marquee presence in Europe\'s hospitality scene, reinforcing CGEG as a truly global African brand.',
+                'body'        => 'CJ Nightclubs & Restaurants brings premium African hospitality to a global audience. Now operational in London alongside our wellness brand, CGEG becomes the first African conglomerate of this scale to establish hospitality and nightlife in London\'s premium market. From Southern Africa to Europe, our venues set the benchmark for excellence.',
                 'stats'       => [
-                    ['num' => 'Multi',  'label' => 'Location Venues'],
-                    ['num' => 'ZA·UK', 'label' => 'Active Markets'],
-                    ['num' => '5★',    'label' => 'Service Standard'],
-                    ['num' => 'B2C',   'label' => '& Corporate Events'],
+                    ['num' => 'ZA·ZW·UK','label' => 'Active Markets'],
+                    ['num' => 'London',  'label' => '2025 Launch'],
+                    ['num' => '1st',     'label' => 'African Brand in London'],
+                    ['num' => '5★',      'label' => 'Service Standard'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-tools-kitchen-2','title' => 'Culinary Excellence', 'desc' => 'Premium menus curated by experienced chefs drawing on African and international cuisine.'],
-                    ['icon' => 'ti-music',          'title' => 'Nightlife & Events',  'desc' => 'High-energy entertainment venues with live performances, DJs, and bespoke event hosting.'],
-                    ['icon' => 'ti-building',       'title' => 'London Operations',   'desc' => 'Active hospitality operations within our London commercial property asset.'],
+                    ['icon' => 'ti-building-arch','title' => 'London Launch (2025)', 'desc' => 'The first African conglomerate of this scale to establish premium hospitality and nightlife in London.'],
+                    ['icon' => 'ti-tools-kitchen-2','title' => 'Premium Dining',    'desc' => 'Curated menus drawing on African and international culinary traditions in premium settings.'],
+                    ['icon' => 'ti-music',         'title' => 'Nightlife & Events',  'desc' => 'High-energy entertainment venues with live performances, DJs, and bespoke corporate events.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-tools-kitchen-2','title' => 'Fine Dining',     'desc' => 'Premium restaurant experiences with curated menus and exceptional service.'],
-                    ['icon' => 'ti-music',          'title' => 'Nightlife',        'desc' => 'Premium nightclub and entertainment venues for discerning clientele.'],
-                    ['icon' => 'ti-calendar-event', 'title' => 'Private Events',   'desc' => 'Private dining, corporate events, and bespoke functions.'],
-                    ['icon' => 'ti-glass-full',     'title' => 'Bar & Lounge',     'desc' => 'Curated cocktail bars and premium lounge experiences.'],
+                    ['icon' => 'ti-tools-kitchen-2','title' => 'Fine Dining',    'desc' => 'Premium restaurant experiences with curated menus and exceptional service.'],
+                    ['icon' => 'ti-music',          'title' => 'Nightlife',       'desc' => 'Premium nightclub and entertainment venues for discerning clientele.'],
+                    ['icon' => 'ti-calendar-event', 'title' => 'Private Events',  'desc' => 'Private dining, corporate events, and bespoke function hosting.'],
+                    ['icon' => 'ti-glass-full',     'title' => 'Bar & Lounge',    'desc' => 'Curated cocktail bars and premium lounge experiences.'],
                 ],
+                'hero_img'    => $this->img('hospitality-hero',    1920, 900),
+                'overview_img'=> $this->img('hospitality-overview', 800, 700),
+                'services_img'=> $this->img('hospitality-services', 600, 500),
+                'action_imgs' => [$this->img('hospitality-a1',700,450), $this->img('hospitality-a2',700,450), $this->img('hospitality-a3',700,450)],
             ],
 
             'wellness' => [
                 'slug'        => 'wellness',
-                'name'        => 'CJ Global Spas & Salons',
-                'tagline'     => 'Wellness Elevated to an Art Form',
+                'name'        => 'CJ Global Saloons & Spas',
+                'tagline'     => 'Luxury Wellness. African Soul.',
                 'icon'        => 'ti-spa',
                 'color_accent'=> null,
-                'description' => 'Luxury spa and beauty experiences delivered across our hospitality and property assets. CJ Global Spas & Salons brings world-class wellness to Southern Africa, London, and beyond.',
-                'body'        => 'Wellness is no longer a luxury — it is an expectation. CJ Global Spas & Salons delivers transformative wellness and beauty experiences that go beyond the treatment room. Integrated within our property and hospitality assets, our wellness facilities offer a seamless blend of luxury, skill, and sanctuary. From signature spa treatments to full-service beauty salons and professional training academies, we set the standard for premium wellness across our operational footprint.',
+                'description' => 'Luxury wellness and beauty experiences. Now operational in London alongside the restaurant and nightclub brands, targeting the premium lifestyle segment.',
+                'body'        => 'CJ Global Saloons & Spas delivers transformative wellness and beauty experiences integrated within our property and hospitality assets. Launched in London in 2025 as part of our European entry strategy, we bring premium African wellness to international markets — from signature spa treatments to full-service beauty salons.',
                 'stats'       => [
-                    ['num' => 'Multi',  'label' => 'Locations'],
-                    ['num' => 'ZA·UK', 'label' => 'Active Markets'],
-                    ['num' => '5★',    'label' => 'Luxury Standard'],
-                    ['num' => 'B2C',   'label' => '& Corporate Wellness'],
+                    ['num' => 'ZA·ZW·UK','label' => 'Active Markets'],
+                    ['num' => 'London',  'label' => '2025 Operational'],
+                    ['num' => 'Premium', 'label' => 'Lifestyle Segment'],
+                    ['num' => '5★',      'label' => 'Service Standard'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-heart',    'title' => 'Signature Treatments', 'desc' => 'Bespoke spa journeys combining traditional African wellness practices with global techniques.'],
-                    ['icon' => 'ti-sparkles', 'title' => 'Full Beauty Services', 'desc' => 'Comprehensive hair, nail, skin, and beauty services in premium salon environments.'],
-                    ['icon' => 'ti-school',   'title' => 'Training Academy',     'desc' => 'Professional beauty and wellness training programmes producing skilled practitioners.'],
+                    ['icon' => 'ti-building-arch','title' => 'London Operational',    'desc' => 'Active wellness and beauty services within our London property — part of the integrated hospitality offering.'],
+                    ['icon' => 'ti-heart',        'title' => 'Signature Treatments',  'desc' => 'Bespoke spa journeys combining traditional African wellness practices with global techniques.'],
+                    ['icon' => 'ti-certificate',  'title' => 'Training Academy',      'desc' => 'Professional beauty and wellness training programmes producing qualified practitioners.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-heart',       'title' => 'Spa Treatments',       'desc' => 'Signature massages, facials, body wraps, and holistic treatments.'],
-                    ['icon' => 'ti-sparkles',    'title' => 'Beauty Services',       'desc' => 'Hair, nail, skin, and full beauty salon services.'],
-                    ['icon' => 'ti-yoga',        'title' => 'Wellness Programmes',   'desc' => 'Holistic wellness, meditation, nutrition, and lifestyle coaching.'],
-                    ['icon' => 'ti-certificate', 'title' => 'Training Academy',      'desc' => 'Professional beauty and wellness practitioner training and certification.'],
+                    ['icon' => 'ti-heart',       'title' => 'Spa Treatments',      'desc' => 'Signature massages, facials, body wraps, and holistic wellness treatments.'],
+                    ['icon' => 'ti-sparkles',    'title' => 'Beauty Services',      'desc' => 'Hair, nail, skin, and full beauty salon services.'],
+                    ['icon' => 'ti-yoga',        'title' => 'Wellness Programmes',  'desc' => 'Holistic wellness, meditation, nutrition, and lifestyle coaching.'],
+                    ['icon' => 'ti-certificate', 'title' => 'Training Academy',     'desc' => 'Professional beauty and wellness practitioner training and certification.'],
                 ],
+                'hero_img'    => $this->img('wellness-hero',    1920, 900),
+                'overview_img'=> $this->img('wellness-overview', 800, 700),
+                'services_img'=> $this->img('wellness-services', 600, 500),
+                'action_imgs' => [$this->img('wellness-a1',700,450), $this->img('wellness-a2',700,450), $this->img('wellness-a3',700,450)],
+            ],
+
+            'properties' => [
+                'slug'        => 'properties',
+                'name'        => 'CJ Global Properties',
+                'tagline'     => 'Real Estate Value Across Three Continents',
+                'icon'        => 'ti-building-community',
+                'color_accent'=> null,
+                'description' => 'Commercial and residential real estate portfolio across Southern Africa. Supports the Group\'s infrastructure vision and provides long-term asset value.',
+                'body'        => 'CJ Global Properties manages a growing portfolio of high-value real estate assets across Africa, Europe, and the Americas. From commercial developments in South Africa to a prime commercial property acquired in London in 2025 and a building in Chicago — our portfolio reflects CGEG\'s global ambition and commitment to long-term asset value.',
+                'stats'       => [
+                    ['num' => '3',       'label' => 'Continents'],
+                    ['num' => 'ZA·UK·US','label' => 'Key Markets'],
+                    ['num' => 'London',  'label' => 'Acquired 2025'],
+                    ['num' => 'Chicago', 'label' => 'US Base'],
+                ],
+                'highlights'  => [
+                    ['icon' => 'ti-building-arch','title' => 'London Property (2025)', 'desc' => 'Prime commercial property acquired in London — housing CJ Restaurants, Nightclubs, and Beauty Spa operations.'],
+                    ['icon' => 'ti-world',        'title' => 'Multi-Continental',      'desc' => 'Active portfolio across South Africa, Zimbabwe, the United Kingdom, and the United States.'],
+                    ['icon' => 'ti-trending-up',  'title' => 'Long-Term Value',        'desc' => 'Strategic acquisition of high-growth real estate across key African and international markets.'],
+                ],
+                'services'    => [
+                    ['icon' => 'ti-building',  'title' => 'Commercial Properties','desc' => 'Office buildings, retail spaces, commercial parks, and mixed-use developments.'],
+                    ['icon' => 'ti-home',      'title' => 'Residential Portfolio', 'desc' => 'Luxury homes, apartment complexes, and premium residential estates.'],
+                    ['icon' => 'ti-chart-bar', 'title' => 'Property Investment',   'desc' => 'Strategic acquisition, valuation, and real estate portfolio management.'],
+                    ['icon' => 'ti-key',       'title' => 'Property Management',   'desc' => 'Full-service management including leasing, maintenance, and tenant relations.'],
+                ],
+                'hero_img'    => $this->img('properties-hero',    1920, 900),
+                'overview_img'=> $this->img('properties-overview', 800, 700),
+                'services_img'=> $this->img('properties-services', 600, 500),
+                'action_imgs' => [$this->img('properties-a1',700,450), $this->img('properties-a2',700,450), $this->img('properties-a3',700,450)],
             ],
 
             'spirits' => [
@@ -209,25 +289,29 @@ class PageController extends Controller
                 'tagline'     => 'Crafted for Those Who Demand the Best',
                 'icon'        => 'ti-bottle',
                 'color_accent'=> 'spirits',
-                'description' => 'CJ Vodka is the newest chapter in the CGEG story — a premium spirits brand anchored by a landmark building acquisition in Chicago, bringing an African entrepreneurial spirit to the global luxury spirits market.',
-                'body'        => 'Born from the same boldness that built a pan-African conglomerate, CJ Vodka Premium Spirits enters the global luxury spirits arena with a clear mandate: to craft a product worthy of the world\'s most discerning palates, and to carry the CGEG story into every glass. Anchored by a landmark building acquisition in Chicago — a city synonymous with ambition and reinvention — CJ Vodka is positioned as a premium international spirits brand with deep African roots and global aspirations.',
+                'description' => 'NEWEST DIVISION (2025). Manufacturing premium spirits for the US market, anchored in Chicago. Additional hubs planned in KwaZulu-Natal, Lesotho, and Zimbabwe.',
+                'body'        => 'CJ Vodka Premium Spirits is CGEG\'s bold pivot into spirits manufacturing. The Chicago facility will produce premium vodka for the US market — one of the world\'s largest premium spirits consumer markets — with global distribution planned. Manufacturing hubs in KwaZulu-Natal and Lesotho will serve the African market, with negotiations underway for a Zimbabwe manufacturing hub.',
                 'stats'       => [
-                    ['num' => '2024',    'label' => 'Brand Launched'],
-                    ['num' => 'Chicago', 'label' => 'US Headquarters'],
-                    ['num' => 'Premium', 'label' => 'Market Position'],
+                    ['num' => '2025',    'label' => 'Division Launched'],
+                    ['num' => 'Chicago', 'label' => 'Manufacturing HQ'],
+                    ['num' => 'KZN·LS',  'label' => 'African Hubs'],
                     ['num' => 'Global',  'label' => 'Distribution Target'],
                 ],
                 'highlights'  => [
-                    ['icon' => 'ti-building-store','title' => 'Chicago HQ',           'desc' => 'A landmark building acquisition in Chicago anchors the brand\'s North American base and global operations.'],
-                    ['icon' => 'ti-globe',         'title' => 'Global Ambition',       'desc' => 'Targeting international distribution across Africa, Europe, and the Americas from launch.'],
-                    ['icon' => 'ti-star',          'title' => 'Premium Positioning',   'desc' => 'Crafted to compete at the pinnacle of the global vodka and premium spirits category.'],
+                    ['icon' => 'ti-building-factory','title' => 'Chicago HQ',          'desc' => 'Building acquired in Chicago, Illinois — the Group\'s debut in manufacturing and the North American market.'],
+                    ['icon' => 'ti-globe',           'title' => 'Global Distribution', 'desc' => 'US market primary, with KwaZulu-Natal and Lesotho hubs serving Africa and Zimbabwe expansion in negotiation.'],
+                    ['icon' => 'ti-star',            'title' => 'Premium Positioning', 'desc' => 'Entering the US premium spirits market — one of the world\'s largest and most competitive consumer categories.'],
                 ],
                 'services'    => [
-                    ['icon' => 'ti-bottle',         'title' => 'CJ Vodka Range',       'desc' => 'Premium vodka expressions crafted to international luxury standards.'],
-                    ['icon' => 'ti-building-store', 'title' => 'Distribution',          'desc' => 'International distribution partnerships across key global markets.'],
-                    ['icon' => 'ti-users',          'title' => 'Brand Partnerships',    'desc' => 'Strategic co-branding and hospitality partnerships with premium venues.'],
-                    ['icon' => 'ti-star',           'title' => 'Brand Experiences',     'desc' => 'Exclusive events, activations, and immersive brand experiences globally.'],
+                    ['icon' => 'ti-bottle',         'title' => 'CJ Vodka Range',      'desc' => 'Premium vodka expressions crafted to international luxury standards for the US market.'],
+                    ['icon' => 'ti-building-store', 'title' => 'Distribution',         'desc' => 'International distribution partnerships across key global markets — US, Africa, and beyond.'],
+                    ['icon' => 'ti-users',          'title' => 'Brand Partnerships',   'desc' => 'Strategic co-branding and hospitality partnerships with premium venues worldwide.'],
+                    ['icon' => 'ti-star',           'title' => 'Brand Experiences',    'desc' => 'Exclusive events, activations, and immersive brand experiences globally.'],
                 ],
+                'hero_img'    => $this->img('spirits-hero',    1920, 900),
+                'overview_img'=> $this->img('spirits-bottle',   600, 900),
+                'services_img'=> $this->img('spirits-bar',      600, 500),
+                'action_imgs' => [$this->img('spirits-a1',700,450), $this->img('spirits-a2',700,450), $this->img('spirits-a3',700,450)],
             ],
         ];
     }
@@ -240,12 +324,17 @@ class PageController extends Controller
     public function home()
     {
         $divisions = $this->divisionsData();
-        return view('pages.home', compact('divisions'));
+        $heroImg   = $this->img('cgeg-hero', 1920, 1080);
+        $aboutImg  = $this->img('cgeg-about', 800, 900);
+        return view('pages.home', compact('divisions', 'heroImg', 'aboutImg'));
     }
 
     public function about()
     {
-        return view('pages.about');
+        $team     = $this->teamData();
+        $heroImg  = $this->img('about-hero', 1920, 700);
+        $storyImg = $this->img('about-story', 800, 700);
+        return view('pages.about', compact('team', 'heroImg', 'storyImg'));
     }
 
     public function divisions()
@@ -257,60 +346,41 @@ class PageController extends Controller
     public function division(string $slug)
     {
         $divisions = $this->divisionsData();
+        if (!isset($divisions[$slug])) abort(404);
 
-        if (!isset($divisions[$slug])) {
-            abort(404);
-        }
-
-        $division      = $divisions[$slug];
+        $division       = $divisions[$slug];
         $otherDivisions = array_filter($divisions, fn($d) => $d['slug'] !== $slug);
 
-        // Spirits gets its own moody template
         if ($slug === 'spirits') {
             return view('pages.divisions.spirits', compact('division', 'otherDivisions'));
         }
-
         return view('pages.divisions.show', compact('division', 'otherDivisions'));
     }
 
     public function foundation()
     {
-        return view('pages.foundation');
+        $heroImg = $this->img('foundation-hero', 1920, 800);
+        $eduImg  = $this->img('foundation-education', 800, 500);
+        $healthImg = $this->img('foundation-healthcare', 800, 500);
+        return view('pages.foundation', compact('heroImg', 'eduImg', 'healthImg'));
     }
 
     public function footprint()
     {
-        return view('pages.footprint');
+        $offices = [
+            ['flag'=>'🇿🇦','country'=>'South Africa','name'=>'KwaZulu-Natal (HQ)','address'=>'CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal','phone'=>'+27 66 947 129','img'=>$this->img('office-kzn',600,400)],
+            ['flag'=>'🇿🇼','country'=>'Zimbabwe',    'name'=>'Bulawayo Office',    'address'=>'River Crescent Road, Kelvin West, Bulawayo','phone'=>'+263 77 270 1826','img'=>$this->img('office-bulawayo',600,400)],
+            ['flag'=>'🇬🇧','country'=>'United Kingdom','name'=>'London Operations','address'=>'Prime commercial property — hospitality & wellness','phone'=>null,'img'=>$this->img('office-london',600,400)],
+            ['flag'=>'🇺🇸','country'=>'United States','name'=>'Chicago Manufacturing','address'=>'CJ Vodka Premium Spirits — North American HQ','phone'=>null,'img'=>$this->img('office-chicago',600,400)],
+        ];
+        return view('pages.footprint', compact('offices'));
     }
 
     public function leadership()
     {
-        $team = [
-            'founder' => [
-                'name'       => 'Prof. Sir Clemence Jaricha Muzenda',
-                'title'      => 'Founder & Chief Executive Officer',
-                'bio'        => 'A visionary Zimbabwean-born entrepreneur and global business leader, Prof. Sir Clemence Jaricha Muzenda founded CJ Global Express Group Unlimited in 2012 with a mandate to build a diversified conglomerate that would drive economic transformation across Africa and beyond. Under his leadership, CGEG has grown from a single entity to a nine-division powerhouse operating in 32+ countries.',
-                'image_slot' => 'founder-leadership',
-            ],
-            'directors' => [
-                ['name' => 'Dr. Chris Grant',       'title' => 'Finance Director',        'image_slot' => 'dir-grant'],
-                ['name' => 'Mr. L. Hadebe',          'title' => 'Director, Loss Control',  'image_slot' => 'dir-hadebe'],
-                ['name' => 'Munodawafa Mutwara',     'title' => 'Director of Operations',  'image_slot' => 'dir-mutwara'],
-                ['name' => 'Mr. Kris Cly',           'title' => 'General Manager',         'image_slot' => 'dir-cly'],
-            ],
-            'management' => [
-                ['name' => 'Lorcadia Phiri', 'title' => 'PA to CEO'],
-                ['name' => 'Novela Dube',    'title' => 'Secretary'],
-                ['name' => 'Mr. D Nyathi',   'title' => 'HR Manager'],
-                ['name' => 'Dr. E Kapongo',  'title' => 'Accountant'],
-            ],
-            'oversight' => [
-                ['name' => 'Ms Vee Jaricha',    'title' => 'Oversight — All Divisions', 'image_slot' => 'oversight-vee'],
-                ['name' => 'CJ Junior Jaricha', 'title' => 'Oversight — All Divisions', 'image_slot' => 'oversight-cj'],
-            ],
-        ];
-
-        return view('pages.leadership', compact('team'));
+        $team = $this->teamData();
+        $heroImg = $this->img('leadership-hero', 1920, 600);
+        return view('pages.leadership', compact('team', 'heroImg'));
     }
 
     public function projects()
@@ -318,42 +388,41 @@ class PageController extends Controller
         $projects = [
             [
                 'title'      => 'Sandton Hydon Park Mall',
-                'location'   => 'West of Harare, Zimbabwe',
-                'value'      => 'US$10–15 Million',
+                'location'   => 'West of Harare City, Zimbabwe',
+                'value'      => 'US$670 Million',
                 'partner'    => 'Delatfin Investment (Clemence Zingoni)',
                 'impact'     => '2,000–5,000 Jobs',
                 'status'     => 'In Development',
-                'division'   => 'CJ Global Mall',
-                'desc'       => 'A landmark retail and lifestyle destination marking CGEG\'s return to Zimbabwe after 17 years. This US$10–15M development will create up to 5,000 jobs and establish a new commercial hub west of Harare.',
+                'division'   => 'CJ Global Mall / Construction',
+                'desc'       => 'A landmark two-floor mixed-use development featuring retail, office space, and a fuel station — CGEG\'s first major investment in Zimbabwe in 17 years. Designed to inspire foreign investor confidence and create up to 5,000 jobs.',
                 'featured'   => true,
-                'image_slot' => 'project-sandton',
+                'image'      => $this->img('project-sandton', 1200, 700),
             ],
             [
-                'title'      => 'London Commercial Property',
+                'title'      => 'London Market Entry',
                 'location'   => 'London, United Kingdom',
                 'value'      => 'Undisclosed',
                 'partner'    => null,
                 'impact'     => null,
                 'status'     => 'Operational',
-                'division'   => 'CJ Global Properties',
-                'desc'       => 'A premium commercial property in London housing operational hospitality and wellness services, anchoring CGEG\'s European presence.',
+                'division'   => 'CJ Properties / Hospitality / Wellness',
+                'desc'       => 'Prime commercial property acquired in London (2025). CJ Restaurants, Nightclubs, and Beauty Spa now operational — making CGEG the first African conglomerate of this scale in London\'s hospitality and wellness market.',
                 'featured'   => true,
-                'image_slot' => 'project-london',
+                'image'      => $this->img('project-london', 800, 500),
             ],
             [
-                'title'      => 'Chicago Building Acquisition',
+                'title'      => 'CJ Vodka — Chicago Manufacturing',
                 'location'   => 'Chicago, Illinois, USA',
                 'value'      => 'Undisclosed',
                 'partner'    => null,
                 'impact'     => null,
                 'status'     => 'Operational',
                 'division'   => 'CJ Vodka Premium Spirits',
-                'desc'       => 'A strategic building acquisition in Chicago anchoring the CJ Vodka Premium Spirits division and establishing CGEG\'s North American operational base.',
+                'desc'       => 'Building acquired in Chicago for CJ Vodka Premium Spirits manufacturing — the Group\'s debut in manufacturing and the North American market. Additional hubs in KwaZulu-Natal and Lesotho will serve the African market.',
                 'featured'   => true,
-                'image_slot' => 'project-chicago',
+                'image'      => $this->img('project-chicago', 800, 500),
             ],
         ];
-
         return view('pages.projects', compact('projects'));
     }
 
@@ -375,15 +444,15 @@ class PageController extends Controller
             'honeypot'   => 'max:0',
         ]);
 
-        $to   = env('MAIL_TO_ADDRESS', 'enquiries@cjglobalexpressgroup.com');
-        $body = "New enquiry from the CGEG website:\n\n"
+        $to   = env('MAIL_TO_ADDRESS', 'reception@cjglobalexpressgroup.com');
+        $body = "New enquiry from CGEG website:\n\n"
               . "Name: {$validated['first_name']} {$validated['last_name']}\n"
               . "Email: {$validated['email']}\n"
               . "Phone: " . ($validated['phone'] ?? 'Not provided') . "\n"
               . "Division: " . ($validated['division'] ?? 'General') . "\n\n"
               . "Message:\n{$validated['message']}";
 
-        mail($to, "CGEG Website Enquiry — {$validated['first_name']} {$validated['last_name']}", $body,
+        mail($to, "CGEG Enquiry — {$validated['first_name']} {$validated['last_name']}", $body,
             "From: {$validated['email']}\r\nReply-To: {$validated['email']}");
 
         return back()->with('success', 'Thank you for your message. We will be in touch shortly.');

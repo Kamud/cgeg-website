@@ -15,7 +15,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,0.05) 0%, transparent 65%);
+    background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,0.1) 0%, transparent 65%);
     pointer-events: none;
 }
 
@@ -25,7 +25,7 @@
     grid-template-columns: 340px 1fr;
     gap: var(--space-5);
     align-items: center;
-    background: var(--surface-raised);
+    background: var(--gradient-hero);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-raised-lg);
     padding: var(--space-4);
@@ -234,9 +234,7 @@
 
 {{-- ── HERO ── --}}
 <section class="leadership-hero">
-    {{-- [IMAGE SLOT] leadership-hero | 1920×600px — boardroom or team photo --}}
-    <div class="img-slot" style="position:absolute;inset:0;border-radius:0;min-height:unset;opacity:0.1;"
-         data-slot="leadership-hero" data-size="1920x600"></div>
+    <img src="{{ $heroImg }}" alt="CGEG Leadership" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;">
 
     <div class="container" style="position:relative;z-index:2;">
         <div class="eyebrow reveal">Our People</div>
@@ -254,11 +252,7 @@
         <div class="founder-feature reveal reveal-delay-1">
             {{-- [IMAGE SLOT] founder-leadership | 500×600px — formal founder portrait --}}
             <div class="founder-feature-img">
-                <div class="img-slot" style="min-height:320px;border-radius:10px;"
-                     data-slot="founder-leadership" data-size="500x600">
-                    <i class="ti ti-user" style="font-size:40px;"></i>
-                    <span>Founder Portrait</span>
-                </div>
+                <img src="{{ $team['founder']['image'] }}" alt="{{ $team['founder']['name'] }}" style="width:100%;height:320px;object-fit:cover;border-radius:10px;">
             </div>
             <div class="founder-feature-info">
                 <span class="title-tag">Founder &amp; Chief Executive Officer</span>
@@ -293,7 +287,7 @@
             @foreach($team['directors'] as $i => $director)
             <div class="person-card reveal" style="transition-delay:{{ $i * 80 }}ms;">
                 {{-- [IMAGE SLOT] dir-{{ Str::slug($director['name']) }} | 400×400px — professional headshot --}}
-                <div class="person-avatar" data-slot="{{ $director['image_slot'] }}" data-size="400x400">
+                <div class="person-avatar">
                     <span class="initials">
                         {{ collect(explode(' ', $director['name']))->map(fn($w) => strtoupper($w[0]))->take(2)->implode('') }}
                     </span>
@@ -340,11 +334,8 @@
             @foreach($team['oversight'] as $i => $member)
             <div class="oversight-card reveal" style="transition-delay:{{ $i * 100 }}ms;">
                 {{-- [IMAGE SLOT] {{ $member['image_slot'] }} | 400×400px --}}
-                <div class="person-avatar" style="margin-bottom:var(--space-2);"
-                     data-slot="{{ $member['image_slot'] }}" data-size="400x400">
-                    <span class="initials">
-                        {{ collect(explode(' ', $member['name']))->map(fn($w) => strtoupper($w[0]))->take(2)->implode('') }}
-                    </span>
+                <div class="person-avatar" style="margin-bottom:var(--space-2);">
+                    <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="person-name">{{ $member['name'] }}</div>
                 <div class="person-role" style="margin-top:4px;">{{ $member['title'] }}</div>

@@ -1,138 +1,77 @@
 @extends('layouts.app')
-
-@section('title', 'CJ Global Express Group Unlimited — Building Africa\'s Next Chapter')
-@section('meta_description', 'A diversified global conglomerate operating across construction, mining, logistics, properties, hospitality, wellness and spirits in 32+ countries.')
+@section('title', 'CJ Global Express Group Unlimited — Building Africa. Serving the World.')
+@section('meta_description', 'A diversified African conglomerate operating across 56 countries on six continents. Construction, mining, logistics, retail, hospitality, wellness, real estate and premium spirits.')
 
 @section('content')
-
-{{-- =====================================================
-     HERO
-===================================================== --}}
 <style>
+/* ── Hero ── */
 .hero {
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: var(--space-7) 0;
-    overflow: hidden;
+    min-height: 92vh; display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #F5F1EB 0%, #EDE4D0 40%, #F5F1EB 100%);
 }
 .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 65%);
-    pointer-events: none;
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 65% 50%, rgba(201,168,76,0.12) 0%, transparent 60%);
+    pointer-events:none;
 }
-.hero-content { position: relative; z-index: 2; max-width: 680px; }
-.hero-title { font-size: var(--text-hero); margin-bottom: var(--space-2); }
-.hero-subtitle {
-    font-size: var(--text-body-lg);
-    color: var(--text-secondary);
-    line-height: 1.75;
-    max-width: 500px;
-    margin-bottom: var(--space-4);
+.hero-content { position:relative; z-index:2; max-width:680px; }
+.hero-title { font-size:var(--text-hero); margin-bottom:var(--space-2); line-height:1.05; }
+.hero-subtitle { font-size:var(--text-body-lg); color:var(--text-secondary); line-height:1.75; max-width:500px; margin-bottom:var(--space-4); }
+.hero-ctas { display:flex; gap:var(--space-2); align-items:center; flex-wrap:wrap; }
+.hero-img-wrap {
+    position:absolute; right:0; top:0; bottom:0; width:45%;
+    overflow:hidden;
 }
-.hero-ctas { display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap; }
-.hero-scroll {
-    position: absolute;
-    bottom: var(--space-4);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: var(--text-muted);
-    font-size: var(--text-label);
-    letter-spacing: 0.08em;
-    animation: bounce 2s ease-in-out infinite;
+.hero-img-wrap img { width:100%; height:100%; object-fit:cover; opacity:0.85; }
+.hero-img-wrap::before {
+    content:''; position:absolute; inset:0; z-index:1;
+    background: linear-gradient(to right, #F5F1EB 0%, transparent 40%);
 }
-@keyframes bounce {
-    0%,100% { transform: translateX(-50%) translateY(0); }
-    50%      { transform: translateX(-50%) translateY(6px); }
-}
+.hero-scroll { position:absolute; bottom:var(--space-4); left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; color:var(--text-muted); font-size:var(--text-label); letter-spacing:0.08em; animation:bounce 2s ease-in-out infinite; }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
 
-/* About band */
-.about-band { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: center; }
-.about-band .about-text h2 { margin-bottom: var(--space-2); }
-.about-band .about-text p { color: var(--text-secondary); margin-bottom: var(--space-2); }
-.compliance-strip { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-3); }
-.compliance-badge {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    padding: 4px 10px;
-    border: 1px solid var(--gold-border);
-    border-radius: 20px;
-    color: var(--gold-primary);
-    text-transform: uppercase;
-}
+/* ── Stat strip ── */
+.stat-strip { background:linear-gradient(135deg,#1C1814 0%,#2A2218 60%,#1C1814 100%); padding:var(--space-4) 0; }
+.stat-strip .card-stat { background:rgba(255,255,255,0.05); box-shadow:none; border:1px solid rgba(201,168,76,0.15); }
+.stat-strip .stat-num   { color:var(--gold-bright); }
+.stat-strip .stat-label { color:rgba(245,240,232,0.6); }
 
-/* Divisions grid */
-.divisions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+/* ── About band ── */
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-6); align-items:center; }
+.about-text p { color:var(--text-secondary); margin-bottom:var(--space-2); line-height:1.8; }
+.compliance-strip { display:flex; flex-wrap:wrap; gap:var(--space-1); margin-top:var(--space-3); }
+.compliance-badge { font-size:10px; font-weight:500; letter-spacing:0.06em; padding:4px 10px; border:1px solid var(--gold-border); border-radius:20px; color:var(--gold-primary); text-transform:uppercase; background:var(--gold-light); }
 
-/* Founder band */
-.founder-band {
-    background: var(--surface-raised);
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
-    padding: var(--space-7) 0;
-    text-align: center;
-}
-.founder-band blockquote {
-    font-family: var(--font-display);
-    font-size: clamp(20px, 2.5vw, 28px);
-    font-style: italic;
-    color: var(--text-primary);
-    max-width: 780px;
-    margin: 0 auto var(--space-3);
-    line-height: 1.5;
-}
-.founder-band cite {
-    font-family: var(--font-body);
-    font-size: var(--text-label);
-    color: var(--gold-primary);
-    letter-spacing: 0.1em;
-    font-style: normal;
-    text-transform: uppercase;
-}
+/* ── Divisions ── */
+.divisions-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-2); }
 
-/* Foundation CTA */
-.foundation-band {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: var(--space-7) 0;
-}
-.foundation-band h2 { margin-bottom: var(--space-2); }
-.foundation-band p { color: var(--text-secondary); max-width: 520px; margin: 0 auto var(--space-4); }
+/* ── Founder band (dark) ── */
+.founder-band { background:var(--gradient-band); padding:var(--space-7) 0; text-align:center; }
+.founder-band blockquote { font-family:var(--font-display); font-size:clamp(20px,2.5vw,28px); font-style:italic; color:var(--text-on-dark); max-width:780px; margin:0 auto var(--space-3); line-height:1.5; }
+.founder-band cite { font-family:var(--font-body); font-size:var(--text-label); color:var(--gold-bright); letter-spacing:0.1em; font-style:normal; text-transform:uppercase; }
 
-@media (max-width: 768px) {
-    .hero { min-height: 100svh; }
-    .about-band { grid-template-columns: 1fr; }
-    .divisions-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 1024px) {
-    .divisions-grid { grid-template-columns: repeat(2, 1fr); }
-}
+/* ── Foundation ── */
+.foundation-cta { background:linear-gradient(135deg,#F5F1EB,#EDE4D0); border-top:1px solid var(--border-subtle); padding:var(--space-7) 0; text-align:center; }
+
+@media(max-width:1024px){ .hero-img-wrap{width:35%;} }
+@media(max-width:768px) { .hero-img-wrap{display:none;} .about-grid{grid-template-columns:1fr;} .divisions-grid{grid-template-columns:1fr;} }
+@media(max-width:1024px){ .divisions-grid{grid-template-columns:repeat(2,1fr);} }
 </style>
 
-{{-- Hero --}}
+{{-- HERO --}}
 <section class="hero">
-    {{-- [IMAGE SLOT] hero-bg | Recommended: 1920×1080px, atmospheric African skyline or construction site --}}
-    <div class="img-slot" style="position:absolute;inset:0;border-radius:0;min-height:unset;opacity:0.18;" data-slot="hero-bg" data-size="1920x1080">
-        <i class="ti ti-photo"></i>
+    <div class="hero-img-wrap">
+        <img src="{{ $heroImg }}" alt="CJ Global Express Group — Building Africa">
     </div>
-
     <div class="container">
         <div class="hero-content">
-            <div class="eyebrow reveal">32+ Countries &middot; 9 Divisions &middot; Est. 2012</div>
+            <div class="eyebrow reveal">56 Countries &middot; 9 Divisions &middot; Est. 1997</div>
             <h1 class="hero-title reveal reveal-delay-1">
-                Building Africa's<br><em class="italic-gold">Next Chapter</em>
+                Building Africa.<br><em class="italic-gold">Serving the World.</em>
             </h1>
             <p class="hero-subtitle reveal reveal-delay-2">
-                A diversified global conglomerate driving growth across construction, mining, logistics, properties, hospitality, wellness, and premium spirits.
+                A diversified African conglomerate operating across 56 countries on six continents — driving growth through construction, mining, logistics, retail, hospitality, wellness, real estate, and premium spirits.
             </p>
             <div class="hero-ctas reveal reveal-delay-3">
                 <a href="{{ route('divisions') }}" class="btn btn-primary">Explore Divisions</a>
@@ -140,152 +79,131 @@
             </div>
         </div>
     </div>
-
-    <div class="hero-scroll">
-        <span>Scroll</span>
-        <i class="ti ti-chevron-down"></i>
-    </div>
+    <div class="hero-scroll"><span>Scroll</span><i class="ti ti-chevron-down"></i></div>
 </section>
 
-{{-- Stat Strip --}}
-<section class="section-sm" style="background: var(--surface-raised); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+{{-- STAT STRIP (dark band) --}}
+<div class="stat-strip">
     <div class="container">
         <div class="grid-4">
-            <div class="card-stat reveal"><div class="stat-num">32+</div><div class="stat-label">Countries</div></div>
+            <div class="card-stat reveal"><div class="stat-num">56</div><div class="stat-label">Countries</div></div>
             <div class="card-stat reveal reveal-delay-1"><div class="stat-num">$200M+</div><div class="stat-label">Capital Deployed</div></div>
             <div class="card-stat reveal reveal-delay-2"><div class="stat-num">9</div><div class="stat-label">Divisions</div></div>
-            <div class="card-stat reveal reveal-delay-3"><div class="stat-num">5,000+</div><div class="stat-label">Jobs Created</div></div>
+            <div class="card-stat reveal reveal-delay-3"><div class="stat-num">25,000+</div><div class="stat-label">Jobs Created</div></div>
         </div>
     </div>
-</section>
+</div>
 
-{{-- Who We Are --}}
+{{-- WHO WE ARE --}}
 <section class="section">
     <div class="container">
-        <div class="about-band">
+        <div class="about-grid">
             <div class="about-text">
                 <div class="eyebrow reveal">Who We Are</div>
-                <h2 class="reveal reveal-delay-1">A Legacy Built on<br><em class="italic-gold">Integrity</em></h2>
-                <p class="reveal reveal-delay-2">
-                    Founded in 2012 by Prof. Sir Clemence Jaricha Muzenda, CJ Global Express Group Unlimited has grown from a single vision into a diversified powerhouse spanning nine industries and 32+ countries across Africa, Europe, and the Americas.
-                </p>
-                <p class="reveal reveal-delay-2">
-                    Headquartered in KwaZulu-Natal, South Africa, with offices in Zimbabwe, the United Kingdom, and the United States, CGEG is committed to driving economic transformation, creating employment, and building lasting infrastructure across the continent.
-                </p>
+                <h2 class="reveal reveal-delay-1">Africa's Most Dynamic<br><em class="italic-gold">Multi-Sector Empire</em></h2>
+                <p class="reveal reveal-delay-2">Founded in 1997 by Prof. Clemence Jaricha, CJ Global Express Group Unlimited began as a single logistics operation. Today it stands as one of Africa's most dynamic multi-sector conglomerates — operating across 56 countries on six continents through nine distinct divisions.</p>
+                <p class="reveal reveal-delay-2">Driven by the belief that African enterprise must set the global standard, CGEG creates sustainable economic value for communities, partners, and shareholders across the continent and beyond.</p>
                 <div class="compliance-strip reveal reveal-delay-3">
                     <span class="compliance-badge">BBBEE Level 1</span>
-                    <span class="compliance-badge">COIDA Compliant</span>
-                    <span class="compliance-badge">UIF Registered</span>
-                    <span class="compliance-badge">CIDB Certified</span>
+                    <span class="compliance-badge">COIDA</span>
+                    <span class="compliance-badge">UIF</span>
+                    <span class="compliance-badge">CIDB</span>
                     <span class="compliance-badge">CSD Registered</span>
                 </div>
-                <div style="margin-top: var(--space-3);">
+                <div style="margin-top:var(--space-3);" class="reveal reveal-delay-3">
                     <a href="{{ route('about') }}" class="btn btn-link">Read Our Full Story <i class="ti ti-arrow-right"></i></a>
                 </div>
             </div>
-
-            {{-- [IMAGE SLOT] about-portrait | 800×900px — Prof. Sir Clemence or HQ exterior --}}
-            <div class="img-slot reveal reveal-delay-1" style="min-height: 420px;" data-slot="about-portrait" data-size="800x900">
-                <i class="ti ti-photo"></i>
-                <span>About Image</span>
+            <div class="reveal reveal-delay-1" style="border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-raised-lg);">
+                <img src="{{ $aboutImg }}" alt="CJ Global Express Group" style="width:100%;height:420px;object-fit:cover;">
             </div>
         </div>
     </div>
 </section>
 
-{{-- Divisions --}}
-<section class="section" style="background: var(--surface-raised); border-top: 1px solid var(--border-subtle);">
+{{-- DIVISIONS --}}
+<section class="section" style="background:linear-gradient(135deg,#F5F1EB,#EDE8DF);border-top:1px solid var(--border-subtle);">
     <div class="container">
-        <div style="margin-bottom: var(--space-5);">
+        <div style="margin-bottom:var(--space-5);">
             <div class="eyebrow reveal">Our Divisions</div>
             <h2 class="reveal reveal-delay-1">Nine Pillars of <em class="italic-gold">Growth</em></h2>
         </div>
         <div class="divisions-grid">
             @foreach($divisions as $slug => $division)
-            <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="--delay: {{ $loop->index * 60 }}ms; transition-delay: {{ $loop->index * 60 }}ms; text-decoration: none;">
+            <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms;text-decoration:none;">
                 <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
                 <div class="card-title">{{ $division['name'] }}</div>
-                <div class="card-desc">{{ Str::limit($division['description'], 90) }}</div>
+                <div class="card-desc">{{ Str::limit($division['description'], 88) }}</div>
                 <div class="card-link">Explore <i class="ti ti-arrow-right"></i></div>
             </a>
             @endforeach
         </div>
-        <div style="text-align:center; margin-top: var(--space-5);">
+        <div style="text-align:center;margin-top:var(--space-5);">
             <a href="{{ route('divisions') }}" class="btn btn-ghost">View All Divisions</a>
         </div>
     </div>
 </section>
 
-{{-- Founder's Quote --}}
+{{-- FOUNDER QUOTE (dark band) --}}
 <div class="founder-band">
     <div class="container">
-        <div class="divider-gold" style="margin: 0 auto var(--space-3);"></div>
-        <blockquote class="reveal">
-            "Our ambition is not merely to build businesses — it is to build the future of a continent. Every project, every division, every partnership is a brick in that foundation."
-        </blockquote>
-        <cite class="reveal reveal-delay-1">Prof. Sir Clemence Jaricha Muzenda — Founder &amp; CEO</cite>
+        <div class="divider-gold reveal" style="margin:0 auto var(--space-3);background:var(--gold-bright);"></div>
+        <blockquote class="reveal">"We must build businesses that feed families, not just balance sheets."</blockquote>
+        <cite class="reveal reveal-delay-1">Prof. Clemence Jaricha — Founder &amp; Chairman, CJ Global Express Group Unlimited</cite>
     </div>
 </div>
 
-{{-- Featured Projects --}}
+{{-- FEATURED PROJECTS --}}
 <section class="section">
     <div class="container">
-        <div style="margin-bottom: var(--space-5);">
+        <div style="margin-bottom:var(--space-5);">
             <div class="eyebrow reveal">Featured Projects</div>
             <h2 class="reveal reveal-delay-1">Projects That Define <em class="italic-gold">a Continent</em></h2>
         </div>
         <div class="grid-3">
             <div class="card card-project reveal">
-                {{-- [IMAGE SLOT] project-sandton | 800×500px — Sandton Hydon Park development render --}}
-                <div class="img-slot project-img" data-slot="project-sandton" data-size="800x500">
-                    <i class="ti ti-photo"></i>
+                <div class="project-img" style="height:220px;border-radius:8px;overflow:hidden;">
+                    <img src="{{ \App\Http\Controllers\PageController::placeholderImg('project-sandton',800,500) }}" alt="Sandton Hydon Park Mall" style="width:100%;height:100%;object-fit:cover;">
                 </div>
-                <div class="project-division">CJ Global Mall</div>
+                <div class="project-division" style="margin-top:var(--space-2);">CJ Global Mall</div>
                 <div class="project-title">Sandton Hydon Park Mall</div>
-                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;"></i> Harare, Zimbabwe</div>
-                <span class="badge-status badge-development">In Development</span>
+                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;color:var(--gold-primary);"></i> Harare, Zimbabwe</div>
+                <span class="badge-status badge-development">In Development · US$670M</span>
             </div>
             <div class="card card-project reveal reveal-delay-1">
-                {{-- [IMAGE SLOT] project-london | 800×500px — London commercial property --}}
-                <div class="img-slot project-img" data-slot="project-london" data-size="800x500">
-                    <i class="ti ti-photo"></i>
+                <div class="project-img" style="height:220px;border-radius:8px;overflow:hidden;">
+                    <img src="{{ \App\Http\Controllers\PageController::placeholderImg('project-london',800,500) }}" alt="London Market Entry" style="width:100%;height:100%;object-fit:cover;">
                 </div>
-                <div class="project-division">CJ Global Properties</div>
-                <div class="project-title">London Commercial Property</div>
-                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;"></i> London, United Kingdom</div>
-                <span class="badge-status badge-operational">Operational</span>
+                <div class="project-division" style="margin-top:var(--space-2);">CJ Properties / Hospitality</div>
+                <div class="project-title">London Market Entry</div>
+                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;color:var(--gold-primary);"></i> London, United Kingdom</div>
+                <span class="badge-status badge-operational">Operational · 2025</span>
             </div>
             <div class="card card-project reveal reveal-delay-2">
-                {{-- [IMAGE SLOT] project-chicago | 800×500px — Chicago building --}}
-                <div class="img-slot project-img" data-slot="project-chicago" data-size="800x500">
-                    <i class="ti ti-photo"></i>
+                <div class="project-img" style="height:220px;border-radius:8px;overflow:hidden;">
+                    <img src="{{ \App\Http\Controllers\PageController::placeholderImg('project-chicago',800,500) }}" alt="Chicago Manufacturing" style="width:100%;height:100%;object-fit:cover;">
                 </div>
-                <div class="project-division">CJ Vodka Premium Spirits</div>
-                <div class="project-title">Chicago Building Acquisition</div>
-                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;"></i> Chicago, Illinois, USA</div>
-                <span class="badge-status badge-operational">Operational</span>
+                <div class="project-division" style="margin-top:var(--space-2);">CJ Vodka Premium Spirits</div>
+                <div class="project-title">Chicago Manufacturing HQ</div>
+                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;color:var(--gold-primary);"></i> Chicago, Illinois, USA</div>
+                <span class="badge-status badge-operational">Operational · 2025</span>
             </div>
         </div>
-        <div style="text-align:center; margin-top: var(--space-5);">
+        <div style="text-align:center;margin-top:var(--space-5);">
             <a href="{{ route('projects') }}" class="btn btn-ghost">View All Projects</a>
         </div>
     </div>
 </section>
 
-{{-- Foundation CTA --}}
-<div class="foundation-band" style="background: var(--surface-raised); border-top: 1px solid var(--border-subtle);">
-    <div class="container">
-        {{-- [IMAGE SLOT] foundation-band | 1920×600px — community/charity imagery --}}
-        <div class="img-slot" style="position:absolute;inset:0;border-radius:0;min-height:unset;opacity:0.12;" data-slot="foundation-band" data-size="1920x600">
-        </div>
-        <div style="position:relative; z-index:2;">
-            <div class="eyebrow reveal" style="justify-content:center;">CJ Global Foundation</div>
-            <h2 class="reveal reveal-delay-1">Giving Back to the<br><em class="italic-gold">Communities We Serve</em></h2>
-            <p class="reveal reveal-delay-2">
-                Active across Zimbabwe, South Africa, Botswana, Zambia, and Lesotho — driving education and healthcare impact where it matters most.
-            </p>
-            <a href="{{ route('foundation') }}" class="btn btn-primary reveal reveal-delay-3">Learn About Our Foundation</a>
-        </div>
+{{-- FOUNDATION CTA --}}
+<div class="foundation-cta">
+    <div class="container" style="max-width:640px;">
+        <div class="eyebrow reveal" style="justify-content:center;">CJ Global Foundation</div>
+        <h2 class="reveal reveal-delay-1">Giving Back to the<br><em class="italic-gold">Communities We Serve</em></h2>
+        <p style="color:var(--text-secondary);margin:var(--space-2) 0 var(--space-4);" class="reveal reveal-delay-2">
+            Active across Zimbabwe, South Africa, Botswana, Zambia, and Lesotho — driving education, healthcare, and youth entrepreneurship impact where it matters most.
+        </p>
+        <a href="{{ route('foundation') }}" class="btn btn-primary reveal reveal-delay-3">Learn About Our Foundation</a>
     </div>
 </div>
 
