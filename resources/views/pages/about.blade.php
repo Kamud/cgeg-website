@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'About Us — CJ Global Express Group Unlimited')
-@section('meta_description', 'Founded in 2012 by Prof. Sir Clemence Jaricha Muzenda, CJ Global Express Group Unlimited is a diversified global conglomerate operating across 9 divisions in 32+ countries.')
+@section('meta_description', 'Founded in 1999 by Prof. Sir Clemence Jaricha Muzenda, CJ Global Express Group Unlimited is a diversified global conglomerate operating across 9 divisions in 32+ countries.')
 
 @section('content')
 
@@ -158,34 +158,61 @@
     padding-left: var(--space-4);
 }
 
-/* ── Timeline ── */
-.timeline {
+/* ── Timeline (centred, alternating, fully responsive) ── */
+.timeline-wrap {
     position: relative;
-    padding-left: var(--space-5);
+    padding: var(--space-2) 0;
 }
-.timeline::before {
+.timeline-wrap::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
     width: 1px;
     background: linear-gradient(to bottom, var(--gold-primary), var(--gold-muted), transparent);
 }
 .timeline-item {
     position: relative;
-    padding-bottom: var(--space-4);
+    width: calc(50% - 36px);
+    padding: var(--space-3);
+    background: var(--surface-raised);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-raised);
+    margin-bottom: var(--space-4);
+    transition: var(--ease-card);
 }
-.timeline-item::before {
+.timeline-item:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+/* odd items on the left */
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+}
+/* even items on the right */
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+}
+/* connector dot */
+.timeline-item::after {
     content: '';
     position: absolute;
-    left: calc(-1 * var(--space-5) - 4px);
-    top: 6px;
-    width: 9px;
-    height: 9px;
+    top: calc(var(--space-3) + 6px);
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     background: var(--gold-primary);
     box-shadow: 0 0 0 3px var(--gold-glow);
+}
+.timeline-item:nth-child(odd)::after {
+    right: calc(-36px - 5px);
+}
+.timeline-item:nth-child(even)::after {
+    left: calc(-36px - 5px);
 }
 .timeline-year {
     font-size: var(--text-label);
@@ -204,6 +231,27 @@
     font-size: var(--text-body);
     color: var(--text-secondary);
     line-height: 1.65;
+}
+/* ── Mobile: single column, spine on the left ── */
+@media (max-width: 768px) {
+    .timeline-wrap::before {
+        left: 16px;
+        transform: none;
+    }
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 40px;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+    .timeline-item::after,
+    .timeline-item:nth-child(odd)::after,
+    .timeline-item:nth-child(even)::after {
+        left: calc(-40px + 10px);
+        right: auto;
+    }
 }
 
 /* ── Compliance ── */
@@ -249,17 +297,10 @@
     .story-grid,
     .founder-grid { grid-template-columns: 1fr; }
     .compliance-grid { grid-template-columns: repeat(2, 1fr); }
-    .timeline { padding-left: var(--space-3); }
-}
-
-@media (max-width: 768px) {
-    .story-grid, .founder-grid { grid-template-columns: 1fr !important; gap: var(--space-4) !important; }
-    .vmv-grid { grid-template-columns: 1fr !important; }
-    .compliance-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .timeline { padding-left: var(--space-3); }
     .founder-message blockquote { font-size: clamp(16px, 5vw, 20px); }
     .about-hero { padding: var(--space-6) 0 var(--space-4); }
     .about-hero h1 { font-size: clamp(28px, 9vw, 42px); }
+    .timeline-section-grid { grid-template-columns: 1fr !important; gap: var(--space-4) !important; }
 }
 @media (max-width: 480px) {
     .compliance-grid { grid-template-columns: 1fr 1fr !important; }
@@ -271,10 +312,10 @@
     <img src="{{ asset('images/pages/about-hero.jpg') }}" alt="CJ Global Express Group headquarters" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;">
 
     <div class="container" style="position:relative;z-index:2;">
-        <div class="eyebrow reveal">Established 2012</div>
+        <div class="eyebrow reveal">Established 1999</div>
         <h1 class="reveal reveal-delay-1">A Legacy Built on<br><em class="italic-gold">Integrity</em></h1>
         <p style="color:var(--text-secondary);max-width:580px;margin-top:var(--space-2);font-size:var(--text-body-lg);" class="reveal reveal-delay-2">
-            From a bold vision in 2012 to a diversified global conglomerate spanning nine industries and 32+ countries — this is the story of CJ Global Express Group Unlimited.
+            From a bold vision in 1999 to a diversified global conglomerate spanning nine industries and 32+ countries — this is the story of CJ Global Express Group Unlimited.
         </p>
     </div>
 </section>
@@ -290,7 +331,7 @@
                     CJ Global Express Group Unlimited is a diversified multinational conglomerate headquartered in Ntambanana, KwaZulu-Natal, South Africa, with offices in Zimbabwe, the United Kingdom, and the United States.
                 </p>
                 <p class="reveal reveal-delay-2">
-                    Founded in 2012 by Prof. Sir Clemence Jaricha Muzenda, CGEG has grown from a single entity into a nine-division powerhouse — spanning construction, mining, logistics, properties, retail, hospitality, wellness, and premium spirits.
+                    Founded in 1999 by Prof. Sir Clemence Jaricha Muzenda, CGEG has grown from a single entity into a nine-division powerhouse — spanning construction, mining, logistics, properties, retail, hospitality, wellness, and premium spirits.
                 </p>
                 <p class="reveal reveal-delay-2">
                     Our mandate has never changed: to drive economic transformation across Africa and the world, to create meaningful employment, and to build infrastructure that outlasts any single generation.
@@ -354,7 +395,7 @@
                     Born in Zimbabwe, Prof. Sir Clemence Jaricha Muzenda is a visionary entrepreneur, global business leader, and advocate for African economic empowerment. His journey from a young Zimbabwean with a dream to the founder of a pan-African conglomerate is a testament to the power of vision, perseverance, and integrity.
                 </p>
                 <p class="reveal reveal-delay-2">
-                    In 2012, he founded CJ Global Express Group Unlimited with a clear mandate: to build a diversified business that would not only generate commercial value but drive meaningful transformation across the African continent. Under his leadership, CGEG has expanded to 32+ countries and grown from a single division to nine distinct business pillars.
+                    In 1999, he founded CJ Global Express Group Unlimited with a clear mandate: to build a diversified business that would not only generate commercial value but drive meaningful transformation across the African continent. Under his leadership, CGEG has expanded to 32+ countries and grown from a single division to nine distinct business pillars.
                 </p>
                 <p class="reveal reveal-delay-2">
                     Prof. Sir Muzenda's philosophy centres on the belief that business is one of the most powerful tools for societal upliftment — and that African entrepreneurs must build at global scale. His landmark return to Zimbabwe through the Sandton Hydon Park Mall project, after nearly 17 years, stands as a symbol of that conviction.
@@ -382,40 +423,43 @@
 {{-- ── TIMELINE ── --}}
 <section class="section">
     <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-7);align-items:start;">
-            <div>
-                <div class="eyebrow reveal">Our Journey</div>
-                <h2 class="reveal reveal-delay-1">13 Years of<br><em class="italic-gold">Building</em></h2>
-                <p style="color:var(--text-secondary);margin-top:var(--space-2);line-height:1.8;" class="reveal reveal-delay-2">
-                    From a founding vision in 2012 to a nine-division conglomerate operating across 32+ countries — every milestone has been a step toward a larger purpose.
-                </p>
+        <div style="text-align:center;margin-bottom:var(--space-5);">
+            <div class="eyebrow reveal" style="justify-content:center;">Our Journey</div>
+            <h2 class="reveal reveal-delay-1">25+ Years of<br><em class="italic-gold">Building</em></h2>
+            <p style="color:var(--text-secondary);margin-top:var(--space-2);line-height:1.8;max-width:560px;margin-left:auto;margin-right:auto;" class="reveal reveal-delay-2">
+                From a founding vision in 1999 to a nine-division conglomerate operating across 32+ countries — every milestone has been a step toward a larger purpose.
+            </p>
+        </div>
+        <div class="timeline-wrap">
+            <div class="timeline-item reveal">
+                <div class="timeline-year">1999</div>
+                <div class="timeline-event">Founded in Zimbabwe</div>
+                <div class="timeline-desc">Prof. Sir Clemence Jaricha Muzenda establishes the foundations of what will become CJ Global Express Group Unlimited — beginning with a vision for pan-African economic transformation.</div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-year">2012</div>
-                    <div class="timeline-event">Founded in South Africa</div>
-                    <div class="timeline-desc">CJ Global Express Group Unlimited registered (2012/344459/07). Operations begin from KwaZulu-Natal.</div>
-                </div>
-                <div class="timeline-item reveal reveal-delay-1">
-                    <div class="timeline-year">2014 – 2016</div>
-                    <div class="timeline-event">Pan-African Expansion</div>
-                    <div class="timeline-desc">Logistics and construction divisions established. Footprint grows across Southern Africa into Botswana, Zambia, and Lesotho.</div>
-                </div>
-                <div class="timeline-item reveal reveal-delay-2">
-                    <div class="timeline-year">2018 – 2020</div>
-                    <div class="timeline-event">Global Footprint</div>
-                    <div class="timeline-desc">European operations anchored with London commercial property. North American presence established in Chicago. 32+ countries reached.</div>
-                </div>
-                <div class="timeline-item reveal reveal-delay-3">
-                    <div class="timeline-year">2022 – 2023</div>
-                    <div class="timeline-event">Nine Divisions</div>
-                    <div class="timeline-desc">CGEG reaches nine distinct business divisions including the launch of CJ Vodka Premium Spirits — a bold entry into the global luxury spirits market.</div>
-                </div>
-                <div class="timeline-item reveal reveal-delay-4">
-                    <div class="timeline-year">2024 – 2025</div>
-                    <div class="timeline-event">Return to Zimbabwe</div>
-                    <div class="timeline-desc">Landmark Sandton Hydon Park Mall development (US$10–15M) announced in partnership with Delatfin Investment — projected to create up to 5,000 jobs.</div>
-                </div>
+            <div class="timeline-item reveal reveal-delay-1">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-event">Incorporated in South Africa</div>
+                <div class="timeline-desc">CJ Global Express Group Unlimited formally registered (2012/344459/07). South African headquarters established in Ntambanana, KwaZulu-Natal, anchoring the group's continental operations.</div>
+            </div>
+            <div class="timeline-item reveal reveal-delay-2">
+                <div class="timeline-year">2014 – 2016</div>
+                <div class="timeline-event">Pan-African Expansion</div>
+                <div class="timeline-desc">Logistics and construction divisions established. Footprint grows across Southern Africa into Botswana, Zambia, and Lesotho.</div>
+            </div>
+            <div class="timeline-item reveal reveal-delay-3">
+                <div class="timeline-year">2018 – 2020</div>
+                <div class="timeline-event">Global Footprint</div>
+                <div class="timeline-desc">European operations anchored with a London commercial property acquisition. North American presence established in Chicago. 32+ countries reached.</div>
+            </div>
+            <div class="timeline-item reveal reveal-delay-4">
+                <div class="timeline-year">2022 – 2023</div>
+                <div class="timeline-event">Nine Divisions</div>
+                <div class="timeline-desc">CGEG reaches nine distinct business divisions including the launch of CJ Vodka Premium Spirits — a bold entry into the global luxury spirits market.</div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-year">2024 – 2025</div>
+                <div class="timeline-event">Return to Zimbabwe</div>
+                <div class="timeline-desc">Landmark Sandton Hydon Park Mall development (US$10–15M) announced in partnership with Delatfin Investment — projected to create up to 5,000 jobs and signal CGEG's powerful return home.</div>
             </div>
         </div>
     </div>
