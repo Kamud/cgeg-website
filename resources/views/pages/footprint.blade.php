@@ -146,71 +146,13 @@
             <div class="eyebrow reveal">Global Operations</div>
             <h2 class="reveal reveal-delay-1">Our <em class="italic-gold">Footprint</em></h2>
         </div>
-        <div class="map-container reveal reveal-delay-1">
-            {{-- Simplified SVG world map with active regions highlighted --}}
-            <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing CGEG operational countries highlighted in gold across Africa, Europe and North America">
-                <defs>
-                    <style>
-                        .land { fill: #2A2520; stroke: #3A342E; stroke-width: 0.5; }
-                        .active { fill: #C9A84C; opacity: 0.75; }
-                        .active-mild { fill: #C9A84C; opacity: 0.4; }
-                        .ocean { fill: #1C1814; }
-                        .map-label { font-family: 'DM Sans', sans-serif; font-size: 9px; fill: #F5F0E8; letter-spacing: 0.05em; }
-                    </style>
-                </defs>
-                <!-- Ocean background -->
-                <rect width="1000" height="500" class="ocean"/>
-
-                <!-- Africa (simplified) -->
-                <path class="active" d="M460,160 L510,155 L540,170 L560,200 L565,240 L555,280 L540,320 L520,360 L500,390 L480,370 L465,340 L455,300 L450,260 L448,220 L450,190 Z"/>
-
-                <!-- Southern Africa highlight -->
-                <path class="active" d="M455,300 L540,320 L535,350 L520,370 L500,390 L480,370 L465,340 Z"/>
-
-                <!-- Europe (simplified) -->
-                <path class="land" d="M450,80 L520,75 L550,90 L545,110 L530,125 L510,130 L490,125 L465,120 L450,110 Z"/>
-                <!-- UK highlight -->
-                <path class="active" d="M455,78 L470,75 L475,88 L465,95 L455,90 Z"/>
-
-                <!-- North America (simplified) -->
-                <path class="land" d="M100,80 L250,75 L280,100 L290,140 L275,180 L240,200 L200,210 L160,200 L130,180 L110,150 L95,120 Z"/>
-                <!-- US highlight (Chicago region) -->
-                <path class="active-mild" d="M150,120 L220,115 L230,145 L215,165 L185,170 L160,160 L148,140 Z"/>
-                <!-- Chicago dot -->
-                <circle cx="185" cy="145" r="5" fill="#C9A84C" opacity="0.9"/>
-
-                <!-- South America -->
-                <path class="land" d="M200,220 L270,215 L290,260 L285,320 L265,370 L240,390 L220,380 L205,340 L200,290 L195,250 Z"/>
-
-                <!-- Asia (simplified) -->
-                <path class="land" d="M560,70 L750,65 L820,90 L830,130 L800,160 L750,175 L690,170 L640,155 L590,140 L565,120 L558,100 Z"/>
-
-                <!-- Australia -->
-                <path class="land" d="M730,300 L800,295 L830,320 L825,360 L800,380 L760,375 L735,355 L725,325 Z"/>
-
-                <!-- HQ dot — KZN South Africa -->
-                <circle cx="510" cy="345" r="7" fill="#C9A84C"/>
-                <circle cx="510" cy="345" r="12" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
-                <text x="524" y="349" class="map-label">KZN HQ</text>
-
-                <!-- Zimbabwe dot -->
-                <circle cx="505" cy="310" r="5" fill="#C9A84C"/>
-                <text x="512" y="314" class="map-label">Zimbabwe</text>
-
-                <!-- London dot -->
-                <circle cx="462" cy="82" r="5" fill="#C9A84C"/>
-                <text x="469" y="86" class="map-label">London</text>
-
-                <!-- Chicago dot label -->
-                <text x="192" y="141" class="map-label">Chicago</text>
-
-                <!-- Legend -->
-                <rect x="20" y="450" width="12" height="12" fill="#C9A84C" opacity="0.75" rx="2"/>
-                <text x="36" y="461" class="map-label">CGEG Active Region</text>
-                <circle cx="26" cy="475" r="4" fill="#C9A84C"/>
-                <text x="36" y="479" class="map-label">Key Office</text>
-            </svg>
-            <p style="text-align:center;font-size:10px;color:var(--text-muted);margin-top:var(--space-2);letter-spacing:0.05em;text-transform:uppercase;">Operational footprint across Africa, Europe and North America — 32+ countries</p>
+        <div class="map-container reveal reveal-delay-1" style="padding:0;overflow:hidden;">
+            <img
+                src="{{ asset('images/pages/footprint/world-map.jpg') }}"
+                alt="CGEG global operational footprint — Africa, Europe and North America across 32+ countries"
+                style="width:100%;height:auto;display:block;border-radius:var(--radius-card);"
+            >
+            <p style="text-align:center;font-size:10px;color:var(--text-muted);padding:var(--space-2) 0 var(--space-1);letter-spacing:0.05em;text-transform:uppercase;">Operational footprint across Africa, Europe and North America — 32+ countries</p>
         </div>
     </div>
 </section>

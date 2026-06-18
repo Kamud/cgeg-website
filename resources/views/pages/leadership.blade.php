@@ -268,7 +268,7 @@
                 <span class="title-tag">Founder &amp; Chief Executive Officer</span>
                 <h2>Prof. Sir Clemence<br><em class="italic-gold">Jaricha Muzenda</em></h2>
                 <p>
-                    A visionary Zimbabwean-born entrepreneur and global business leader who founded CGEG in 2012 with a mandate to build a diversified conglomerate that would drive economic transformation across Africa and beyond.
+                    A visionary Zimbabwean-born entrepreneur and global business leader who founded CGEG in 1999 with a mandate to build a diversified conglomerate that would drive economic transformation across Africa and beyond.
                 </p>
                 <p>
                     Under his leadership, CGEG has grown from a single entity to a nine-division powerhouse operating in 32+ countries across Africa, Europe, and the Americas.
@@ -282,6 +282,29 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+{{-- ── DIVISIONAL OVERSIGHT ── --}}
+<section class="section" style="background:var(--surface-raised);border-top:1px solid var(--border-subtle);">
+    <div class="container" style="text-align:center;">
+        <div class="eyebrow reveal" style="justify-content:center;">Divisional Oversight</div>
+        <h2 class="reveal reveal-delay-1" style="margin-bottom:var(--space-5);">
+            Oversight of <em class="italic-gold">All Divisions</em>
+        </h2>
+        <div class="oversight-grid">
+            @foreach($team['oversight'] as $i => $member)
+            <div class="oversight-card reveal" style="transition-delay:{{ $i * 100 }}ms;">
+                {{-- [IMAGE SLOT] {{ $member['image_slot'] }} | 400×400px --}}
+                <div class="person-avatar" style="margin-bottom:var(--space-2);">
+                    <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div class="person-name">{{ $member['name'] }}</div>
+                <div class="person-role" style="margin-top:4px;">{{ $member['title'] }}</div>
+                <span class="oversight-tag">All Divisions</span>
+            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -323,29 +346,6 @@
                     <div class="mgmt-name">{{ $member['name'] }}</div>
                     <div class="mgmt-role">{{ $member['title'] }}</div>
                 </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- ── OVERSIGHT ── --}}
-<section class="section" style="background:var(--surface-raised);border-top:1px solid var(--border-subtle);">
-    <div class="container" style="text-align:center;">
-        <div class="eyebrow reveal" style="justify-content:center;">Divisional Oversight</div>
-        <h2 class="reveal reveal-delay-1" style="margin-bottom:var(--space-5);">
-            Oversight of <em class="italic-gold">All Divisions</em>
-        </h2>
-        <div class="oversight-grid">
-            @foreach($team['oversight'] as $i => $member)
-            <div class="oversight-card reveal" style="transition-delay:{{ $i * 100 }}ms;">
-                {{-- [IMAGE SLOT] {{ $member['image_slot'] }} | 400×400px --}}
-                <div class="person-avatar" style="margin-bottom:var(--space-2);">
-                    <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" style="width:100%;height:100%;object-fit:cover;">
-                </div>
-                <div class="person-name">{{ $member['name'] }}</div>
-                <div class="person-role" style="margin-top:4px;">{{ $member['title'] }}</div>
-                <span class="oversight-tag">All Divisions</span>
             </div>
             @endforeach
         </div>
