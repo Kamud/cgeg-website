@@ -123,7 +123,7 @@
 {{-- ── HERO ── --}}
 <section class="foundation-hero">
     {{-- [IMAGE SLOT] foundation-hero | 1920×800px — community, children, healthcare imagery --}}
-    <img src="https://picsum.photos/seed/foundation-hero/1920/800" alt="CJ Global Foundation community impact" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;">
+    <img src="{{ asset('images/pages/foundation-hero.jpg') }}" alt="CJ Global Foundation community impact" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;">
 
     <div class="container" style="position:relative;z-index:2;">
         <div class="eyebrow reveal">CJ Global Foundation</div>
@@ -170,7 +170,7 @@
             <div class="focus-card reveal">
                 {{-- [IMAGE SLOT] foundation-education | 800×500px — education programme imagery --}}
                 <div class="focus-card-img">
-                    <img src="https://picsum.photos/seed/foundation-education/800/500" alt="Foundation Education Programme" style="width:100%;height:240px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/foundation-education.jpg') }}" alt="Foundation Education Programme" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="focus-card-body">
                     <div class="focus-card-icon"><i class="ti ti-school"></i></div>
@@ -187,7 +187,7 @@
             <div class="focus-card reveal reveal-delay-1">
                 {{-- [IMAGE SLOT] foundation-healthcare | 800×500px — healthcare programme imagery --}}
                 <div class="focus-card-img">
-                    <img src="https://picsum.photos/seed/foundation-healthcare/800/500" alt="Foundation Healthcare Programme" style="width:100%;height:240px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/foundation-healthcare.jpg') }}" alt="Foundation Healthcare Programme" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="focus-card-body">
                     <div class="focus-card-icon"><i class="ti ti-heart-plus"></i></div>

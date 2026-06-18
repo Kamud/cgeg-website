@@ -6,25 +6,7 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Placeholder image helper
-    | Uses picsum.photos (free, no attribution required, stable URLs)
-    | Format: https://picsum.photos/seed/{seed}/W/H
-    | Replace any src with the real client asset when ready.
-    |--------------------------------------------------------------------------
-    */
-    public static function placeholderImg(string $seed, int $w, int $h): string
-    {
-        return "https://picsum.photos/seed/{$seed}/{}/{}";
-    }
-
-    private function img(string $seed, int $w, int $h): string
-    {
-        return "https://picsum.photos/seed/{$seed}/{$w}/{$h}";
-    }
-
-    /*
+/*
     |--------------------------------------------------------------------------
     | Leadership team — updated from 2026 Corporate Profile
     |--------------------------------------------------------------------------
@@ -37,7 +19,7 @@ class PageController extends Controller
                 'title'      => 'Founder & Chairman',
                 'bio'        => 'A visionary Zimbabwean-born entrepreneur, academic, and global business leader, Prof. Clemence Jaricha founded CJ Global Express Group Unlimited in 1997 with a single logistics operation. Under his leadership, CGEG has grown into one of Africa\'s most dynamic multi-sector business empires, operating across 56 countries on six continents with nine distinct divisions.',
                 'quote'      => 'We must build businesses that feed families, not just balance sheets.',
-                'image'      => $this->img('founder-cj', 500, 600),
+                'image'      => asset('pages/leadership/founder.jpg'),
             ],
             'directors' => [
                 ['name' => 'Dr. Chris Grant',       'title' => 'Finance Director',           'image' => $this->img('director-grant',   400, 400)],
@@ -46,13 +28,13 @@ class PageController extends Controller
                 ['name' => 'Mr. Kris Cly',           'title' => 'General Manager',            'image' => $this->img('director-cly',     400, 400)],
             ],
             'management' => [
-                ['name' => 'Dr. E. Kapongo',   'title' => 'Group Accountant',              'image' => $this->img('mgmt-kapongo', 400, 400)],
+                ['name' => 'Dr. E. Kapongo',   'title' => 'Group Accountant',              'image' => asset('pages/leadership/kapongo.jpg')],
                 ['name' => 'Mr. D. Nyathi',    'title' => 'HR Manager',                    'image' => $this->img('mgmt-nyathi',  400, 400)],
                 ['name' => 'Ms. C. Zulu',      'title' => 'Secretary',                     'image' => $this->img('mgmt-zulu',    400, 400)],
                 ['name' => 'Ms. Lorcadia Phiri','title' => 'Personal Assistant to the CEO','image' => $this->img('mgmt-phiri',   400, 400)],
             ],
             'oversight' => [
-                ['name' => 'Dr. Vee Jaricha',    'title' => 'Divisional Oversight — All Divisions', 'image' => $this->img('oversight-vee', 400, 400)],
+                ['name' => 'Dr. Vee Jaricha',    'title' => 'Divisional Oversight — All Divisions', 'image' => asset('pages/leadership/vee-jaricha.jpg')],
                 ['name' => 'Dr. C. Junior Jaricha','title' => 'Divisional Oversight — All Divisions','image' => $this->img('oversight-cj',  400, 400)],
             ],
         ];
@@ -91,10 +73,10 @@ class PageController extends Controller
                     ['icon' => 'ti-home',        'title' => 'Residential Estates',    'desc' => 'Premium housing developments, estates, and residential complexes.'],
                     ['icon' => 'ti-certificate', 'title' => 'Project Management',     'desc' => 'End-to-end construction management, scheduling, and consulting.'],
                 ],
-                'hero_img'    => $this->img('construction-hero',    1920, 900),
-                'overview_img'=> $this->img('construction-overview', 800, 700),
-                'services_img'=> $this->img('construction-services', 600, 500),
-                'action_imgs' => [$this->img('construction-a1',700,450), $this->img('construction-a2',700,450), $this->img('construction-a3',700,450)],
+                'hero_img'    => asset('images/divisions/construction/hero.jpg'),
+                'overview_img'=> asset('images/divisions/construction/overview.jpg'),
+                'services_img'=> asset('images/divisions/construction/services.jpg'),
+                'action_imgs' => [asset('images/divisions/construction/action-1.jpg'), asset('images/divisions/construction/action-2.jpg'), asset('images/divisions/construction/action-3.jpg')],
             ],
 
             'mining' => [
@@ -122,10 +104,10 @@ class PageController extends Controller
                     ['icon' => 'ti-truck',    'title' => 'Mining Logistics',         'desc' => 'Ore transport, processing chain management, and bulk handling.'],
                     ['icon' => 'ti-leaf',     'title' => 'Rehabilitation',           'desc' => 'Sustainable mining practices and post-operation land rehabilitation.'],
                 ],
-                'hero_img'    => $this->img('mining-hero',    1920, 900),
-                'overview_img'=> $this->img('mining-overview', 800, 700),
-                'services_img'=> $this->img('mining-services', 600, 500),
-                'action_imgs' => [$this->img('mining-a1',700,450), $this->img('mining-a2',700,450), $this->img('mining-a3',700,450)],
+                'hero_img'    => asset('images/divisions/mining/hero.jpg'),
+                'overview_img'=> asset('images/divisions/mining/overview.jpg'),
+                'services_img'=> asset('images/divisions/mining/services.jpg'),
+                'action_imgs' => [asset('images/divisions/mining/action-1.jpg'), asset('images/divisions/mining/action-2.jpg'), asset('images/divisions/mining/action-3.jpg')],
             ],
 
             'logistics' => [
@@ -153,10 +135,10 @@ class PageController extends Controller
                     ['icon' => 'ti-ship',    'title' => 'Sea Freight',   'desc' => 'Container shipping, breakbulk, and port logistics management.'],
                     ['icon' => 'ti-package', 'title' => 'Warehousing',   'desc' => 'Secure storage, inventory management, and fulfilment services.'],
                 ],
-                'hero_img'    => $this->img('logistics-hero',    1920, 900),
-                'overview_img'=> $this->img('logistics-overview', 800, 700),
-                'services_img'=> $this->img('logistics-services', 600, 500),
-                'action_imgs' => [$this->img('logistics-a1',700,450), $this->img('logistics-a2',700,450), $this->img('logistics-a3',700,450)],
+                'hero_img'    => asset('images/divisions/logistics/hero.jpg'),
+                'overview_img'=> asset('images/divisions/logistics/overview.jpg'),
+                'services_img'=> asset('images/divisions/logistics/services.jpg'),
+                'action_imgs' => [asset('images/divisions/logistics/action-1.jpg'), asset('images/divisions/logistics/action-2.jpg'), asset('images/divisions/logistics/action-3.jpg')],
             ],
 
             'mall' => [
@@ -184,10 +166,10 @@ class PageController extends Controller
                     ['icon' => 'ti-users',        'title' => 'Mall Management',  'desc' => 'Operations, security, cleaning, and tenant relations.'],
                     ['icon' => 'ti-gas-station',  'title' => 'Mixed-Use Assets', 'desc' => 'Fuel station, office space, and commercial hub management.'],
                 ],
-                'hero_img'    => $this->img('mall-hero',    1920, 900),
-                'overview_img'=> $this->img('mall-overview', 800, 700),
-                'services_img'=> $this->img('mall-services', 600, 500),
-                'action_imgs' => [$this->img('mall-a1',700,450), $this->img('mall-a2',700,450), $this->img('mall-a3',700,450)],
+                'hero_img'    => asset('images/divisions/mall/hero.jpg'),
+                'overview_img'=> asset('images/divisions/mall/overview.jpg'),
+                'services_img'=> asset('images/divisions/mall/services.jpg'),
+                'action_imgs' => [asset('images/divisions/mall/action-1.jpg'), asset('images/divisions/mall/action-2.jpg'), asset('images/divisions/mall/action-3.jpg')],
             ],
 
             'hospitality' => [
@@ -215,10 +197,10 @@ class PageController extends Controller
                     ['icon' => 'ti-calendar-event', 'title' => 'Private Events',  'desc' => 'Private dining, corporate events, and bespoke function hosting.'],
                     ['icon' => 'ti-glass-full',     'title' => 'Bar & Lounge',    'desc' => 'Curated cocktail bars and premium lounge experiences.'],
                 ],
-                'hero_img'    => $this->img('hospitality-hero',    1920, 900),
-                'overview_img'=> $this->img('hospitality-overview', 800, 700),
-                'services_img'=> $this->img('hospitality-services', 600, 500),
-                'action_imgs' => [$this->img('hospitality-a1',700,450), $this->img('hospitality-a2',700,450), $this->img('hospitality-a3',700,450)],
+                'hero_img'    => asset('images/divisions/hospitality/hero.jpg'),
+                'overview_img'=> asset('images/divisions/hospitality/overview.jpg'),
+                'services_img'=> asset('images/divisions/hospitality/services.jpg'),
+                'action_imgs' => [asset('images/divisions/hospitality/action-1.jpg'), asset('images/divisions/hospitality/action-2.jpg'), asset('images/divisions/hospitality/action-3.jpg')],
             ],
 
             'wellness' => [
@@ -246,10 +228,10 @@ class PageController extends Controller
                     ['icon' => 'ti-yoga',        'title' => 'Wellness Programmes',  'desc' => 'Holistic wellness, meditation, nutrition, and lifestyle coaching.'],
                     ['icon' => 'ti-certificate', 'title' => 'Training Academy',     'desc' => 'Professional beauty and wellness practitioner training and certification.'],
                 ],
-                'hero_img'    => $this->img('wellness-hero',    1920, 900),
-                'overview_img'=> $this->img('wellness-overview', 800, 700),
-                'services_img'=> $this->img('wellness-services', 600, 500),
-                'action_imgs' => [$this->img('wellness-a1',700,450), $this->img('wellness-a2',700,450), $this->img('wellness-a3',700,450)],
+                'hero_img'    => asset('images/divisions/wellness/hero.jpg'),
+                'overview_img'=> asset('images/divisions/wellness/overview.jpg'),
+                'services_img'=> asset('images/divisions/wellness/services.jpg'),
+                'action_imgs' => [asset('images/divisions/wellness/action-1.jpg'), asset('images/divisions/wellness/action-2.jpg'), asset('images/divisions/wellness/action-3.jpg')],
             ],
 
             'properties' => [
@@ -277,10 +259,10 @@ class PageController extends Controller
                     ['icon' => 'ti-chart-bar', 'title' => 'Property Investment',   'desc' => 'Strategic acquisition, valuation, and real estate portfolio management.'],
                     ['icon' => 'ti-key',       'title' => 'Property Management',   'desc' => 'Full-service management including leasing, maintenance, and tenant relations.'],
                 ],
-                'hero_img'    => $this->img('properties-hero',    1920, 900),
-                'overview_img'=> $this->img('properties-overview', 800, 700),
-                'services_img'=> $this->img('properties-services', 600, 500),
-                'action_imgs' => [$this->img('properties-a1',700,450), $this->img('properties-a2',700,450), $this->img('properties-a3',700,450)],
+                'hero_img'    => asset('images/divisions/properties/hero.jpg'),
+                'overview_img'=> asset('images/divisions/properties/overview.jpg'),
+                'services_img'=> asset('images/divisions/properties/services.jpg'),
+                'action_imgs' => [asset('images/divisions/properties/action-1.jpg'), asset('images/divisions/properties/action-2.jpg'), asset('images/divisions/properties/action-3.jpg')],
             ],
 
             'spirits' => [
@@ -308,10 +290,10 @@ class PageController extends Controller
                     ['icon' => 'ti-users',          'title' => 'Brand Partnerships',   'desc' => 'Strategic co-branding and hospitality partnerships with premium venues worldwide.'],
                     ['icon' => 'ti-star',           'title' => 'Brand Experiences',    'desc' => 'Exclusive events, activations, and immersive brand experiences globally.'],
                 ],
-                'hero_img'    => $this->img('spirits-hero',    1920, 900),
-                'overview_img'=> $this->img('spirits-bottle',   600, 900),
-                'services_img'=> $this->img('spirits-bar',      600, 500),
-                'action_imgs' => [$this->img('spirits-a1',700,450), $this->img('spirits-a2',700,450), $this->img('spirits-a3',700,450)],
+                'hero_img'    => asset('images/divisions/spirits/hero.jpg'),
+                "overview_img"=> asset('images/divisions/spirits/bottle.jpg'),
+                "services_img"=> asset('images/divisions/spirits/services.jpg'),
+                'action_imgs' => [asset('images/divisions/spirits/action-1.jpg'), asset('images/divisions/spirits/action-2.jpg'), asset('images/divisions/spirits/action-3.jpg')],
             ],
         ];
     }
@@ -324,16 +306,16 @@ class PageController extends Controller
     public function home()
     {
         $divisions = $this->divisionsData();
-        $heroImg   = $this->img('cgeg-hero', 1920, 1080);
-        $aboutImg  = $this->img('cgeg-about', 800, 900);
+        $heroImg   = asset('pages/hero.jpg');
+        $aboutImg  = asset('pages/about-story.jpg');
         return view('pages.home', compact('divisions', 'heroImg', 'aboutImg'));
     }
 
     public function about()
     {
         $team     = $this->teamData();
-        $heroImg  = $this->img('about-hero', 1920, 700);
-        $storyImg = $this->img('about-story', 800, 700);
+        $heroImg  = asset('pages/about-hero.jpg');
+        $storyImg = asset('pages/about-story.jpg');
         return view('pages.about', compact('team', 'heroImg', 'storyImg'));
     }
 
@@ -359,19 +341,19 @@ class PageController extends Controller
 
     public function foundation()
     {
-        $heroImg = $this->img('foundation-hero', 1920, 800);
-        $eduImg  = $this->img('foundation-education', 800, 500);
-        $healthImg = $this->img('foundation-healthcare', 800, 500);
+        $heroImg = asset('pages/foundation-hero.jpg');
+        $eduImg  = asset('pages/foundation-education.jpg');
+        $healthImg = asset('pages/foundation-healthcare.jpg');
         return view('pages.foundation', compact('heroImg', 'eduImg', 'healthImg'));
     }
 
     public function footprint()
     {
         $offices = [
-            ['flag'=>'🇿🇦','country'=>'South Africa','name'=>'KwaZulu-Natal (HQ)','address'=>'CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal','phone'=>'+27 66 947 129','img'=>$this->img('office-kzn',600,400)],
-            ['flag'=>'🇿🇼','country'=>'Zimbabwe',    'name'=>'Bulawayo Office',    'address'=>'River Crescent Road, Kelvin West, Bulawayo','phone'=>'+263 77 270 1826','img'=>$this->img('office-bulawayo',600,400)],
-            ['flag'=>'🇬🇧','country'=>'United Kingdom','name'=>'London Operations','address'=>'Prime commercial property — hospitality & wellness','phone'=>null,'img'=>$this->img('office-london',600,400)],
-            ['flag'=>'🇺🇸','country'=>'United States','name'=>'Chicago Manufacturing','address'=>'CJ Vodka Premium Spirits — North American HQ','phone'=>null,'img'=>$this->img('office-chicago',600,400)],
+            ['flag'=>'🇿🇦','country'=>'South Africa','name'=>'KwaZulu-Natal (HQ)','address'=>'CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal','phone'=>'+27 66 947 129','img'=>asset('pages/footprint/office-kzn.jpg')],
+            ['flag'=>'🇿🇼','country'=>'Zimbabwe',    'name'=>'Bulawayo Office',    'address'=>'River Crescent Road, Kelvin West, Bulawayo','phone'=>'+263 77 270 1826','img'=>asset('pages/footprint/office-bulawayo.jpg')],
+            ['flag'=>'🇬🇧','country'=>'United Kingdom','name'=>'London Operations','address'=>'Prime commercial property — hospitality & wellness','phone'=>null,'img'=>asset('pages/footprint/office-london.jpg')],
+            ['flag'=>'🇺🇸','country'=>'United States','name'=>'Chicago Manufacturing','address'=>'CJ Vodka Premium Spirits — North American HQ','phone'=>null,'img'=>asset('pages/footprint/office-chicago.jpg')],
         ];
         return view('pages.footprint', compact('offices'));
     }
@@ -379,7 +361,7 @@ class PageController extends Controller
     public function leadership()
     {
         $team = $this->teamData();
-        $heroImg = $this->img('leadership-hero', 1920, 600);
+        $heroImg = asset('pages/leadership-hero.jpg');
         return view('pages.leadership', compact('team', 'heroImg'));
     }
 
@@ -396,7 +378,7 @@ class PageController extends Controller
                 'division'   => 'CJ Global Mall / Construction',
                 'desc'       => 'A landmark two-floor mixed-use development featuring retail, office space, and a fuel station — CGEG\'s first major investment in Zimbabwe in 17 years. Designed to inspire foreign investor confidence and create up to 5,000 jobs.',
                 'featured'   => true,
-                'image'      => $this->img('project-sandton', 1200, 700),
+                'image'      => asset('pages/project-sandton.jpg'),
             ],
             [
                 'title'      => 'London Market Entry',
@@ -408,7 +390,7 @@ class PageController extends Controller
                 'division'   => 'CJ Properties / Hospitality / Wellness',
                 'desc'       => 'Prime commercial property acquired in London (2025). CJ Restaurants, Nightclubs, and Beauty Spa now operational — making CGEG the first African conglomerate of this scale in London\'s hospitality and wellness market.',
                 'featured'   => true,
-                'image'      => $this->img('project-london', 800, 500),
+                'image'      => asset('pages/project-london.jpg'),
             ],
             [
                 'title'      => 'CJ Vodka — Chicago Manufacturing',
@@ -420,7 +402,7 @@ class PageController extends Controller
                 'division'   => 'CJ Vodka Premium Spirits',
                 'desc'       => 'Building acquired in Chicago for CJ Vodka Premium Spirits manufacturing — the Group\'s debut in manufacturing and the North American market. Additional hubs in KwaZulu-Natal and Lesotho will serve the African market.',
                 'featured'   => true,
-                'image'      => $this->img('project-chicago', 800, 500),
+                'image'      => asset('pages/project-chicago.jpg'),
             ],
         ];
         return view('pages.projects', compact('projects'));

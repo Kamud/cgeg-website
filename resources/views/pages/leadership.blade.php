@@ -298,7 +298,7 @@
             <div class="person-card reveal" style="transition-delay:{{ $i * 80 }}ms;">
                 {{-- [IMAGE SLOT] dir-{{ Str::slug($director['name']) }} | 400×400px — professional headshot --}}
                 <div class="person-avatar">
-                    <img src="https://picsum.photos/seed/director-grant/88/88" alt="Director" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                    <img src="{{ asset('images/pages/leadership/grant.jpg') }}" alt="Director" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
                 </div>
                 <div class="person-name">{{ $director['name'] }}</div>
                 <div class="person-role">{{ $director['title'] }}</div>
@@ -318,7 +318,7 @@
         <div class="mgmt-grid">
             @foreach($team['management'] as $i => $member)
             <div class="mgmt-item reveal" style="transition-delay:{{ $i * 60 }}ms;">
-                <div class="mgmt-avatar-sm" style="overflow:hidden;padding:0;"><img src="https://picsum.photos/seed/mgmt-kapongo/48/48" alt="Team member" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+                <div class="mgmt-avatar-sm" style="overflow:hidden;padding:0;"><img src="{{ asset('images/pages/leadership/kapongo.jpg') }}" alt="Team member" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
                 <div>
                     <div class="mgmt-name">{{ $member['name'] }}</div>
                     <div class="mgmt-role">{{ $member['title'] }}</div>

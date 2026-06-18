@@ -256,7 +256,7 @@
             <div class="office-card reveal">
                 {{-- [IMAGE SLOT] office-kzn | 600×400px — KZN HQ exterior --}}
                 <div class="office-card-img">
-                    <img src="https://picsum.photos/seed/office-kzn/600/400" alt="KZN Headquarters, KwaZulu-Natal" style="width:100%;height:180px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/footprint/office-kzn.jpg') }}" alt="KZN Headquarters, KwaZulu-Natal" style="width:100%;height:180px;object-fit:cover;">
                 </div>
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇦 South Africa — Headquarters</div>
@@ -270,7 +270,7 @@
             <div class="office-card reveal reveal-delay-1">
                 {{-- [IMAGE SLOT] office-zimbabwe | 600×400px — Bulawayo office --}}
                 <div class="office-card-img">
-                    <img src="https://picsum.photos/seed/office-bulawayo/600/400" alt="Bulawayo Office, Zimbabwe" style="width:100%;height:180px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/footprint/office-bulawayo.jpg') }}" alt="Bulawayo Office, Zimbabwe" style="width:100%;height:180px;object-fit:cover;">
                 </div>
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇼 Zimbabwe</div>
@@ -283,7 +283,7 @@
             <div class="office-card reveal reveal-delay-2">
                 {{-- [IMAGE SLOT] office-london | 600×400px — London office --}}
                 <div class="office-card-img">
-                    <img src="https://picsum.photos/seed/office-london/600/400" alt="London Operations" style="width:100%;height:180px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/footprint/office-london.jpg') }}" alt="London Operations" style="width:100%;height:180px;object-fit:cover;">
                 </div>
                 <div class="office-card-body">
                     <div class="office-flag">🇬🇧 United Kingdom</div>

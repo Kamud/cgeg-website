@@ -258,7 +258,7 @@
 <section class="spirits-hero">
     {{-- [IMAGE SLOT] spirits-hero | 1920×1080px — moody dark spirits/bar imagery or bottle product shot --}}
     <div style="position:absolute;inset:0;z-index:0;opacity:0.15;">
-        <img src="https://picsum.photos/seed/spirits-hero/1920/1080" alt="CJ Vodka Premium Spirits" style="width:100%;height:100%;object-fit:cover;opacity:0.2;">
+        <img src="{{ asset('images/divisions/spirits/hero.jpg') }}" alt="CJ Vodka Premium Spirits" style="width:100%;height:100%;object-fit:cover;opacity:0.2;">
     </div>
 
     <div class="container" style="position:relative;z-index:2;">
@@ -322,7 +322,7 @@
 
             {{-- [IMAGE SLOT] spirits-bottle | 600×900px — CJ Vodka bottle product shot --}}
             <div class="reveal reveal-delay-1">
-                <img src="https://picsum.photos/seed/spirits-bottle/600/900" alt="CJ Vodka bottle" style="width:100%;height:520px;object-fit:cover;border-radius:var(--radius-card);">
+                <img src="{{ asset('images/divisions/spirits/bottle.jpg') }}" alt="CJ Vodka bottle" style="width:100%;height:520px;object-fit:cover;border-radius:var(--radius-card);">
             </div>
         </div>
     </div>
@@ -356,11 +356,11 @@
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);">
             {{-- [IMAGE SLOT] spirits-gallery-1 | 700×450px — venue/bar imagery --}}
-            <img src="https://picsum.photos/seed/spirits-bar1/700/450" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
+            <img src="{{ asset('images/divisions/spirits/gallery-1.jpg') }}" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
             {{-- [IMAGE SLOT] spirits-gallery-2 | 700×450px --}}
-            <img src="https://picsum.photos/seed/spirits-bar2/700/450" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
+            <img src="{{ asset('images/divisions/spirits/gallery-2.jpg') }}" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
             {{-- [IMAGE SLOT] spirits-gallery-3 | 700×450px --}}
-            <img src="https://picsum.photos/seed/spirits-bar3/700/450" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
+            <img src="{{ asset('images/divisions/spirits/gallery-3.jpg') }}" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
         </div>
     </div>
 </div>
