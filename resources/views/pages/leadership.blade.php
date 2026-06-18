@@ -275,10 +275,10 @@
                 </p>
                 <div class="founder-contacts">
                     <a href="mailto:founder@cjglobalexpressgroup.com">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg> founder@cjglobalexpressgroup.com
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i> founder@cjglobalexpressgroup.com
                     </a>
                     <a href="mailto:sircj@cjglobalexpressgroup.co.za">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg> sircj@cjglobalexpressgroup.co.za
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i> sircj@cjglobalexpressgroup.co.za
                     </a>
                 </div>
             </div>

@@ -28,7 +28,7 @@
                 <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
                 <div class="card-title">{{ $division['name'] }}</div>
                 <div class="card-desc">{{ Str::limit($division['description'], 100) }}</div>
-                <div class="card-link">Explore Division <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></div>
+                <div class="card-link">Explore Division <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
             </a>
             @endforeach
         </div>

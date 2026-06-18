@@ -24,14 +24,8 @@
     <link rel="stylesheet" href="{{ asset('css/design-system.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    {{-- Icons: Heroicons 2.0 inline SVG — zero font dependency, zero network requests --}}
-    <style>
-    svg[aria-hidden="true"] { flex-shrink: 0; }
-    .icon-sm { width: 16px; height: 16px; }
-    .icon-md { width: 20px; height: 20px; }
-    .icon-lg { width: 24px; height: 24px; }
-    .icon-xl { width: 32px; height: 32px; }
-    </style>
+    {{-- Font Awesome 6 Free --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @stack('styles')
 </head>

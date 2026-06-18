@@ -201,7 +201,7 @@
         {{-- Info Strip --}}
         <div class="contact-info-strip">
             <div class="contact-info-card reveal">
-                <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg></div>
+                <div class="contact-info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
                 <div>
                     <div class="contact-info-label">Headquarters</div>
                     <div class="contact-info-value">KwaZulu-Natal</div>
@@ -209,14 +209,14 @@
                 </div>
             </div>
             <div class="contact-info-card reveal reveal-delay-1">
-                <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg></div>
+                <div class="contact-info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
                 <div>
                     <div class="contact-info-label">General Enquiries</div>
                     <div class="contact-info-value" style="font-size:13px;">enquiries@cjglobal<br>expressgroup.com</div>
                 </div>
             </div>
             <div class="contact-info-card reveal reveal-delay-2">
-                <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-building-office"/></svg></div>
+                <div class="contact-info-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
                 <div>
                     <div class="contact-info-label">Zimbabwe Office</div>
                     <div class="contact-info-value">Bulawayo</div>
@@ -235,7 +235,7 @@
 
                 @if(session('success'))
                 <div class="form-success">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-check-circle"/></svg>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                     {{ session('success') }}
                 </div>
                 @endif
@@ -302,7 +302,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:var(--space-1);">
-                        Send Message <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-paper-airplane"/></svg>
+                        Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                     </button>
                 </form>
             </div>
@@ -340,17 +340,17 @@
                     <div class="address-office">Our Offices</div>
 
                     <div class="address-office-name">🇿🇦 KwaZulu-Natal (HQ)</div>
-                    <div class="address-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Ntambanana, KwaZulu-Natal, South Africa</div>
-                    <div class="address-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-academic-cap"/></svg> Reg: 2012/344459/07 | Tax: 9225224253</div>
+                    <div class="address-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ntambanana, KwaZulu-Natal, South Africa</div>
+                    <div class="address-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Reg: 2012/344459/07 | Tax: 9225224253</div>
 
                     <div class="address-office-name" style="margin-top:var(--space-2);">🇿🇼 Bulawayo (Zimbabwe)</div>
-                    <div class="address-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> River Crescent Rd, Kelvin West, Bulawayo, Zimbabwe</div>
+                    <div class="address-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> River Crescent Rd, Kelvin West, Bulawayo, Zimbabwe</div>
 
                     <div class="address-office-name" style="margin-top:var(--space-2);">🇬🇧 London (UK)</div>
-                    <div class="address-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-building-office"/></svg> Commercial property — hospitality &amp; wellness operations</div>
+                    <div class="address-item"><i class="fa-solid fa-building" aria-hidden="true"></i> Commercial property — hospitality &amp; wellness operations</div>
 
                     <div class="address-office-name" style="margin-top:var(--space-2);">🇺🇸 Chicago (USA)</div>
-                    <div class="address-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-building-office"/></svg> CJ Vodka Premium Spirits — North American base</div>
+                    <div class="address-item"><i class="fa-solid fa-building" aria-hidden="true"></i> CJ Vodka Premium Spirits — North American base</div>
                 </div>
 
             </div>

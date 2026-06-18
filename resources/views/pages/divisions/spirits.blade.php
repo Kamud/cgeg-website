@@ -273,7 +273,7 @@
             </p>
             <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;" class="reveal reveal-delay-4">
                 <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">
-                    Partner With Us <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg>
+                    Partner With Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </a>
                 <a href="{{ route('divisions') }}" class="btn btn-ghost">All Divisions</a>
             </div>
@@ -390,7 +390,7 @@
         </p>
         <div style="display:flex;gap:var(--space-2);justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
             <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">
-                Get in Touch <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg>
+                Get in Touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
             <a href="{{ route('divisions') }}" class="btn btn-ghost">All Divisions</a>
         </div>
@@ -410,16 +410,16 @@
                     Other <em class="italic-gold">Divisions</em>
                 </h3>
             </div>
-            <a href="{{ route('divisions') }}" class="btn btn-ghost">View All <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></a>
+            <a href="{{ route('divisions') }}" class="btn btn-ghost">View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);">
             @foreach(array_slice($otherDivisions, 0, 4, true) as $slug => $other)
             <a href="{{ route('division', $slug) }}" class="card card-division reveal"
                style="text-decoration:none;background:var(--spirits-deep);transition-delay:{{ $loop->index * 60 }}ms;">
-                <div class="card-icon">@include('components.heroicon', ['name' => str_replace('hi-', '', $other['icon'])])</div>
+                <div class="card-icon"><i class="{{ $other['icon'] }}" aria-hidden="true"></i></div>
                 <div class="card-title">{{ $other['name'] }}</div>
                 <div class="card-desc" style="font-size:11px;">{{ Str::limit($other['tagline'], 55) }}</div>
-                <div class="card-link" style="margin-top:var(--space-1);">Explore <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></div>
+                <div class="card-link" style="margin-top:var(--space-1);">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
             </a>
             @endforeach
         </div>

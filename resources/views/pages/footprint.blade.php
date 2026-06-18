@@ -224,19 +224,19 @@
         </div>
         <div class="grid-3">
             <div class="region-card reveal">
-                <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map"/></svg></div>
+                <div class="region-icon"><i class="fa-solid fa-map" aria-hidden="true"></i></div>
                 <div class="region-name">Africa</div>
                 <div class="region-count">28+ Countries</div>
                 <div class="region-countries">South Africa (HQ) · Zimbabwe · Botswana · Zambia · Lesotho · Mozambique · Namibia · Tanzania · Kenya and across the continent.</div>
             </div>
             <div class="region-card reveal reveal-delay-1">
-                <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-building-library"/></svg></div>
+                <div class="region-icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></div>
                 <div class="region-name">Europe</div>
                 <div class="region-count">2+ Countries</div>
                 <div class="region-countries">United Kingdom (London commercial property with operational hospitality and wellness services) and expanding European presence.</div>
             </div>
             <div class="region-card reveal reveal-delay-2">
-                <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-globe-alt"/></svg></div>
+                <div class="region-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
                 <div class="region-name">Americas</div>
                 <div class="region-count">1+ Country</div>
                 <div class="region-countries">United States (Chicago building acquisition anchoring the CJ Vodka Premium Spirits division and North American operations).</div>
@@ -261,9 +261,9 @@
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇦 South Africa — Headquarters</div>
                     <div class="office-name">KwaZulu-Natal Office</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Ntambanana, KwaZulu-Natal, South Africa</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg> enquiries@cjglobalexpressgroup.com</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg> sircj@cjglobalexpressgroup.co.za</div>
+                    <div class="office-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ntambanana, KwaZulu-Natal, South Africa</div>
+                    <div class="office-detail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> enquiries@cjglobalexpressgroup.com</div>
+                    <div class="office-detail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> sircj@cjglobalexpressgroup.co.za</div>
                 </div>
             </div>
 
@@ -275,8 +275,8 @@
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇼 Zimbabwe</div>
                     <div class="office-name">Bulawayo Office</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> River Crescent Rd, Kelvin West, Bulawayo, Zimbabwe</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg> founder@cjglobalexpressgroup.com</div>
+                    <div class="office-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> River Crescent Rd, Kelvin West, Bulawayo, Zimbabwe</div>
+                    <div class="office-detail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> founder@cjglobalexpressgroup.com</div>
                 </div>
             </div>
 
@@ -288,8 +288,8 @@
                 <div class="office-card-body">
                     <div class="office-flag">🇬🇧 United Kingdom</div>
                     <div class="office-name">London Operations</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> London, United Kingdom</div>
-                    <div class="office-detail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-building-office"/></svg> Hospitality &amp; Wellness Operations</div>
+                    <div class="office-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> London, United Kingdom</div>
+                    <div class="office-detail"><i class="fa-solid fa-building" aria-hidden="true"></i> Hospitality &amp; Wellness Operations</div>
                 </div>
             </div>
         </div>
