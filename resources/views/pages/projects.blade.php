@@ -180,22 +180,25 @@
                     <div class="project-feature-title">Sandton Hydon Park Mall</div>
                     <div style="display:flex;align-items:center;gap:6px;margin-bottom:var(--space-1);">
                         <i class="fa-solid fa-location-dot" style="font-size:14px" aria-hidden="true"></i>
-                        <span style="font-size:var(--text-small);color:var(--text-secondary);">West of Harare, Zimbabwe</span>
+                        <span style="font-size:var(--text-small);color:var(--text-secondary);">West of Harare City, Zimbabwe</span>
                     </div>
                     <span class="badge-status badge-development">In Development</span>
                     <p class="project-feature-desc">
-                        The Sandton Hydon Park Mall is the defining project of CGEG's return to Zimbabwe after nearly 17 years — and a landmark in the nation's commercial development story. This world-class retail and lifestyle destination, developed in partnership with Delatfin Investment (Clemence Zingoni), will anchor a new economic hub west of Harare.
+                        A landmark two-floor mixed-use development featuring retail, office space, and a fuel station — this project signals the Group's return to Zimbabwe and is intended to inspire other foreign investors to follow. As Prof. Sir Jaricha has stated, this development is as much about economic confidence as it is about commerce.
                     </p>
                     <p class="project-feature-desc" style="margin-top:var(--space-2);">
-                        More than a mall, Sandton Hydon Park represents CGEG's conviction that private sector investment is the most powerful driver of community upliftment. When completed, it is projected to create between 2,000 and 5,000 direct and indirect jobs — a transformational impact for the region.
+                        Developed in partnership with Delatfin Investment (Clemence Zingoni), Sandton Hydon Park will anchor a new economic hub west of Harare. When completed, it is projected to create between 2,000 and 5,000 direct and indirect jobs — a transformational impact for the region.
                     </p>
+                    <div style="margin-top:var(--space-3);padding:var(--space-2) var(--space-3);border-left:2px solid var(--gold-primary);background:var(--surface-inset);box-shadow:var(--shadow-inset);border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                        <p style="font-family:var(--font-display);font-style:italic;color:var(--text-primary);font-size:16px;line-height:1.5;margin:0;">First major investment in Zimbabwe in 17 years</p>
+                    </div>
                 </div>
                 <div>
                     <div style="font-size:var(--text-label);color:var(--text-secondary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:var(--space-2);">Project Details</div>
                     <div class="project-meta-grid">
                         <div class="project-meta-item">
-                            <div class="project-meta-label">Project Value</div>
-                            <div class="project-meta-value">US$10–15 Million</div>
+                            <div class="project-meta-label">Investment</div>
+                            <div class="project-meta-value">US$970 Million</div>
                         </div>
                         <div class="project-meta-item">
                             <div class="project-meta-label">Status</div>
@@ -207,7 +210,7 @@
                         </div>
                         <div class="project-meta-item">
                             <div class="project-meta-label">Partner</div>
-                            <div class="project-meta-value">Delatfin Investment</div>
+                            <div class="project-meta-value">Delatfin Investment (Clemence Zingoni)</div>
                         </div>
                         <div class="project-meta-item">
                             <div class="project-meta-label">Division</div>
@@ -215,7 +218,7 @@
                         </div>
                         <div class="project-meta-item">
                             <div class="project-meta-label">Location</div>
-                            <div class="project-meta-value">Harare, Zimbabwe</div>
+                            <div class="project-meta-value">West of Harare City, Zimbabwe</div>
                         </div>
                     </div>
                 </div>
@@ -232,38 +235,51 @@
             <div class="project-half reveal">
                 {{-- [IMAGE SLOT] project-london | 800×500px — London commercial property --}}
                 <div class="project-half-img">
-                    <img src="{{ asset('images/pages/project-london.jpg') }}" alt="London Commercial Property" style="width:100%;height:240px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/project-london.jpg') }}" alt="London Market Entry" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="project-half-body">
-                    <div class="project-division-tag">CJ Global Properties</div>
-                    <div class="project-half-title">London Commercial Property</div>
+                    <div class="project-division-tag">CJ Restaurants &amp; Nightclubs · CJ Global Spas &amp; Salons</div>
+                    <div class="project-half-title">London Market Entry</div>
                     <div class="project-location-row">
                         <i class="fa-solid fa-location-dot" style="font-size:13px" aria-hidden="true"></i>
                         London, United Kingdom
                     </div>
                     <span class="badge-status badge-operational" style="margin-bottom:var(--space-2);display:inline-block;">Operational</span>
                     <p class="project-half-desc">
-                        A premium commercial property in London anchoring CGEG's European presence, housing operational hospitality and wellness services under the CJ Restaurants & Nightclubs and CJ Global Spas & Salons divisions.
+                        The London acquisition is part of a deliberate strategy to diversify beyond logistics into premium hospitality and wellness. Prime commercial property acquired in London, housing operational CJ Restaurants &amp; Nightclubs and CJ Global Spas &amp; Salons — opening doors across European markets.
                     </p>
+                    <div style="margin-top:var(--space-3);padding:var(--space-2) var(--space-3);border-left:2px solid var(--gold-primary);background:var(--surface-inset);box-shadow:var(--shadow-inset);border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                        <p style="font-family:var(--font-display);font-style:italic;color:var(--text-primary);font-size:15px;line-height:1.5;margin:0;">First African conglomerate of this scale in London's hospitality market</p>
+                    </div>
+                    <div style="margin-top:var(--space-2);display:flex;gap:var(--space-1);flex-wrap:wrap;">
+                        <span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;background:var(--surface-inset);box-shadow:var(--shadow-inset);border-radius:6px;padding:4px 10px;">Hospitality &amp; Wellness</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-half reveal reveal-delay-1">
                 {{-- [IMAGE SLOT] project-chicago | 800×500px — Chicago building --}}
                 <div class="project-half-img">
-                    <img src="{{ asset('images/pages/project-chicago.jpg') }}" alt="Chicago Building Acquisition" style="width:100%;height:240px;object-fit:cover;">
+                    <img src="{{ asset('images/pages/project-chicago.jpg') }}" alt="CJ Vodka Premium Spirits — Chicago" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="project-half-body">
                     <div class="project-division-tag">CJ Vodka Premium Spirits</div>
-                    <div class="project-half-title">Chicago Building Acquisition</div>
+                    <div class="project-half-title">CJ Vodka Premium Spirits</div>
                     <div class="project-location-row">
                         <i class="fa-solid fa-location-dot" style="font-size:13px" aria-hidden="true"></i>
                         Chicago, Illinois, USA
                     </div>
                     <span class="badge-status badge-operational" style="margin-bottom:var(--space-2);display:inline-block;">Operational</span>
                     <p class="project-half-desc">
-                        A strategic building acquisition in Chicago establishing CGEG's North American operational base and anchoring the newly launched CJ Vodka Premium Spirits division — a bold entry into the global luxury spirits market.
+                        CGEG's newest and ninth division — a bold pivot into spirits manufacturing. The Chicago facility produces premium vodka for the US market, with manufacturing hubs in KwaZulu-Natal and Lesotho serving the African market. Negotiations are underway for a Zimbabwe manufacturing facility. Targeting the US premium spirits market, one of the world's largest.
                     </p>
+                    <div style="margin-top:var(--space-3);padding:var(--space-2) var(--space-3);border-left:2px solid var(--gold-primary);background:var(--surface-inset);box-shadow:var(--shadow-inset);border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                        <p style="font-family:var(--font-display);font-style:italic;color:var(--text-primary);font-size:15px;line-height:1.5;margin:0;">Group's debut in manufacturing and the North American market</p>
+                    </div>
+                    <div style="margin-top:var(--space-2);display:flex;gap:var(--space-1);flex-wrap:wrap;">
+                        <span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;background:var(--surface-inset);box-shadow:var(--shadow-inset);border-radius:6px;padding:4px 10px;">Premium Spirits</span>
+                        <span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;background:var(--surface-inset);box-shadow:var(--shadow-inset);border-radius:6px;padding:4px 10px;">Manufacturing</span>
+                    </div>
                 </div>
             </div>
         </div>
