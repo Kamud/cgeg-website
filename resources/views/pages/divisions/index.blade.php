@@ -24,12 +24,13 @@
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);">
             @foreach($divisions as $slug => $division)
-            <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms; text-decoration:none;">
+            {{-- Links temporarily disabled while division images are being prepared --}}
+            <div class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms; cursor:default;">
                 <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
                 <div class="card-title">{{ $division['name'] }}</div>
                 <div class="card-desc">{{ Str::limit($division['description'], 100) }}</div>
-                <div class="card-link">Explore Division <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
-            </a>
+                {{-- <div class="card-link">Explore Division <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div> --}}
+            </div>
             @endforeach
         </div>
     </div>
