@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-scroll"><span>Scroll</span><i class="ti ti-chevron-down"></i></div>
+    <div class="hero-scroll"><span>Scroll</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-down"/></svg></div>
 </section>
 
 {{-- STAT STRIP (dark band) --}}
@@ -111,7 +111,7 @@
                     <span class="compliance-badge">CSD Registered</span>
                 </div>
                 <div style="margin-top:var(--space-3);" class="reveal reveal-delay-3">
-                    <a href="{{ route('about') }}" class="btn btn-link">Read Our Full Story <i class="ti ti-arrow-right"></i></a>
+                    <a href="{{ route('about') }}" class="btn btn-link">Read Our Full Story <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></a>
                 </div>
             </div>
             <div class="reveal reveal-delay-1" style="border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-raised-lg);">
@@ -131,10 +131,10 @@
         <div class="divisions-grid">
             @foreach($divisions as $slug => $division)
             <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms;text-decoration:none;">
-                <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
+                <div class="card-icon">@include('components.heroicon', ['name' => str_replace('hi-', '', $division['icon']), 'style' => 'width:20px;height:20px;'])</i></div>
                 <div class="card-title">{{ $division['name'] }}</div>
                 <div class="card-desc">{{ Str::limit($division['description'], 88) }}</div>
-                <div class="card-link">Explore <i class="ti ti-arrow-right"></i></div>
+                <div class="card-link">Explore <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></div>
             </a>
             @endforeach
         </div>
@@ -167,7 +167,7 @@
                 </div>
                 <div class="project-division" style="margin-top:var(--space-2);">CJ Global Mall</div>
                 <div class="project-title">Sandton Hydon Park Mall</div>
-                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;color:var(--gold-primary);"></i> Harare, Zimbabwe</div>
+                <div class="project-location"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;width:13px;height:13px;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Harare, Zimbabwe</div>
                 <span class="badge-status badge-development">In Development · US$670M</span>
             </div>
             <div class="card card-project reveal reveal-delay-1">
@@ -176,7 +176,7 @@
                 </div>
                 <div class="project-division" style="margin-top:var(--space-2);">CJ Properties / Hospitality</div>
                 <div class="project-title">London Market Entry</div>
-                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;color:var(--gold-primary);"></i> London, United Kingdom</div>
+                <div class="project-location"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;width:13px;height:13px;" aria-hidden="true"><use href="#hi-map-pin"/></svg> London, United Kingdom</div>
                 <span class="badge-status badge-operational">Operational · 2025</span>
             </div>
             <div class="card card-project reveal reveal-delay-2">
@@ -185,7 +185,7 @@
                 </div>
                 <div class="project-division" style="margin-top:var(--space-2);">CJ Vodka Premium Spirits</div>
                 <div class="project-title">Chicago Manufacturing HQ</div>
-                <div class="project-location"><i class="ti ti-map-pin" style="font-size:13px;color:var(--gold-primary);"></i> Chicago, Illinois, USA</div>
+                <div class="project-location"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;width:13px;height:13px;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Chicago, Illinois, USA</div>
                 <span class="badge-status badge-operational">Operational · 2025</span>
             </div>
         </div>

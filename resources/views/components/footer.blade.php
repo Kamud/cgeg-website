@@ -24,10 +24,10 @@
                 <a href="{{ route('home') }}" class="footer-logo">CJ<span>.</span>GLOBAL</a>
                 <p>Building Africa. Serving the World. A diversified conglomerate operating across 56 countries on six continents through nine distinct divisions.</p>
                 <div style="margin-top:var(--space-3);">
-                    <div class="footer-contact-item"><i class="ti ti-map-pin"></i><span>CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal, South Africa</span></div>
-                    <div class="footer-contact-item"><i class="ti ti-phone"></i><a href="tel:+27669471290">+27 66 947 129</a></div>
-                    <div class="footer-contact-item"><i class="ti ti-phone"></i><a href="tel:+263772701826">+263 77 270 1826</a></div>
-                    <div class="footer-contact-item"><i class="ti ti-mail"></i><a href="mailto:reception@cjglobalexpressgroup.com">reception@cjglobalexpressgroup.com</a></div>
+                    <div class="footer-contact-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg><span>CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal, South Africa</span></div>
+                    <div class="footer-contact-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-phone"/></svg><a href="tel:+27669471290">+27 66 947 129</a></div>
+                    <div class="footer-contact-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-phone"/></svg><a href="tel:+263772701826">+263 77 270 1826</a></div>
+                    <div class="footer-contact-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-envelope"/></svg><a href="mailto:reception@cjglobalexpressgroup.com">reception@cjglobalexpressgroup.com</a></div>
                 </div>
             </div>
             <div class="footer-col">

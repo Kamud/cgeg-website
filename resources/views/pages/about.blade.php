@@ -314,17 +314,17 @@
         </div>
         <div class="vmv-grid">
             <div class="vmv-card reveal">
-                <div class="vmv-icon"><i class="ti ti-eye"></i></div>
+                <div class="vmv-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-eye"/></svg></div>
                 <h3>Our Vision</h3>
                 <p>To be the sector leader benchmarking quality, integrity, and innovation across every industry we operate in — from Africa to the world.</p>
             </div>
             <div class="vmv-card reveal reveal-delay-1">
-                <div class="vmv-icon"><i class="ti ti-target"></i></div>
+                <div class="vmv-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-viewfinder-circle"/></svg></div>
                 <h3>Our Mission</h3>
                 <p>To deliver exceptional value to our clients, communities, and stakeholders through diversified business excellence, strategic growth, and unwavering integrity.</p>
             </div>
             <div class="vmv-card reveal reveal-delay-2">
-                <div class="vmv-icon"><i class="ti ti-heart"></i></div>
+                <div class="vmv-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-heart"/></svg></div>
                 <h3>Our Values</h3>
                 <div class="values-list">
                     <div class="value-item">Innovation — embracing new ideas and approaches</div>
@@ -430,27 +430,27 @@
         </div>
         <div class="compliance-grid">
             <div class="compliance-card reveal">
-                <i class="ti ti-award"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-trophy"/></svg>
                 <span class="c-name">BBBEE Level 1</span>
                 <span class="c-desc">Broad-Based Black Economic Empowerment</span>
             </div>
             <div class="compliance-card reveal reveal-delay-1">
-                <i class="ti ti-shield-check"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-shield-check"/></svg>
                 <span class="c-name">COIDA</span>
                 <span class="c-desc">Compensation for Occupational Injuries</span>
             </div>
             <div class="compliance-card reveal reveal-delay-2">
-                <i class="ti ti-users"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-users"/></svg>
                 <span class="c-name">UIF Registered</span>
                 <span class="c-desc">Unemployment Insurance Fund</span>
             </div>
             <div class="compliance-card reveal reveal-delay-3">
-                <i class="ti ti-building"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-building-office"/></svg>
                 <span class="c-name">CIDB Certified</span>
                 <span class="c-desc">Construction Industry Development Board</span>
             </div>
             <div class="compliance-card reveal reveal-delay-4">
-                <i class="ti ti-file-check"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-document-check"/></svg>
                 <span class="c-name">CSD Registered</span>
                 <span class="c-desc">Central Supplier Database — South Africa</span>
             </div>

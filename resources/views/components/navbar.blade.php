@@ -211,29 +211,29 @@ body.menu-open { overflow: hidden; }
 {{-- Mobile Menu --}}
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-menu-item">
-        <a href="{{ route('home') }}"       class="mobile-menu-link {{ request()->routeIs('home')        ? 'active' : '' }}">Home       <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('home') }}"       class="mobile-menu-link {{ request()->routeIs('home')        ? 'active' : '' }}">Home       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-menu-item">
-        <a href="{{ route('about') }}"      class="mobile-menu-link {{ request()->routeIs('about')       ? 'active' : '' }}">About      <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('about') }}"      class="mobile-menu-link {{ request()->routeIs('about')       ? 'active' : '' }}">About      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-menu-item">
-        <a href="{{ route('divisions') }}"  class="mobile-menu-link {{ request()->routeIs('divisions*')  ? 'active' : '' }}">Divisions  <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('divisions') }}"  class="mobile-menu-link {{ request()->routeIs('divisions*')  ? 'active' : '' }}">Divisions  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-menu-item">
-        <a href="{{ route('projects') }}"   class="mobile-menu-link {{ request()->routeIs('projects')    ? 'active' : '' }}">Projects   <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('projects') }}"   class="mobile-menu-link {{ request()->routeIs('projects')    ? 'active' : '' }}">Projects   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-menu-item">
-        <a href="{{ route('footprint') }}"  class="mobile-menu-link {{ request()->routeIs('footprint')   ? 'active' : '' }}">Global Footprint <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('footprint') }}"  class="mobile-menu-link {{ request()->routeIs('footprint')   ? 'active' : '' }}">Global Footprint <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-menu-item">
-        <a href="{{ route('foundation') }}" class="mobile-menu-link {{ request()->routeIs('foundation')  ? 'active' : '' }}">Foundation <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('foundation') }}" class="mobile-menu-link {{ request()->routeIs('foundation')  ? 'active' : '' }}">Foundation <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-menu-item">
-        <a href="{{ route('leadership') }}" class="mobile-menu-link {{ request()->routeIs('leadership')  ? 'active' : '' }}">Leadership <i class="ti ti-chevron-right"></i></a>
+        <a href="{{ route('leadership') }}" class="mobile-menu-link {{ request()->routeIs('leadership')  ? 'active' : '' }}">Leadership <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-chevron-right"/></svg></a>
     </div>
     <div class="mobile-divider mobile-menu-item"></div>
     <div class="mobile-cta-wrap mobile-menu-item">
-        <a href="{{ route('contact') }}" class="btn btn-primary">Get in Touch <i class="ti ti-arrow-right"></i></a>
+        <a href="{{ route('contact') }}" class="btn btn-primary">Get in Touch <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></a>
     </div>
 </div>
 

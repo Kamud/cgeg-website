@@ -179,7 +179,7 @@
                     <div class="project-division-tag">CJ Global Mall</div>
                     <div class="project-feature-title">Sandton Hydon Park Mall</div>
                     <div style="display:flex;align-items:center;gap:6px;margin-bottom:var(--space-1);">
-                        <i class="ti ti-map-pin" style="color:var(--gold-primary);font-size:14px;"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;width:14px;height:14px;" aria-hidden="true"><use href="#hi-map-pin"/></svg>
                         <span style="font-size:var(--text-small);color:var(--text-secondary);">West of Harare, Zimbabwe</span>
                     </div>
                     <span class="badge-status badge-development">In Development</span>
@@ -238,7 +238,7 @@
                     <div class="project-division-tag">CJ Global Properties</div>
                     <div class="project-half-title">London Commercial Property</div>
                     <div class="project-location-row">
-                        <i class="ti ti-map-pin" style="color:var(--gold-primary);font-size:13px;"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;width:13px;height:13px;" aria-hidden="true"><use href="#hi-map-pin"/></svg>
                         London, United Kingdom
                     </div>
                     <span class="badge-status badge-operational" style="margin-bottom:var(--space-2);display:inline-block;">Operational</span>
@@ -257,7 +257,7 @@
                     <div class="project-division-tag">CJ Vodka Premium Spirits</div>
                     <div class="project-half-title">Chicago Building Acquisition</div>
                     <div class="project-location-row">
-                        <i class="ti ti-map-pin" style="color:var(--gold-primary);font-size:13px;"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;width:13px;height:13px;" aria-hidden="true"><use href="#hi-map-pin"/></svg>
                         Chicago, Illinois, USA
                     </div>
                     <span class="badge-status badge-operational" style="margin-bottom:var(--space-2);display:inline-block;">Operational</span>

@@ -24,8 +24,14 @@
     <link rel="stylesheet" href="{{ asset('css/design-system.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    {{-- Tabler Icons (self-hosted v3.44.0 — no CDN dependency) --}}
-    <link rel="stylesheet" href="{{ asset('fonts/tabler-icons/tabler-icons.min.css') }}">
+    {{-- Icons: Heroicons 2.0 inline SVG — zero font dependency, zero network requests --}}
+    <style>
+    svg[aria-hidden="true"] { flex-shrink: 0; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 20px; height: 20px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .icon-xl { width: 32px; height: 32px; }
+    </style>
 
     @stack('styles')
 </head>

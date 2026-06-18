@@ -67,11 +67,11 @@
     </div>
     <div class="div-hero-overlay"></div>
     <div class="container div-hero-content">
-        <div class="div-hero-badge reveal"><i class="{{ $division['icon'] }}"></i> A CJ Global Division</div>
+        <div class="div-hero-badge reveal">@include('components.heroicon', ['name' => str_replace('hi-', '', $division['icon'])]) A CJ Global Division</div>
         <h1 class="reveal reveal-delay-1">{{ $division['name'] }}</h1>
         <p class="tagline reveal reveal-delay-2">{{ $division['tagline'] }}</p>
         <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;" class="reveal reveal-delay-3">
-            <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">Work With Us <i class="ti ti-arrow-right"></i></a>
+            <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">Work With Us <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></a>
             <a href="{{ route('divisions') }}" class="btn btn-ghost">All Divisions</a>
         </div>
     </div>
@@ -175,7 +175,7 @@
         <h2 class="reveal">Ready to Work With <em class="italic-gold">Us?</em></h2>
         <p style="color:var(--text-secondary);margin:var(--space-2) 0 var(--space-4);line-height:1.75;" class="reveal reveal-delay-1">Get in touch with our {{ $division['name'] }} team to discuss how we can support your goals.</p>
         <div style="display:flex;gap:var(--space-2);justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
-            <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">Get in Touch <i class="ti ti-arrow-right"></i></a>
+            <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">Get in Touch <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></a>
             <a href="{{ route('about') }}" class="btn btn-ghost">About CGEG</a>
         </div>
     </div>
@@ -190,15 +190,15 @@
                 <div class="eyebrow">Explore More</div>
                 <h3 style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-top:4px;">Other <em class="italic-gold">Divisions</em></h3>
             </div>
-            <a href="{{ route('divisions') }}" class="btn btn-ghost">View All <i class="ti ti-arrow-right"></i></a>
+            <a href="{{ route('divisions') }}" class="btn btn-ghost">View All <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></a>
         </div>
         <div class="other-divs-grid">
             @foreach(array_slice($otherDivisions,0,4,true) as $slug => $other)
             <a href="{{ route('division',$slug) }}" class="card card-division reveal" style="text-decoration:none;transition-delay:{{ $loop->index * 60 }}ms;">
-                <div class="card-icon"><i class="{{ $other['icon'] }}"></i></div>
+                <div class="card-icon">@include('components.heroicon', ['name' => str_replace('hi-', '', $other['icon'])])</div>
                 <div class="card-title">{{ $other['name'] }}</div>
                 <div class="card-desc" style="font-size:11px;">{{ Str::limit($other['tagline'],55) }}</div>
-                <div class="card-link" style="margin-top:var(--space-1);">Explore <i class="ti ti-arrow-right"></i></div>
+                <div class="card-link" style="margin-top:var(--space-1);">Explore <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-arrow-right"/></svg></div>
             </a>
             @endforeach
         </div>

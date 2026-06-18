@@ -173,7 +173,7 @@
                     <img src="{{ asset('images/pages/foundation-education.jpg') }}" alt="Foundation Education Programme" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="focus-card-body">
-                    <div class="focus-card-icon"><i class="ti ti-school"></i></div>
+                    <div class="focus-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-academic-cap"/></svg></div>
                     <div class="focus-card-title">Education</div>
                     <p class="focus-card-desc">
                         Investing in schools, scholarships, and learning infrastructure across Southern Africa. The CJ Global Foundation believes that education is the single greatest equaliser — and the foundation of every nation's future.
@@ -190,7 +190,7 @@
                     <img src="{{ asset('images/pages/foundation-healthcare.jpg') }}" alt="Foundation Healthcare Programme" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="focus-card-body">
-                    <div class="focus-card-icon"><i class="ti ti-heart-plus"></i></div>
+                    <div class="focus-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-heart"/></svg></div>
                     <div class="focus-card-title">Healthcare</div>
                     <p class="focus-card-desc">
                         Supporting clinics, mobile health units, and community health education across underserved communities. From maternal health in Zimbabwe to primary care access in Botswana — the Foundation is committed to closing the healthcare gap.
@@ -213,7 +213,7 @@
         </div>
         <div class="grid-3">
             <div class="programme-card reveal">
-                <div class="programme-icon"><i class="ti ti-school"></i></div>
+                <div class="programme-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-academic-cap"/></svg></div>
                 <div>
                     <div class="programme-country">Zimbabwe</div>
                     <div class="programme-name">School Infrastructure Support</div>
@@ -221,7 +221,7 @@
                 </div>
             </div>
             <div class="programme-card reveal reveal-delay-1">
-                <div class="programme-icon"><i class="ti ti-heart-plus"></i></div>
+                <div class="programme-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-heart"/></svg></div>
                 <div>
                     <div class="programme-country">South Africa</div>
                     <div class="programme-name">Community Health Clinics</div>
@@ -229,7 +229,7 @@
                 </div>
             </div>
             <div class="programme-card reveal reveal-delay-2">
-                <div class="programme-icon"><i class="ti ti-book"></i></div>
+                <div class="programme-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-book-open"/></svg></div>
                 <div>
                     <div class="programme-country">Zambia</div>
                     <div class="programme-name">Bursary Programme</div>
@@ -237,7 +237,7 @@
                 </div>
             </div>
             <div class="programme-card reveal reveal-delay-1">
-                <div class="programme-icon"><i class="ti ti-baby-carriage"></i></div>
+                <div class="programme-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-heart"/></svg></div>
                 <div>
                     <div class="programme-country">Botswana</div>
                     <div class="programme-name">Maternal Health Initiative</div>
@@ -245,7 +245,7 @@
                 </div>
             </div>
             <div class="programme-card reveal reveal-delay-2">
-                <div class="programme-icon"><i class="ti ti-pencil"></i></div>
+                <div class="programme-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-pencil"/></svg></div>
                 <div>
                     <div class="programme-country">Lesotho</div>
                     <div class="programme-name">Early Childhood Development</div>
@@ -253,7 +253,7 @@
                 </div>
             </div>
             <div class="programme-card reveal reveal-delay-3">
-                <div class="programme-icon"><i class="ti ti-users"></i></div>
+                <div class="programme-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-users"/></svg></div>
                 <div>
                     <div class="programme-country">Pan-African</div>
                     <div class="programme-name">Youth Entrepreneurship</div>
@@ -270,11 +270,11 @@
         <div class="eyebrow reveal" style="justify-content:center;">Active In</div>
         <h2 class="reveal reveal-delay-1" style="margin-bottom:var(--space-4);">Five Countries, <em class="italic-gold">One Mission</em></h2>
         <div class="countries-strip">
-            <div class="country-pill reveal"><i class="ti ti-map-pin"></i> Zimbabwe</div>
-            <div class="country-pill reveal reveal-delay-1"><i class="ti ti-map-pin"></i> South Africa</div>
-            <div class="country-pill reveal reveal-delay-2"><i class="ti ti-map-pin"></i> Botswana</div>
-            <div class="country-pill reveal reveal-delay-3"><i class="ti ti-map-pin"></i> Zambia</div>
-            <div class="country-pill reveal reveal-delay-4"><i class="ti ti-map-pin"></i> Lesotho</div>
+            <div class="country-pill reveal"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Zimbabwe</div>
+            <div class="country-pill reveal reveal-delay-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> South Africa</div>
+            <div class="country-pill reveal reveal-delay-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Botswana</div>
+            <div class="country-pill reveal reveal-delay-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Zambia</div>
+            <div class="country-pill reveal reveal-delay-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:inline-block;vertical-align:middle;flex-shrink:0;" aria-hidden="true"><use href="#hi-map-pin"/></svg> Lesotho</div>
         </div>
     </div>
 </section>
