@@ -1,6 +1,14 @@
 @extends('layouts.app')
 @section('title', 'Our Divisions — CJ Global Express Group Unlimited')
 @section('content')
+<style>
+@media (max-width: 768px) {
+    div[style*='grid-template-columns:repeat(3,1fr)'] { display: grid !important; grid-template-columns: 1fr !important; }
+}
+@media (max-width: 1024px) {
+    div[style*='grid-template-columns:repeat(3,1fr)'] { grid-template-columns: repeat(2,1fr) !important; }
+}
+</style>
 
 <section class="page-hero">
     <div class="container">

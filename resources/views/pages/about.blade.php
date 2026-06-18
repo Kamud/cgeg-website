@@ -251,13 +251,24 @@
     .compliance-grid { grid-template-columns: repeat(2, 1fr); }
     .timeline { padding-left: var(--space-3); }
 }
+
+@media (max-width: 768px) {
+    .story-grid, .founder-grid { grid-template-columns: 1fr !important; gap: var(--space-4) !important; }
+    .vmv-grid { grid-template-columns: 1fr !important; }
+    .compliance-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .timeline { padding-left: var(--space-3); }
+    .founder-message blockquote { font-size: clamp(16px, 5vw, 20px); }
+    .about-hero { padding: var(--space-6) 0 var(--space-4); }
+    .about-hero h1 { font-size: clamp(28px, 9vw, 42px); }
+}
+@media (max-width: 480px) {
+    .compliance-grid { grid-template-columns: 1fr 1fr !important; }
+}
 </style>
 
 {{-- ── HERO ── --}}
 <section class="about-hero">
-    {{-- [IMAGE SLOT] about-hero | 1920×700px — HQ building exterior or boardroom --}}
-    <div class="img-slot" style="position:absolute;inset:0;border-radius:0;min-height:unset;opacity:0.12;"
-         data-slot="about-hero" data-size="1920x700"></div>
+    <img src="https://picsum.photos/seed/about-hero/1920/700" alt="CJ Global Express Group headquarters" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;">
 
     <div class="container" style="position:relative;z-index:2;">
         <div class="eyebrow reveal">Established 2012</div>
@@ -287,10 +298,8 @@
             </div>
 
             {{-- [IMAGE SLOT] about-story | 800×700px — HQ exterior or operations --}}
-            <div class="img-slot reveal reveal-delay-1" style="min-height:380px;"
-                 data-slot="about-story" data-size="800x700">
-                <i class="ti ti-photo"></i>
-                <span>Company Image</span>
+            <div class="reveal reveal-delay-1" style="border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-raised-lg);">
+                <img src="https://picsum.photos/seed/about-story/800/700" alt="CJ Global Express Group" style="width:100%;height:380px;object-fit:cover;">
             </div>
         </div>
     </div>
@@ -334,11 +343,7 @@
         <div class="founder-grid">
             {{-- [IMAGE SLOT] founder-portrait | 700×900px — formal founder portrait --}}
             <div class="founder-img-wrap reveal">
-                <div class="img-slot" style="min-height:480px;"
-                     data-slot="founder-portrait" data-size="700x900">
-                    <i class="ti ti-user"></i>
-                    <span>Founder Portrait</span>
-                </div>
+                <img src="https://picsum.photos/seed/founder-portrait/700/900" alt="Prof. Clemence Jaricha — Founder & Chairman" style="width:100%;min-height:480px;height:480px;object-fit:cover;border-radius:var(--radius-card);">
             </div>
 
             <div class="founder-bio">

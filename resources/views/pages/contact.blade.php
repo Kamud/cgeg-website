@@ -173,6 +173,15 @@
     .form-grid-2 { grid-template-columns: 1fr; }
     .form-card { padding: var(--space-3); }
 }
+
+@media (max-width: 1024px) {
+    .contact-layout { grid-template-columns: 1fr !important; }
+    .contact-info-strip { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+    .form-grid-2 { grid-template-columns: 1fr !important; }
+    .form-card { padding: var(--space-3) !important; }
+}
 </style>
 
 {{-- ── HERO ── --}}

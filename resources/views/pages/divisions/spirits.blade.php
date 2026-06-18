@@ -238,6 +238,18 @@
     .spirits-about-grid { grid-template-columns: 1fr; }
     .spirits-hero { min-height: 85svh; }
 }
+
+@media (max-width: 768px) {
+    .spirits-about-grid { grid-template-columns: 1fr !important; }
+    .spirits-hero { min-height: 80svh !important; }
+    .spirits-tagline-word { font-size: clamp(36px, 10vw, 56px) !important; }
+    .grid-4 { grid-template-columns: repeat(2,1fr) !important; }
+    div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media (max-width: 480px) {
+    .spirits-tagline-word { font-size: clamp(28px, 10vw, 44px) !important; }
+}
 </style>
 
 {{-- ══════════════════════════════════════════════
@@ -246,10 +258,7 @@
 <section class="spirits-hero">
     {{-- [IMAGE SLOT] spirits-hero | 1920×1080px — moody dark spirits/bar imagery or bottle product shot --}}
     <div style="position:absolute;inset:0;z-index:0;opacity:0.15;">
-        <div class="img-slot" style="height:100%;border-radius:0;background:var(--spirits-deep);"
-             data-slot="spirits-hero" data-size="1920x1080">
-            <i class="ti ti-bottle" style="font-size:56px;opacity:0.3;"></i>
-        </div>
+        <img src="https://picsum.photos/seed/spirits-hero/1920/1080" alt="CJ Vodka Premium Spirits" style="width:100%;height:100%;object-fit:cover;opacity:0.2;">
     </div>
 
     <div class="container" style="position:relative;z-index:2;">
@@ -313,12 +322,7 @@
 
             {{-- [IMAGE SLOT] spirits-bottle | 600×900px — CJ Vodka bottle product shot --}}
             <div class="reveal reveal-delay-1">
-                <div class="img-slot" style="min-height:520px;background:var(--spirits-raised);
-                     box-shadow:8px 8px 24px rgba(0,0,0,0.7),-3px -3px 8px rgba(255,245,220,0.03);"
-                     data-slot="spirits-bottle" data-size="600x900">
-                    <i class="ti ti-bottle" style="font-size:48px;"></i>
-                    <span>CJ Vodka Product Shot</span>
-                </div>
+                <img src="https://picsum.photos/seed/spirits-bottle/600/900" alt="CJ Vodka bottle" style="width:100%;height:520px;object-fit:cover;border-radius:var(--radius-card);">
             </div>
         </div>
     </div>
@@ -352,23 +356,11 @@
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);">
             {{-- [IMAGE SLOT] spirits-gallery-1 | 700×450px — venue/bar imagery --}}
-            <div class="img-slot reveal" style="min-height:220px;background:var(--spirits-raised);
-                 box-shadow:5px 5px 14px rgba(0,0,0,0.6);"
-                 data-slot="spirits-gallery-1" data-size="700x450">
-                <i class="ti ti-photo"></i>
-            </div>
+            <img src="https://picsum.photos/seed/spirits-bar1/700/450" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
             {{-- [IMAGE SLOT] spirits-gallery-2 | 700×450px --}}
-            <div class="img-slot reveal reveal-delay-1" style="min-height:220px;background:var(--spirits-raised);
-                 box-shadow:5px 5px 14px rgba(0,0,0,0.6);"
-                 data-slot="spirits-gallery-2" data-size="700x450">
-                <i class="ti ti-photo"></i>
-            </div>
+            <img src="https://picsum.photos/seed/spirits-bar2/700/450" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
             {{-- [IMAGE SLOT] spirits-gallery-3 | 700×450px --}}
-            <div class="img-slot reveal reveal-delay-2" style="min-height:220px;background:var(--spirits-raised);
-                 box-shadow:5px 5px 14px rgba(0,0,0,0.6);"
-                 data-slot="spirits-gallery-3" data-size="700x450">
-                <i class="ti ti-photo"></i>
-            </div>
+            <img src="https://picsum.photos/seed/spirits-bar3/700/450" alt="CJ Vodka experience" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-card);">
         </div>
     </div>
 </div>

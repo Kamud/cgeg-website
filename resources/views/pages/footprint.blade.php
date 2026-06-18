@@ -106,6 +106,14 @@
 @media (max-width: 768px) {
     .map-container { padding: var(--space-2); }
 }
+
+@media (max-width: 768px) {
+    .map-container { padding: var(--space-2) !important; }
+    .footprint-hero h1 { font-size: clamp(28px, 9vw, 42px); }
+}
+@media (max-width: 600px) {
+    .grid-3 { grid-template-columns: 1fr !important; }
+}
 </style>
 
 {{-- ── HERO ── --}}
@@ -248,10 +256,7 @@
             <div class="office-card reveal">
                 {{-- [IMAGE SLOT] office-kzn | 600×400px — KZN HQ exterior --}}
                 <div class="office-card-img">
-                    <div class="img-slot" style="height:180px;border-radius:0;"
-                         data-slot="office-kzn" data-size="600x400">
-                        <i class="ti ti-photo"></i><span>KZN HQ</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/office-kzn/600/400" alt="KZN Headquarters, KwaZulu-Natal" style="width:100%;height:180px;object-fit:cover;">
                 </div>
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇦 South Africa — Headquarters</div>
@@ -265,10 +270,7 @@
             <div class="office-card reveal reveal-delay-1">
                 {{-- [IMAGE SLOT] office-zimbabwe | 600×400px — Bulawayo office --}}
                 <div class="office-card-img">
-                    <div class="img-slot" style="height:180px;border-radius:0;"
-                         data-slot="office-zimbabwe" data-size="600x400">
-                        <i class="ti ti-photo"></i><span>Zimbabwe Office</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/office-bulawayo/600/400" alt="Bulawayo Office, Zimbabwe" style="width:100%;height:180px;object-fit:cover;">
                 </div>
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇼 Zimbabwe</div>
@@ -281,10 +283,7 @@
             <div class="office-card reveal reveal-delay-2">
                 {{-- [IMAGE SLOT] office-london | 600×400px — London office --}}
                 <div class="office-card-img">
-                    <div class="img-slot" style="height:180px;border-radius:0;"
-                         data-slot="office-london" data-size="600x400">
-                        <i class="ti ti-photo"></i><span>London Property</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/office-london/600/400" alt="London Operations" style="width:100%;height:180px;object-fit:cover;">
                 </div>
                 <div class="office-card-body">
                     <div class="office-flag">🇬🇧 United Kingdom</div>

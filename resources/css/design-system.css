@@ -358,3 +358,87 @@ h3 { font-size: var(--text-h3); }
 @media (max-width: 480px) {
     :root { --container-pad: 20px; }
 }
+
+/* =====================================================
+   GLOBAL MOBILE RESPONSIVENESS
+   Added: full responsive overhaul
+===================================================== */
+
+/* ── Responsive Typography ── */
+@media (max-width: 768px) {
+    :root {
+        --text-hero: clamp(32px, 10vw, 48px);
+        --text-h1:   clamp(26px, 8vw,  38px);
+        --text-h2:   clamp(22px, 6vw,  30px);
+        --section-gap: clamp(48px, 10vw, 80px);
+    }
+    .text-hero { font-size: clamp(32px, 10vw, 48px); }
+}
+@media (max-width: 480px) {
+    :root {
+        --text-hero: clamp(28px, 9vw, 40px);
+        --text-h1:   clamp(24px, 8vw, 32px);
+        --text-h2:   clamp(20px, 6vw, 26px);
+    }
+}
+
+/* ── Responsive Grids ── */
+@media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ── Responsive Buttons ── */
+@media (max-width: 480px) {
+    .btn { padding: 11px 22px; font-size: 12px; }
+}
+
+/* ── Responsive Cards ── */
+@media (max-width: 480px) {
+    .card { padding: var(--space-2); }
+    .card-stat .stat-num { font-size: 26px; }
+}
+
+/* ── Responsive Page Heroes ── */
+@media (max-width: 768px) {
+    .page-hero { padding: var(--space-6) 0 var(--space-5); }
+    .page-hero h1 { font-size: clamp(26px, 8vw, 38px); }
+}
+
+/* ── Responsive Sections ── */
+@media (max-width: 768px) {
+    .section    { padding: clamp(48px,10vw,80px) 0; }
+    .section-sm { padding: var(--space-4) 0; }
+    .band       { padding: var(--space-5) 0; }
+    .band-dark  { padding: var(--space-6) 0; }
+}
+
+/* ── Band quotes mobile ── */
+@media (max-width: 768px) {
+    .band-quote blockquote { font-size: clamp(16px, 5vw, 22px); padding: 0 var(--space-2); }
+}
+
+/* ── Utility: hide on mobile ── */
+.hide-mobile  { display: block; }
+.show-mobile  { display: none; }
+@media (max-width: 768px) {
+    .hide-mobile { display: none; }
+    .show-mobile { display: block; }
+}
+
+/* ── Touch targets ── */
+@media (max-width: 768px) {
+    a, button { min-height: 44px; }
+    .nav-links a { min-height: auto; }
+    .btn { min-height: 44px; }
+}
+
+/* ── Stat strip mobile ── */
+@media (max-width: 600px) {
+    .card-stat { padding: 16px 12px; }
+    .card-stat .stat-num   { font-size: 22px; }
+    .card-stat .stat-label { font-size: 9px; }
+}

@@ -141,13 +141,20 @@
     .project-pair { grid-template-columns: 1fr; }
     .project-feature-img { height: 260px; }
 }
+
+@media (max-width: 768px) {
+    .project-feature-body { grid-template-columns: 1fr !important; }
+    .project-pair { grid-template-columns: 1fr !important; }
+    .project-feature-img { height: 260px !important; }
+    .project-meta-grid { grid-template-columns: 1fr 1fr !important; }
+    .projects-hero h1 { font-size: clamp(28px, 9vw, 42px); }
+}
 </style>
 
 {{-- ── HERO ── --}}
 <section class="projects-hero">
     {{-- [IMAGE SLOT] projects-hero | 1920×700px — construction site or skyline --}}
-    <div class="img-slot" style="position:absolute;inset:0;border-radius:0;min-height:unset;opacity:0.12;"
-         data-slot="projects-hero" data-size="1920x700"></div>
+    <img src="https://picsum.photos/seed/projects-hero/1920/700" alt="CGEG Featured Projects" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;">
 
     <div class="container" style="position:relative;z-index:2;">
         <div class="eyebrow reveal">Our Work</div>
@@ -165,11 +172,7 @@
         <div class="project-feature reveal reveal-delay-1">
             {{-- [IMAGE SLOT] project-sandton | 1200×700px — Sandton Hydon Park development render --}}
             <div class="project-feature-img">
-                <div class="img-slot" style="height:420px;border-radius:0;"
-                     data-slot="project-sandton" data-size="1200x700">
-                    <i class="ti ti-photo" style="font-size:40px;"></i>
-                    <span>Sandton Hydon Park Mall — Development Render</span>
-                </div>
+                <img src="https://picsum.photos/seed/project-sandton/1200/700" alt="Sandton Hydon Park Mall" style="width:100%;height:420px;object-fit:cover;">
             </div>
             <div class="project-feature-body">
                 <div>
@@ -229,11 +232,7 @@
             <div class="project-half reveal">
                 {{-- [IMAGE SLOT] project-london | 800×500px — London commercial property --}}
                 <div class="project-half-img">
-                    <div class="img-slot" style="height:240px;border-radius:0;"
-                         data-slot="project-london" data-size="800x500">
-                        <i class="ti ti-photo"></i>
-                        <span>London Property</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/project-london/800/500" alt="London Commercial Property" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="project-half-body">
                     <div class="project-division-tag">CJ Global Properties</div>
@@ -252,11 +251,7 @@
             <div class="project-half reveal reveal-delay-1">
                 {{-- [IMAGE SLOT] project-chicago | 800×500px — Chicago building --}}
                 <div class="project-half-img">
-                    <div class="img-slot" style="height:240px;border-radius:0;"
-                         data-slot="project-chicago" data-size="800x500">
-                        <i class="ti ti-photo"></i>
-                        <span>Chicago Building</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/project-chicago/800/500" alt="Chicago Building Acquisition" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="project-half-body">
                     <div class="project-division-tag">CJ Vodka Premium Spirits</div>

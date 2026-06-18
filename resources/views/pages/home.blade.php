@@ -163,7 +163,7 @@
         <div class="grid-3">
             <div class="card card-project reveal">
                 <div class="project-img" style="height:220px;border-radius:8px;overflow:hidden;">
-                    <img src="{{ \App\Http\Controllers\PageController::placeholderImg('project-sandton',800,500) }}" alt="Sandton Hydon Park Mall" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="https://picsum.photos/seed/project-sandton/800/500" alt="Sandton Hydon Park Mall" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="project-division" style="margin-top:var(--space-2);">CJ Global Mall</div>
                 <div class="project-title">Sandton Hydon Park Mall</div>
@@ -172,7 +172,7 @@
             </div>
             <div class="card card-project reveal reveal-delay-1">
                 <div class="project-img" style="height:220px;border-radius:8px;overflow:hidden;">
-                    <img src="{{ \App\Http\Controllers\PageController::placeholderImg('project-london',800,500) }}" alt="London Market Entry" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="https://picsum.photos/seed/project-london/800/500" alt="London Market Entry" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="project-division" style="margin-top:var(--space-2);">CJ Properties / Hospitality</div>
                 <div class="project-title">London Market Entry</div>
@@ -181,7 +181,7 @@
             </div>
             <div class="card card-project reveal reveal-delay-2">
                 <div class="project-img" style="height:220px;border-radius:8px;overflow:hidden;">
-                    <img src="{{ \App\Http\Controllers\PageController::placeholderImg('project-chicago',800,500) }}" alt="Chicago Manufacturing" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="https://picsum.photos/seed/project-chicago/800/500" alt="Chicago Manufacturing" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="project-division" style="margin-top:var(--space-2);">CJ Vodka Premium Spirits</div>
                 <div class="project-title">Chicago Manufacturing HQ</div>
@@ -208,3 +208,21 @@
 </div>
 
 @endsection
+@push('styles')
+<style>
+@media (max-width: 768px) {
+    .hero { min-height: 85svh; padding: var(--space-6) 0 var(--space-5); }
+    .hero-title { font-size: clamp(32px, 10vw, 48px); }
+    .hero-ctas { flex-direction: column; align-items: flex-start; }
+    .hero-ctas .btn { width: 100%; justify-content: center; }
+    .stat-strip .grid-4 { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+    .about-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    .divisions-grid { grid-template-columns: 1fr; gap: var(--space-2); }
+    .founder-band blockquote { font-size: clamp(18px, 5vw, 22px); padding: 0 var(--space-2); }
+}
+@media (max-width: 480px) {
+    .stat-strip .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .hero-scroll { display: none; }
+}
+</style>
+@endpush

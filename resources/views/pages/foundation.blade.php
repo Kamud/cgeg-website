@@ -112,13 +112,18 @@
 @media (max-width: 768px) {
     .focus-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+    .focus-grid { grid-template-columns: 1fr !important; }
+    .countries-strip { gap: var(--space-1) !important; }
+    .foundation-hero h1 { font-size: clamp(28px, 9vw, 42px); }
+}
 </style>
 
 {{-- ── HERO ── --}}
 <section class="foundation-hero">
     {{-- [IMAGE SLOT] foundation-hero | 1920×800px — community, children, healthcare imagery --}}
-    <div class="img-slot" style="position:absolute;inset:0;border-radius:0;min-height:unset;opacity:0.13;"
-         data-slot="foundation-hero" data-size="1920x800"></div>
+    <img src="https://picsum.photos/seed/foundation-hero/1920/800" alt="CJ Global Foundation community impact" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;">
 
     <div class="container" style="position:relative;z-index:2;">
         <div class="eyebrow reveal">CJ Global Foundation</div>
@@ -165,10 +170,7 @@
             <div class="focus-card reveal">
                 {{-- [IMAGE SLOT] foundation-education | 800×500px — education programme imagery --}}
                 <div class="focus-card-img">
-                    <div class="img-slot" style="height:240px;border-radius:0;"
-                         data-slot="foundation-education" data-size="800x500">
-                        <i class="ti ti-photo"></i><span>Education Programme</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/foundation-education/800/500" alt="Foundation Education Programme" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="focus-card-body">
                     <div class="focus-card-icon"><i class="ti ti-school"></i></div>
@@ -185,10 +187,7 @@
             <div class="focus-card reveal reveal-delay-1">
                 {{-- [IMAGE SLOT] foundation-healthcare | 800×500px — healthcare programme imagery --}}
                 <div class="focus-card-img">
-                    <div class="img-slot" style="height:240px;border-radius:0;"
-                         data-slot="foundation-healthcare" data-size="800x500">
-                        <i class="ti ti-photo"></i><span>Healthcare Programme</span>
-                    </div>
+                    <img src="https://picsum.photos/seed/foundation-healthcare/800/500" alt="Foundation Healthcare Programme" style="width:100%;height:240px;object-fit:cover;">
                 </div>
                 <div class="focus-card-body">
                     <div class="focus-card-icon"><i class="ti ti-heart-plus"></i></div>
