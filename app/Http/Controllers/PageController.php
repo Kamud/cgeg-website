@@ -19,23 +19,23 @@ class PageController extends Controller
                 'title'      => 'Founder & Chairman',
                 'bio'        => 'A visionary Zimbabwean-born entrepreneur, academic, and global business leader, Prof. Clemence Jaricha founded CJ Global Express Group Unlimited in 1997 with a single logistics operation. Under his leadership, CGEG has grown into one of Africa\'s most dynamic multi-sector business empires, operating across 56 countries on six continents with nine distinct divisions.',
                 'quote'      => 'We must build businesses that feed families, not just balance sheets.',
-                'image'      => asset('pages/leadership/founder.jpg'),
+                'image'      => asset('images/pages/leadership/founder.jpg'),
             ],
             'directors' => [
-                ['name' => 'Dr. Chris Grant',       'title' => 'Finance Director',           'image' => $this->img('director-grant',   400, 400)],
-                ['name' => 'Mr. M. Munodawafa',     'title' => 'Director of Operations',     'image' => $this->img('director-ops',     400, 400)],
-                ['name' => 'Mr. L. Hadebe',          'title' => 'Director of Loss Control',   'image' => $this->img('director-hadebe',  400, 400)],
-                ['name' => 'Mr. Kris Cly',           'title' => 'General Manager',            'image' => $this->img('director-cly',     400, 400)],
+                ['name' => 'Dr. Chris Grant',       'title' => 'Finance Director',           'image' => asset('images/pages/leadership/grant.jpg')],
+                ['name' => 'Mr. M. Munodawafa',     'title' => 'Director of Operations',     'image' => asset('images/pages/leadership/munodawafa.jpg')],
+                ['name' => 'Mr. L. Hadebe',          'title' => 'Director of Loss Control',   'image' => asset('images/pages/leadership/hadebe.jpg')],
+                ['name' => 'Mr. Kris Cly',           'title' => 'General Manager',            'image' => asset('images/pages/leadership/cly.jpg')],
             ],
             'management' => [
-                ['name' => 'Dr. E. Kapongo',   'title' => 'Group Accountant',              'image' => asset('pages/leadership/kapongo.jpg')],
-                ['name' => 'Mr. D. Nyathi',    'title' => 'HR Manager',                    'image' => $this->img('mgmt-nyathi',  400, 400)],
-                ['name' => 'Ms. C. Zulu',      'title' => 'Secretary',                     'image' => $this->img('mgmt-zulu',    400, 400)],
-                ['name' => 'Ms. Lorcadia Phiri','title' => 'Personal Assistant to the CEO','image' => $this->img('mgmt-phiri',   400, 400)],
+                ['name' => 'Dr. E. Kapongo',   'title' => 'Group Accountant',              'image' => asset('images/pages/leadership/kapongo.jpg')],
+                ['name' => 'Mr. D. Nyathi',    'title' => 'HR Manager',                    'image' => asset('images/pages/leadership/nyathi.jpg')],
+                ['name' => 'Ms. C. Zulu',      'title' => 'Secretary',                     'image' => asset('images/pages/leadership/zulu.jpg')],
+                ['name' => 'Ms. Lorcadia Phiri','title' => 'Personal Assistant to the CEO','image' => asset('images/pages/leadership/phiri.jpg')],
             ],
             'oversight' => [
-                ['name' => 'Dr. Vee Jaricha',    'title' => 'Divisional Oversight — All Divisions', 'image' => asset('pages/leadership/vee-jaricha.jpg')],
-                ['name' => 'Dr. C. Junior Jaricha','title' => 'Divisional Oversight — All Divisions','image' => $this->img('oversight-cj',  400, 400)],
+                ['name' => 'Dr. Vee Jaricha',    'title' => 'Divisional Oversight — All Divisions', 'image' => asset('images/pages/leadership/vee-jaricha.jpg')],
+                ['name' => 'Dr. C. Junior Jaricha','title' => 'Divisional Oversight — All Divisions','image' => asset('images/pages/leadership/cj-junior.jpg')],
             ],
         ];
     }
@@ -306,16 +306,16 @@ class PageController extends Controller
     public function home()
     {
         $divisions = $this->divisionsData();
-        $heroImg   = asset('pages/hero.jpg');
-        $aboutImg  = asset('pages/about-story.jpg');
+        $heroImg   = asset('images/pages/hero.jpg');
+        $aboutImg  = asset('images/pages/about-story.jpg');
         return view('pages.home', compact('divisions', 'heroImg', 'aboutImg'));
     }
 
     public function about()
     {
         $team     = $this->teamData();
-        $heroImg  = asset('pages/about-hero.jpg');
-        $storyImg = asset('pages/about-story.jpg');
+        $heroImg  = asset('images/pages/about-hero.jpg');
+        $storyImg = asset('images/pages/about-story.jpg');
         return view('pages.about', compact('team', 'heroImg', 'storyImg'));
     }
 
@@ -341,19 +341,19 @@ class PageController extends Controller
 
     public function foundation()
     {
-        $heroImg = asset('pages/foundation-hero.jpg');
-        $eduImg  = asset('pages/foundation-education.jpg');
-        $healthImg = asset('pages/foundation-healthcare.jpg');
+        $heroImg = asset('images/pages/foundation-hero.jpg');
+        $eduImg  = asset('images/pages/foundation-education.jpg');
+        $healthImg = asset('images/pages/foundation-healthcare.jpg');
         return view('pages.foundation', compact('heroImg', 'eduImg', 'healthImg'));
     }
 
     public function footprint()
     {
         $offices = [
-            ['flag'=>'🇿🇦','country'=>'South Africa','name'=>'KwaZulu-Natal (HQ)','address'=>'CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal','phone'=>'+27 66 947 129','img'=>asset('pages/footprint/office-kzn.jpg')],
-            ['flag'=>'🇿🇼','country'=>'Zimbabwe',    'name'=>'Bulawayo Office',    'address'=>'River Crescent Road, Kelvin West, Bulawayo','phone'=>'+263 77 270 1826','img'=>asset('pages/footprint/office-bulawayo.jpg')],
-            ['flag'=>'🇬🇧','country'=>'United Kingdom','name'=>'London Operations','address'=>'Prime commercial property — hospitality & wellness','phone'=>null,'img'=>asset('pages/footprint/office-london.jpg')],
-            ['flag'=>'🇺🇸','country'=>'United States','name'=>'Chicago Manufacturing','address'=>'CJ Vodka Premium Spirits — North American HQ','phone'=>null,'img'=>asset('pages/footprint/office-chicago.jpg')],
+            ['flag'=>'🇿🇦','country'=>'South Africa','name'=>'KwaZulu-Natal (HQ)','address'=>'CJ Global Mall, Bukhanana Reserve, KwaZulu-Natal','phone'=>'+27 66 947 129','img'=>asset('images/pages/footprint/office-kzn.jpg')],
+            ['flag'=>'🇿🇼','country'=>'Zimbabwe',    'name'=>'Bulawayo Office',    'address'=>'River Crescent Road, Kelvin West, Bulawayo','phone'=>'+263 77 270 1826','img'=>asset('images/pages/footprint/office-bulawayo.jpg')],
+            ['flag'=>'🇬🇧','country'=>'United Kingdom','name'=>'London Operations','address'=>'Prime commercial property — hospitality & wellness','phone'=>null,'img'=>asset('images/pages/footprint/office-london.jpg')],
+            ['flag'=>'🇺🇸','country'=>'United States','name'=>'Chicago Manufacturing','address'=>'CJ Vodka Premium Spirits — North American HQ','phone'=>null,'img'=>asset('images/pages/footprint/office-chicago.jpg')],
         ];
         return view('pages.footprint', compact('offices'));
     }
@@ -361,7 +361,7 @@ class PageController extends Controller
     public function leadership()
     {
         $team = $this->teamData();
-        $heroImg = asset('pages/leadership-hero.jpg');
+        $heroImg = asset('images/pages/leadership-hero.jpg');
         return view('pages.leadership', compact('team', 'heroImg'));
     }
 
@@ -378,7 +378,7 @@ class PageController extends Controller
                 'division'   => 'CJ Global Mall / Construction',
                 'desc'       => 'A landmark two-floor mixed-use development featuring retail, office space, and a fuel station — CGEG\'s first major investment in Zimbabwe in 17 years. Designed to inspire foreign investor confidence and create up to 5,000 jobs.',
                 'featured'   => true,
-                'image'      => asset('pages/project-sandton.jpg'),
+                'image'      => asset('images/pages/project-sandton.jpg'),
             ],
             [
                 'title'      => 'London Market Entry',
@@ -390,7 +390,7 @@ class PageController extends Controller
                 'division'   => 'CJ Properties / Hospitality / Wellness',
                 'desc'       => 'Prime commercial property acquired in London (2025). CJ Restaurants, Nightclubs, and Beauty Spa now operational — making CGEG the first African conglomerate of this scale in London\'s hospitality and wellness market.',
                 'featured'   => true,
-                'image'      => asset('pages/project-london.jpg'),
+                'image'      => asset('images/pages/project-london.jpg'),
             ],
             [
                 'title'      => 'CJ Vodka — Chicago Manufacturing',
@@ -402,7 +402,7 @@ class PageController extends Controller
                 'division'   => 'CJ Vodka Premium Spirits',
                 'desc'       => 'Building acquired in Chicago for CJ Vodka Premium Spirits manufacturing — the Group\'s debut in manufacturing and the North American market. Additional hubs in KwaZulu-Natal and Lesotho will serve the African market.',
                 'featured'   => true,
-                'image'      => asset('pages/project-chicago.jpg'),
+                'image'      => asset('images/pages/project-chicago.jpg'),
             ],
         ];
         return view('pages.projects', compact('projects'));
