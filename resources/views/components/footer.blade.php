@@ -32,6 +32,11 @@
             </div>
             <div class="footer-col">
                 <h4>Divisions</h4>
+                {{-- Division links temporarily hidden while individual pages are being prepared --}}
+                <ul>
+                    <li><a href="{{ route('divisions') }}" style="color:var(--gold-primary);">View All Divisions</a></li>
+                </ul>
+                {{--
                 <ul>
                     <li><a href="{{ route('division','construction') }}">Construction</a></li>
                     <li><a href="{{ route('division','mining') }}">Mining</a></li>
@@ -42,6 +47,7 @@
                     <li><a href="{{ route('division','wellness') }}">Spas &amp; Salons</a></li>
                     <li><a href="{{ route('division','spirits') }}">CJ Vodka Spirits</a></li>
                 </ul>
+                --}}
             </div>
             <div class="footer-col">
                 <h4>Company</h4>

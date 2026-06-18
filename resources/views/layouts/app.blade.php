@@ -8,17 +8,30 @@
     {{-- SEO --}}
     <title>@yield('title', 'CJ Global Express Group Unlimited')</title>
     <meta name="description" content="@yield('meta_description', 'A diversified global conglomerate driving growth across construction, mining, logistics, properties, hospitality and beyond. Operating in 32+ countries.')">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CJ Global Express Group Unlimited">
 
     {{-- Open Graph --}}
-    <meta property="og:title" content="@yield('og_title', 'CJ Global Express Group Unlimited')">
-    <meta property="og:description" content="@yield('og_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.')">
+    <meta property="og:title" content="@yield('og_title', @yield('title', 'CJ Global Express Group Unlimited'))">
+    <meta property="og:description" content="@yield('og_description', @yield('meta_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.'))">
     <meta property="og:image" content="{{ asset('images/og-preview.jpg') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="CJ Global Express Group Unlimited">
 
-    {{-- Favicon --}}
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}">
+    {{-- Twitter / X Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', @yield('title', 'CJ Global Express Group Unlimited'))">
+    <meta name="twitter:description" content="@yield('og_description', @yield('meta_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.'))">
+    <meta name="twitter:image" content="{{ asset('images/og-preview.jpg') }}">
+
+    {{-- Favicon — all formats for broad browser/device support --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     {{-- Design System CSS --}}
     <link rel="stylesheet" href="{{ asset('css/design-system.css') }}">
