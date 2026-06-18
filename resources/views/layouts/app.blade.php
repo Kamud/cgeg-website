@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="{{ asset('css/design-system.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    {{-- Tabler Icons --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    {{-- Tabler Icons (self-hosted v3.44.0 — no CDN dependency) --}}
+    <link rel="stylesheet" href="{{ asset('fonts/tabler-icons/tabler-icons.min.css') }}">
 
     @stack('styles')
 </head>
