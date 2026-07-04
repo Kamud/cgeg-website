@@ -347,6 +347,33 @@ class PageController extends Controller
         return view('pages.foundation', compact('heroImg', 'eduImg', 'healthImg'));
     }
 
+    public function foundationPartnerSubmit(Request $request)
+    {
+        $validated = $request->validate([
+            'name'              => 'required|string|max:150',
+            'email'             => 'required|email|max:255',
+            'phone'             => 'nullable|string|max:30',
+            'organisation'      => 'nullable|string|max:150',
+            'involvement_type'  => 'required|string|max:100',
+            'message'           => 'required|string|min:10|max:2000',
+            'honeypot'          => 'max:0',
+        ]);
+
+        $to   = env('MAIL_TO_ADDRESS', 'reception@cjglobalexpressgroup.com');
+        $body = "New CJ Global Foundation partnership/contribution enquiry:\n\n"
+              . "Name: {$validated['name']}\n"
+              . "Email: {$validated['email']}\n"
+              . "Phone: " . ($validated['phone'] ?? 'Not provided') . "\n"
+              . "Organisation: " . ($validated['organisation'] ?? 'Not provided') . "\n"
+              . "Type of Involvement: {$validated['involvement_type']}\n\n"
+              . "Message:\n{$validated['message']}";
+
+        mail($to, "CJ Global Foundation Enquiry — {$validated['name']}", $body,
+            "From: {$validated['email']}\r\nReply-To: {$validated['email']}");
+
+        return back()->with('foundation_success', 'Thank you for reaching out to the CJ Global Foundation. Our team will be in touch shortly.');
+    }
+
     public function footprint()
     {
         $offices = [

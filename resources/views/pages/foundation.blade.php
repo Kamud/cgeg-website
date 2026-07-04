@@ -279,15 +279,92 @@
     </div>
 </section>
 
-{{-- ── PARTNER CTA ── --}}
-<section class="section" style="text-align:center;">
-    <div class="container" style="max-width:600px;">
-        <div class="divider-gold" style="margin:0 auto var(--space-3);"></div>
-        <h2 class="reveal">Partner With the <em class="italic-gold">Foundation</em></h2>
-        <p style="color:var(--text-secondary);margin:var(--space-2) 0 var(--space-4);" class="reveal reveal-delay-1">
-            We welcome partnerships with NGOs, governments, corporates, and individuals who share our commitment to community upliftment across Southern Africa.
-        </p>
-        <a href="{{ route('contact') }}" class="btn btn-primary reveal reveal-delay-2">Get Involved</a>
+{{-- ── PARTNER / CONTRIBUTE FORM ── --}}
+<section class="section" style="background:var(--surface-raised);border-top:1px solid var(--border-subtle);">
+    <div class="container" style="max-width:640px;">
+        <div style="text-align:center;margin-bottom:var(--space-5);">
+            <div class="divider-gold reveal" style="margin:0 auto var(--space-3);"></div>
+            <div class="eyebrow reveal" style="justify-content:center;">Get Involved</div>
+            <h2 class="reveal reveal-delay-1">Partner With the <em class="italic-gold">Foundation</em></h2>
+            <p style="color:var(--text-secondary);margin-top:var(--space-2);" class="reveal reveal-delay-2">
+                We welcome well-wishers, NGOs, governments, and corporate partners who want to join us in community upliftment across Southern Africa — whether through a partnership or a direct contribution. Tell us how you'd like to get involved.
+            </p>
+        </div>
+
+        <div class="form-card reveal reveal-delay-3">
+            @if(session('foundation_success'))
+            <div class="form-success">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                {{ session('foundation_success') }}
+            </div>
+            @endif
+
+            <form action="{{ route('foundation.partner.submit') }}" method="POST" novalidate>
+                @csrf
+
+                {{-- Honeypot --}}
+                <div class="honeypot">
+                    <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label" for="foundation_name">Full Name <span style="color:var(--error);">*</span></label>
+                        <input class="form-input @error('name') error @enderror"
+                               type="text" id="foundation_name" name="name"
+                               value="{{ old('name') }}" placeholder="Your full name" required>
+                        @error('name')<div class="form-error-msg">{{ $message }}</div>@enderror
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="foundation_email">Email Address <span style="color:var(--error);">*</span></label>
+                        <input class="form-input @error('email') error @enderror"
+                               type="email" id="foundation_email" name="email"
+                               value="{{ old('email') }}" placeholder="you@example.com" required>
+                        @error('email')<div class="form-error-msg">{{ $message }}</div>@enderror
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label" for="foundation_phone">Phone Number</label>
+                        <input class="form-input"
+                               type="tel" id="foundation_phone" name="phone"
+                               value="{{ old('phone') }}" placeholder="+27 000 000 0000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="foundation_org">Organisation (if applicable)</label>
+                        <input class="form-input"
+                               type="text" id="foundation_org" name="organisation"
+                               value="{{ old('organisation') }}" placeholder="NGO, company, or government body">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="foundation_involvement">I'm interested in <span style="color:var(--error);">*</span></label>
+                    <select class="form-select @error('involvement_type') error @enderror" id="foundation_involvement" name="involvement_type" required>
+                        <option value="">— Select an option —</option>
+                        <option value="Strategic Partnership" {{ old('involvement_type') === 'Strategic Partnership' ? 'selected' : '' }}>Strategic Partnership (NGO / Government / Corporate)</option>
+                        <option value="Financial Contribution" {{ old('involvement_type') === 'Financial Contribution' ? 'selected' : '' }}>Financial Contribution / Donation</option>
+                        <option value="In-Kind Contribution" {{ old('involvement_type') === 'In-Kind Contribution' ? 'selected' : '' }}>In-Kind Contribution (goods, services, materials)</option>
+                        <option value="Volunteering" {{ old('involvement_type') === 'Volunteering' ? 'selected' : '' }}>Volunteering / Time Commitment</option>
+                        <option value="Well-Wisher" {{ old('involvement_type') === 'Well-Wisher' ? 'selected' : '' }}>General Well-Wisher / Other</option>
+                    </select>
+                    @error('involvement_type')<div class="form-error-msg">{{ $message }}</div>@enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="foundation_message">Message <span style="color:var(--error);">*</span></label>
+                    <textarea class="form-textarea @error('message') error @enderror"
+                              id="foundation_message" name="message"
+                              placeholder="Tell us about your organisation, your proposed contribution, or how you'd like to support the Foundation..." required>{{ old('message') }}</textarea>
+                    @error('message')<div class="form-error-msg">{{ $message }}</div>@enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:var(--space-1);">
+                    Submit Enquiry <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
     </div>
 </section>
 

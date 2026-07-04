@@ -20,6 +20,7 @@ Route::get('/divisions/{slug}', [PageController::class, 'division'])->name('divi
 
 // Corporate Pages
 Route::get('/foundation', [PageController::class, 'foundation'])->name('foundation');
+Route::post('/foundation/partner', [PageController::class, 'foundationPartnerSubmit'])->name('foundation.partner.submit');
 Route::get('/global-footprint', [PageController::class, 'footprint'])->name('footprint');
 Route::get('/leadership', [PageController::class, 'leadership'])->name('leadership');
 Route::get('/projects', [PageController::class, 'projects'])->name('projects');
