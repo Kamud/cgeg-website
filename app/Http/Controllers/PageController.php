@@ -359,17 +359,14 @@ class PageController extends Controller
             'honeypot'          => 'max:0',
         ]);
 
-        $to   = env('MAIL_TO_ADDRESS', 'reception@cjglobalexpressgroup.com');
-        $body = "New CJ Global Foundation partnership/contribution enquiry:\n\n"
-              . "Name: {$validated['name']}\n"
-              . "Email: {$validated['email']}\n"
-              . "Phone: " . ($validated['phone'] ?? 'Not provided') . "\n"
-              . "Organisation: " . ($validated['organisation'] ?? 'Not provided') . "\n"
-              . "Type of Involvement: {$validated['involvement_type']}\n\n"
-              . "Message:\n{$validated['message']}";
-
-        mail($to, "CJ Global Foundation Enquiry — {$validated['name']}", $body,
-            "From: {$validated['email']}\r\nReply-To: {$validated['email']}");
+        \App\Models\FoundationPartner::create([
+            'name'             => $validated['name'],
+            'email'            => $validated['email'],
+            'phone'            => $validated['phone'] ?? null,
+            'organisation'     => $validated['organisation'] ?? null,
+            'involvement_type' => $validated['involvement_type'],
+            'message'          => $validated['message'],
+        ]);
 
         return back()->with('foundation_success', 'Thank you for reaching out to the CJ Global Foundation. Our team will be in touch shortly.');
     }
