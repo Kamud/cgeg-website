@@ -476,15 +476,15 @@ class PageController extends Controller
                 ],
             ],
             'sandton-hydon-park-mall' => [
-                'title'       => 'US$10–15M Mall Set for Sandton Hydon Park, West of Harare',
+                'title'       => 'US$800–900M Mall Set for Sandton Hydon Park, West of Harare',
                 'category'    => 'Zimbabwe Return',
                 'date'        => '2026-03-05',
                 'source'      => 'The Herald',
                 'source_url'  => 'https://www.herald.co.zw/sa-based-conglomerate-to-build-us15m-mall-in-harare/',
                 'image'       => asset('images/pages/news/news-sandton-mall.jpg'),
-                'excerpt'     => 'CGEG has announced plans to build a US$10–15 million, two-storey mall at Sandton Hydon Park — the Group\'s first major Zimbabwe investment in 17 years, expected to create up to 5,000 jobs.',
+                'excerpt'     => 'CGEG has announced plans to build a million dollar, two-storey mall at Sandton Hydon Park — the Group\'s first major Zimbabwe investment in 17 years, expected to create up to 5,000 jobs.',
                 'body'        => [
-                    'CJ Global Express Group Unlimited has announced plans to build a modern, two-storey mall at Sandton Hydon Park, west of Harare, in a project estimated at US$10–15 million. Founder Prof. Clemence Jaricha said the development will include retail shops, office space, and a service station, bringing a modern shopping experience to the local community.',
+                    'CJ Global Express Group Unlimited has announced plans to build a modern, two-storey mall at Sandton Hydon Park, west of Harare, in a project estimated at US$800 million. Founder Prof. Clemence Jaricha said the development will include retail shops, office space, and a service station, bringing a modern shopping experience to the local community.',
                     'The mall marks the Group\'s return to Zimbabwe after relocating its base to South Africa in 2008 amid difficult local economic conditions. "We are using this project as a way of reintegrating into the Zimbabwe economy, and we hope that this will influence other investors to follow suit," Prof. Jaricha said.',
                     'Construction is projected to create between 2,000 and 5,000 new jobs. The project will be carried out in partnership with Delatfin Investment Pty Ltd, a Zimbabwean company owned by businessman Clemence Zingoni, drawing on CGEG\'s prior experience delivering mall developments in Durban and Greenville, South Africa.',
                     'The development is widely seen as a signal of renewed diaspora investor confidence in Zimbabwe, with commentators noting that even modest levels of reinvestment by Zimbabweans abroad could meaningfully accelerate the country\'s economic development.',

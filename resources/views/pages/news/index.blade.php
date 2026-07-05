@@ -122,7 +122,7 @@
 @endphp
 
 {{-- ── FEATURED ARTICLE ── --}}
-<section class="section" style="padding-top:0;">
+<section class="section" style="padding-top:30px;">
     <div class="container">
         <a href="{{ route('news.show', $featuredSlug) }}" class="news-feature reveal" style="text-decoration:none;">
             <img src="{{ $featured['image'] }}" alt="{{ $featured['title'] }}" class="news-feature-img">

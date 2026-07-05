@@ -321,7 +321,7 @@
             <div class="person-card reveal" style="transition-delay:{{ $i * 80 }}ms;">
                 {{-- [IMAGE SLOT] dir-{{ Str::slug($director['name']) }} | 400×400px — professional headshot --}}
                 <div class="person-avatar">
-                    <img src="{{ asset('images/pages/leadership/grant.jpg') }}" alt="Director" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                    <img src="{{ $director['image']}}" alt="Director" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
                 </div>
                 <div class="person-name">{{ $director['name'] }}</div>
                 <div class="person-role">{{ $director['title'] }}</div>
@@ -338,15 +338,15 @@
             <div class="eyebrow reveal">Management</div>
             <h2 class="reveal reveal-delay-1">The Team Behind<br><em class="italic-gold">Operations</em></h2>
         </div>
-        <div class="mgmt-grid">
+        <div class="directors-grid">
             @foreach($team['management'] as $i => $member)
-            <div class="mgmt-item reveal" style="transition-delay:{{ $i * 60 }}ms;">
-                <div class="mgmt-avatar-sm" style="overflow:hidden;padding:0;"><img src="{{ asset('images/pages/leadership/kapongo.jpg') }}" alt="Team member" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-                <div>
-                    <div class="mgmt-name">{{ $member['name'] }}</div>
-                    <div class="mgmt-role">{{ $member['title'] }}</div>
+                <div class="person-card reveal" style="transition-delay:{{ $i * 80 }}ms;">
+                    <div class="person-avatar">
+                        <img src="{{ $member['image']}}" alt="Director" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                    </div>
+                    <div class="person-name">{{ $member['name'] }}</div>
+                    <div class="person-role">{{ $member['title'] }}</div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>

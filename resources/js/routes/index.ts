@@ -854,8 +854,86 @@ projects.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     
     projects.form = projectsForm
 /**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+export const news = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: news.url(options),
+    method: 'get',
+})
+
+news.definition = {
+    methods: ["get","head"],
+    url: '/news',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+news.url = (options?: RouteQueryOptions) => {
+    return news.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+news.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: news.url(options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+news.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: news.url(options),
+    method: 'head',
+})
+
+    /**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+    const newsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: news.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+        newsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: news.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\PageController::news
+ * @see app/Http/Controllers/PageController.php:541
+ * @route '/news'
+ */
+        newsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: news.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    news.form = newsForm
+/**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
 export const contact = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -870,7 +948,7 @@ contact.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
 contact.url = (options?: RouteQueryOptions) => {
@@ -879,7 +957,7 @@ contact.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
 contact.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -888,7 +966,7 @@ contact.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
 contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -898,7 +976,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
     const contactForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -908,7 +986,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
         contactForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -917,7 +995,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:453
+ * @see app/Http/Controllers/PageController.php:560
  * @route '/contact'
  */
         contactForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
