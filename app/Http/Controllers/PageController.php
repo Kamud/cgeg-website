@@ -450,6 +450,113 @@ class PageController extends Controller
         return view('pages.projects', compact('projects'));
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | News — hardcoded summaries of published third-party media coverage
+    |--------------------------------------------------------------------------
+    | Each entry summarises an external article in our own words and links
+    | back to the original publisher. No content is reproduced verbatim.
+    */
+    private function newsData(): array
+    {
+        return [
+            'cgeg-enters-europe-london' => [
+                'title'       => 'CGEG Enters Europe With London Acquisition',
+                'category'    => 'International Expansion',
+                'date'        => '2026-05-06',
+                'source'      => 'The Herald',
+                'source_url'  => 'https://www.heraldonline.co.zw/cj-global-express-group-unlimited-eyes-europe/',
+                'image'       => asset('images/pages/news/news-europe-expansion.jpg'),
+                'excerpt'     => 'CGEG has acquired a prime commercial property in London, marking its first entry into the European market and a strategic push beyond logistics into hospitality and wellness.',
+                'body'        => [
+                    'CJ Global Express Group Unlimited has acquired a prime commercial property in London, marking its official entry into the European market. Group founder and chairman Prof. Clemence Jaricha described the move as part of a wider strategic shift to diversify beyond logistics into hospitality and wellness.',
+                    'The London site is set to host CJ Restaurants & Nightclubs and a CJ Global Spa location, extending the Group\'s hospitality and wellness offering to a new continent. Prof. Jaricha framed the acquisition as more than geographic growth, describing it as part of building "a global African brand."',
+                    'The holding company now oversees a portfolio spanning logistics, construction and property, hospitality and wellness, and retail — including CJ Global Mall and CJ Vodka Premium Spirits. The London deal places CGEG among a small group of African-owned multinationals establishing a front-line presence in Europe\'s hospitality and wellness sectors.',
+                    'Alongside its commercial growth, the Group continues to invest in community development through the CJ Global Foundation, which supports philanthropy, humanitarian aid, and local development across Zimbabwe. Prof. Jaricha, recently nominated for the 2025 Zimbabwe Men of the Year Awards, has been a vocal advocate for job creation and value addition among young Zimbabwean entrepreneurs.',
+                ],
+            ],
+            'sandton-hydon-park-mall' => [
+                'title'       => 'US$10–15M Mall Set for Sandton Hydon Park, West of Harare',
+                'category'    => 'Zimbabwe Return',
+                'date'        => '2026-03-05',
+                'source'      => 'The Herald',
+                'source_url'  => 'https://www.herald.co.zw/sa-based-conglomerate-to-build-us15m-mall-in-harare/',
+                'image'       => asset('images/pages/news/news-sandton-mall.jpg'),
+                'excerpt'     => 'CGEG has announced plans to build a US$10–15 million, two-storey mall at Sandton Hydon Park — the Group\'s first major Zimbabwe investment in 17 years, expected to create up to 5,000 jobs.',
+                'body'        => [
+                    'CJ Global Express Group Unlimited has announced plans to build a modern, two-storey mall at Sandton Hydon Park, west of Harare, in a project estimated at US$10–15 million. Founder Prof. Clemence Jaricha said the development will include retail shops, office space, and a service station, bringing a modern shopping experience to the local community.',
+                    'The mall marks the Group\'s return to Zimbabwe after relocating its base to South Africa in 2008 amid difficult local economic conditions. "We are using this project as a way of reintegrating into the Zimbabwe economy, and we hope that this will influence other investors to follow suit," Prof. Jaricha said.',
+                    'Construction is projected to create between 2,000 and 5,000 new jobs. The project will be carried out in partnership with Delatfin Investment Pty Ltd, a Zimbabwean company owned by businessman Clemence Zingoni, drawing on CGEG\'s prior experience delivering mall developments in Durban and Greenville, South Africa.',
+                    'The development is widely seen as a signal of renewed diaspora investor confidence in Zimbabwe, with commentators noting that even modest levels of reinvestment by Zimbabweans abroad could meaningfully accelerate the country\'s economic development.',
+                ],
+            ],
+            'rise-of-a-visionary-prof-jaricha' => [
+                'title'       => "The Rise of a Visionary: Prof. Jaricha's Legacy",
+                'category'    => 'Profile',
+                'date'        => '2025-02-14',
+                'source'      => 'Businessbeat 24',
+                'source_url'  => 'https://businessbeat24.com/the-rise-of-a-visionary-prof-clemence-jaricha-and-the-legacy-of-cj-global-express-group-unlimited/',
+                'image'       => asset('images/pages/news/news-legacy-feature.jpg'),
+                'excerpt'     => 'A profile of founder Prof. Clemence Jaricha traces his journey from humble beginnings in Zimbabwe to building a diversified, 32-country business empire — and the philanthropy behind it.',
+                'body'        => [
+                    'A feature profile examines the career of Prof. Clemence Jaricha, the Zimbabwean-born founder and chairman of CJ Global Express Group Unlimited, describing his path from modest beginnings to leading a diversified business empire now present in over 32 countries.',
+                    'The article traces the Group\'s growth across transport, construction, hospitality, real estate, beauty, and mining, framing Prof. Jaricha\'s approach as rooted in the belief that investment in core industries is key to Africa\'s economic transformation. It highlights flagship ventures including CJ Night Clubs and Restaurants, CJ Global Beauty Spa, CJ Global Construction, and CJ Global Mall.',
+                    'Particular attention is given to CJ Global Construction\'s affordable housing work in South Africa\'s Mpumalanga Province, and to CJ Global Mall\'s Johannesburg flagship, described as home to more than 100 stores and a range of dining and entertainment options.',
+                    'The profile also covers Prof. Jaricha\'s philanthropy through the CJ Global Foundation, which supports vulnerable children and grandparents across Southern Africa through initiatives including orphan life-insurance cover and school supply donations in Zimbabwe, Botswana, and Zambia — work he connects to his own experience growing up as an orphan.',
+                ],
+            ],
+            'cj-vodka-chicago-launch' => [
+                'title'       => 'CJ Vodka Premium Spirits Launches in Chicago',
+                'category'    => 'US Expansion',
+                'date'        => '2025-09-02',
+                'source'      => 'Businessbeat 24',
+                'source_url'  => 'https://businessbeat24.com/cj-global-expands-to-america-with-chicago-spirits-division/',
+                'image'       => asset('images/pages/news/news-chicago-spirits.jpg'),
+                'excerpt'     => 'CGEG has expanded into the United States with the launch of CJ Vodka Premium Spirits in Chicago, following a US$185 million building acquisition — the Group\'s eighth division.',
+                'body'        => [
+                    'CJ Global Express Group Unlimited has announced its expansion into the United States with the launch of CJ Vodka Premium Spirits in Chicago, following a US$185 million acquisition of a Chicago building — one of the highest-profile international investments by a Zimbabwean-owned private group in recent years.',
+                    'Headquartered in Southern Africa, CGEG operates across 56 countries spanning construction, mining, logistics, real estate, retail, nightlife, beauty, and hospitality. The move into premium spirits represents both diversification and a deliberate step onto the global stage.',
+                    'Prof. Jaricha said the Group\'s manufacturing base will remain firmly rooted in Africa, with hubs planned for KwaZulu-Natal, South Africa, and Lesotho, alongside the new Chicago facility. He also confirmed plans for further shopping mall developments in Zimbabwe and South Africa\'s Eastern Cape province.',
+                    'The Vodka launch is described as the Group\'s eighth division and one of its most ambitious moves yet into a competitive US consumer market, underscoring a broader trend of African entrepreneurs building globally competitive brands rooted in African manufacturing.',
+                ],
+            ],
+            'cgeg-eighth-division-manufacturing' => [
+                'title'       => 'CGEG Opens Eighth Division, Eyes New Manufacturing Hub',
+                'category'    => 'Group Growth',
+                'date'        => '2025-09-01',
+                'source'      => 'The Herald',
+                'source_url'  => 'https://www.heraldonline.co.zw/cj-global-expands-global-footprint/',
+                'image'       => asset('images/pages/news/news-eighth-division.jpg'),
+                'excerpt'     => 'Prof. Jaricha has confirmed CGEG\'s eighth division, CJ Vodka Premium Spirit, alongside plans for new manufacturing hubs and mall developments in Zimbabwe.',
+                'body'        => [
+                    'Prof. Clemence Jaricha has confirmed the opening of an eighth division under CJ Global Express Group Unlimited, following the acquisition of a building in Chicago, United States, where the new unit will operate as CJ Vodka Premium Spirit, manufacturing spirits for the US market.',
+                    'Beyond Chicago, Prof. Jaricha said the Group is setting up manufacturing hubs in KwaZulu-Natal, South Africa, and in Lesotho, with negotiations underway with the Zimbabwean government for an additional manufacturing site.',
+                    'The development ties in with plans to expand further into Zimbabwe through new shopping mall developments along Mutare Road and in Masvingo, Prof. Jaricha\'s hometown. CGEG, present in 56 countries, already operates seven other divisions spanning malls, construction, beauty spas, transport, and nightlife and restaurants.',
+                    'The announcement reinforces CGEG\'s pattern of pairing international diversification — most recently into premium spirits manufacturing — with continued reinvestment in its home market of Zimbabwe.',
+                ],
+            ],
+        ];
+    }
+
+    public function news()
+    {
+        $articles = $this->newsData();
+        return view('pages.news.index', compact('articles'));
+    }
+
+    public function newsArticle(string $slug)
+    {
+        $articles = $this->newsData();
+        abort_unless(isset($articles[$slug]), 404);
+
+        $article = $articles[$slug];
+        $related = collect($articles)
+            ->except($slug)
+            ->take(3);
+
+        return view('pages.news.show', compact('article', 'related', 'slug'));
+    }
+
     public function contact()
     {
         $divisions = array_column($this->divisionsData(), 'name');

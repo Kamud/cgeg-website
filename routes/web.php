@@ -25,6 +25,10 @@ Route::get('/global-footprint', [PageController::class, 'footprint'])->name('foo
 Route::get('/leadership', [PageController::class, 'leadership'])->name('leadership');
 Route::get('/projects', [PageController::class, 'projects'])->name('projects');
 
+// News
+Route::get('/news', [PageController::class, 'news'])->name('news');
+Route::get('/news/{slug}', [PageController::class, 'newsArticle'])->name('news.show');
+
 // Contact
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'contactSubmit'])->name('contact.submit');

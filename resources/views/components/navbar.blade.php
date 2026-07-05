@@ -197,6 +197,7 @@ body.menu-open { overflow: hidden; }
             <li><a href="{{ route('footprint') }}"  class="{{ request()->routeIs('footprint')   ? 'active' : '' }}">Footprint</a></li>
             <li><a href="{{ route('foundation') }}" class="{{ request()->routeIs('foundation')  ? 'active' : '' }}">Foundation</a></li>
             <li><a href="{{ route('leadership') }}" class="{{ request()->routeIs('leadership')  ? 'active' : '' }}">Leadership</a></li>
+            <li><a href="{{ route('news') }}"       class="{{ request()->routeIs('news*')       ? 'active' : '' }}">News</a></li>
         </ul>
 
         <div class="nav-right">
@@ -230,6 +231,7 @@ body.menu-open { overflow: hidden; }
     </div>
     <div class="mobile-menu-item">
         <a href="{{ route('leadership') }}" class="mobile-menu-link {{ request()->routeIs('leadership')  ? 'active' : '' }}">Leadership <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+        <a href="{{ route('news') }}"       class="mobile-menu-link {{ request()->routeIs('news*')       ? 'active' : '' }}">News       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
     </div>
     <div class="mobile-divider mobile-menu-item"></div>
     <div class="mobile-cta-wrap mobile-menu-item">
