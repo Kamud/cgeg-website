@@ -292,14 +292,18 @@
         </div>
 
         <div class="form-card reveal reveal-delay-3">
-            @if(session('foundation_success'))
-            <div class="form-success">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                {{ session('foundation_success') }}
-            </div>
-            @endif
 
-            <form action="{{ route('foundation.partner.submit') }}" method="POST" novalidate>
+            <div id="foundation-alert-success" class="form-success" style="display:none;">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span id="foundation-alert-success-text"></span>
+            </div>
+
+            <div id="foundation-alert-error" class="form-error-banner" style="display:none;">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                <span id="foundation-alert-error-text"></span>
+            </div>
+
+            <form id="foundation-partner-form" action="{{ route('foundation.partner.submit') }}" method="POST" novalidate>
                 @csrf
 
                 {{-- Honeypot --}}
@@ -310,38 +314,36 @@
                 <div class="form-grid-2">
                     <div class="form-group">
                         <label class="form-label" for="foundation_name">Full Name <span style="color:var(--error);">*</span></label>
-                        <input class="form-input @error('name') error @enderror"
-                               type="text" id="foundation_name" name="name"
+                        <input class="form-input" type="text" id="foundation_name" name="name"
                                value="{{ old('name') }}" placeholder="Your full name" required>
-                        @error('name')<div class="form-error-msg">{{ $message }}</div>@enderror
+                        <div class="form-error-msg" data-error-for="name"></div>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="foundation_email">Email Address <span style="color:var(--error);">*</span></label>
-                        <input class="form-input @error('email') error @enderror"
-                               type="email" id="foundation_email" name="email"
+                        <input class="form-input" type="email" id="foundation_email" name="email"
                                value="{{ old('email') }}" placeholder="you@example.com" required>
-                        @error('email')<div class="form-error-msg">{{ $message }}</div>@enderror
+                        <div class="form-error-msg" data-error-for="email"></div>
                     </div>
                 </div>
 
                 <div class="form-grid-2">
                     <div class="form-group">
                         <label class="form-label" for="foundation_phone">Phone Number</label>
-                        <input class="form-input"
-                               type="tel" id="foundation_phone" name="phone"
+                        <input class="form-input" type="tel" id="foundation_phone" name="phone"
                                value="{{ old('phone') }}" placeholder="+27 000 000 0000">
+                        <div class="form-error-msg" data-error-for="phone"></div>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="foundation_org">Organisation (if applicable)</label>
-                        <input class="form-input"
-                               type="text" id="foundation_org" name="organisation"
+                        <input class="form-input" type="text" id="foundation_org" name="organisation"
                                value="{{ old('organisation') }}" placeholder="NGO, company, or government body">
+                        <div class="form-error-msg" data-error-for="organisation"></div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="foundation_involvement">I'm interested in <span style="color:var(--error);">*</span></label>
-                    <select class="form-select @error('involvement_type') error @enderror" id="foundation_involvement" name="involvement_type" required>
+                    <select class="form-select" id="foundation_involvement" name="involvement_type" required>
                         <option value="">— Select an option —</option>
                         <option value="Strategic Partnership" {{ old('involvement_type') === 'Strategic Partnership' ? 'selected' : '' }}>Strategic Partnership (NGO / Government / Corporate)</option>
                         <option value="Financial Contribution" {{ old('involvement_type') === 'Financial Contribution' ? 'selected' : '' }}>Financial Contribution / Donation</option>
@@ -349,23 +351,142 @@
                         <option value="Volunteering" {{ old('involvement_type') === 'Volunteering' ? 'selected' : '' }}>Volunteering / Time Commitment</option>
                         <option value="Well-Wisher" {{ old('involvement_type') === 'Well-Wisher' ? 'selected' : '' }}>General Well-Wisher / Other</option>
                     </select>
-                    @error('involvement_type')<div class="form-error-msg">{{ $message }}</div>@enderror
+                    <div class="form-error-msg" data-error-for="involvement_type"></div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="foundation_message">Message <span style="color:var(--error);">*</span></label>
-                    <textarea class="form-textarea @error('message') error @enderror"
-                              id="foundation_message" name="message"
+                    <textarea class="form-textarea" id="foundation_message" name="message"
                               placeholder="Tell us about your organisation, your proposed contribution, or how you'd like to support the Foundation..." required>{{ old('message') }}</textarea>
-                    @error('message')<div class="form-error-msg">{{ $message }}</div>@enderror
+                    <div class="form-error-msg" data-error-for="message"></div>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:var(--space-1);">
-                    Submit Enquiry <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                <button type="submit" id="foundation-submit-btn" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:var(--space-1);">
+                    <span id="foundation-submit-label">Submit Enquiry</span>
+                    <i id="foundation-submit-icon" class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
                 </button>
             </form>
         </div>
     </div>
 </section>
+
+<style>
+.form-error-banner {
+    background: var(--error-bg);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-radius: var(--radius-input);
+    padding: var(--space-2);
+    color: var(--error);
+    font-size: var(--text-body);
+    margin-bottom: var(--space-3);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+#foundation-submit-icon.spinning {
+    animation: foundation-spin 0.7s linear infinite;
+}
+@keyframes foundation-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.form-input.error, .form-select.error, .form-textarea.error {
+    border-color: var(--error);
+}
+</style>
+
+<script>
+(function () {
+    var form = document.getElementById('foundation-partner-form');
+    if (!form) return;
+
+    var submitBtn = document.getElementById('foundation-submit-btn');
+    var submitLabel = document.getElementById('foundation-submit-label');
+    var submitIcon = document.getElementById('foundation-submit-icon');
+    var successBox = document.getElementById('foundation-alert-success');
+    var successText = document.getElementById('foundation-alert-success-text');
+    var errorBox = document.getElementById('foundation-alert-error');
+    var errorText = document.getElementById('foundation-alert-error-text');
+
+    function clearFieldErrors() {
+        form.querySelectorAll('[data-error-for]').forEach(function (el) { el.textContent = ''; });
+        form.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(function (el) {
+            el.classList.remove('error');
+        });
+    }
+
+    function showFieldErrors(errors) {
+        Object.keys(errors).forEach(function (field) {
+            var msgEl = form.querySelector('[data-error-for="' + field + '"]');
+            var inputEl = form.querySelector('[name="' + field + '"]');
+            if (msgEl) msgEl.textContent = errors[field][0];
+            if (inputEl) inputEl.classList.add('error');
+        });
+    }
+
+    function setLoading(isLoading) {
+        submitBtn.disabled = isLoading;
+        submitBtn.style.opacity = isLoading ? '0.7' : '1';
+        submitBtn.style.cursor = isLoading ? 'not-allowed' : 'pointer';
+        submitLabel.textContent = isLoading ? 'Submitting…' : 'Submit Enquiry';
+        submitIcon.className = isLoading
+            ? 'fa-solid fa-spinner spinning'
+            : 'fa-solid fa-hand-holding-heart';
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        successBox.style.display = 'none';
+        errorBox.style.display = 'none';
+        clearFieldErrors();
+        setLoading(true);
+
+        var formData = new FormData(form);
+        var csrfToken = form.querySelector('input[name="_token"]').value;
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': csrfToken,
+            },
+            body: formData,
+        })
+        .then(function (response) {
+            return response.json().then(function (data) {
+                return { status: response.status, ok: response.ok, data: data };
+            });
+        })
+        .then(function (result) {
+            setLoading(false);
+
+            if (result.ok) {
+                successText.textContent = result.data.message;
+                successBox.style.display = 'flex';
+                form.reset();
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            if (result.status === 422 && result.data.errors) {
+                showFieldErrors(result.data.errors);
+                errorText.textContent = 'Please fix the highlighted fields below and try again.';
+                errorBox.style.display = 'flex';
+                return;
+            }
+
+            errorText.textContent = result.data.message || 'Something went wrong. Please try again or email us directly at reception@cjglobalexpressgroup.com.';
+            errorBox.style.display = 'flex';
+        })
+        .catch(function () {
+            setLoading(false);
+            errorText.textContent = 'We couldn\'t reach the server. Please check your connection and try again, or email us directly at reception@cjglobalexpressgroup.com.';
+            errorBox.style.display = 'flex';
+        });
+    });
+})();
+</script>
 
 @endsection

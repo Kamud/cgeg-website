@@ -359,16 +359,34 @@ class PageController extends Controller
             'honeypot'          => 'max:0',
         ]);
 
-        \App\Models\FoundationPartner::create([
-            'name'             => $validated['name'],
-            'email'            => $validated['email'],
-            'phone'            => $validated['phone'] ?? null,
-            'organisation'     => $validated['organisation'] ?? null,
-            'involvement_type' => $validated['involvement_type'],
-            'message'          => $validated['message'],
-        ]);
+        try {
+            \App\Models\FoundationPartner::create([
+                'name'             => $validated['name'],
+                'email'            => $validated['email'],
+                'phone'            => $validated['phone'] ?? null,
+                'organisation'     => $validated['organisation'] ?? null,
+                'involvement_type' => $validated['involvement_type'],
+                'message'          => $validated['message'],
+            ]);
+        } catch (\Throwable $e) {
+            report($e);
 
-        return back()->with('foundation_success', 'Thank you for reaching out to the CJ Global Foundation. Our team will be in touch shortly.');
+            if ($request->wantsJson()) {
+                return response()->json([
+                    'message' => 'Something went wrong on our end and your enquiry was not saved. Please try again, or email us directly at reception@cjglobalexpressgroup.com.',
+                ], 500);
+            }
+
+            return back()->withInput()->with('foundation_error', 'Something went wrong on our end and your enquiry was not saved. Please try again, or email us directly at reception@cjglobalexpressgroup.com.');
+        }
+
+        $successMessage = 'Thank you for reaching out to the CJ Global Foundation. Our team will be in touch shortly.';
+
+        if ($request->wantsJson()) {
+            return response()->json(['message' => $successMessage]);
+        }
+
+        return back()->with('foundation_success', $successMessage);
     }
 
     public function footprint()
