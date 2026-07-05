@@ -131,8 +131,7 @@
         <div class="divisions-grid">
             @foreach($divisions as $slug => $division)
             <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms;text-decoration:none;">
-                <div class="card-icon"><?php
-<i class="{{ $division['icon'] }}" aria-hidden="true"></i>
+                <div class="card-icon"><i class="{{ $division['icon'] }}" aria-hidden="true"></i></div>
                 <div class="card-title">{{ $division['name'] }}</div>
                 <div class="card-desc">{{ Str::limit($division['description'], 88) }}</div>
                 <div class="card-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
