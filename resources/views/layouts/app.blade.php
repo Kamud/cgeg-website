@@ -12,8 +12,8 @@
     <meta name="author" content="CJ Global Express Group Unlimited">
 
     {{-- Open Graph --}}
-    <meta property="og:title" content="@yield('og_title', @yield('title', 'CJ Global Express Group Unlimited'))">
-    <meta property="og:description" content="@yield('og_description', @yield('meta_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.'))">
+    <meta property="og:title" content="@yield('og_title', $__env->yieldContent('title', 'CJ Global Express Group Unlimited'))">
+    <meta property="og:description" content="@yield('og_description', $__env->yieldContent('meta_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.'))">
     <meta property="og:image" content="{{ asset('images/og-preview.jpg') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,8 +24,8 @@
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('og_title', @yield('title', 'CJ Global Express Group Unlimited'))">
-    <meta name="twitter:description" content="@yield('og_description', @yield('meta_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.'))">
+    <meta name="twitter:title" content="@yield('og_title', $__env->yieldContent('title', 'CJ Global Express Group Unlimited'))">
+    <meta name="twitter:description" content="@yield('og_description', $__env->yieldContent('meta_description', 'A diversified global conglomerate operating in 32+ countries across 9 divisions.'))">
     <meta name="twitter:image" content="{{ asset('images/og-preview.jpg') }}">
 
     {{-- Favicon — all formats for broad browser/device support --}}
