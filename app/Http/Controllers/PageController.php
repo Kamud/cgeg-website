@@ -333,9 +333,23 @@ class PageController extends Controller
         $division       = $divisions[$slug];
         $otherDivisions = array_filter($divisions, fn($d) => $d['slug'] !== $slug);
 
-        if ($slug === 'spirits') {
-            return view('pages.divisions.spirits', compact('division', 'otherDivisions'));
+        // Each division now has its own hardcoded view (own layout, mood, and image slots)
+        // rather than sharing the generic pages.divisions.show template.
+        $hardcodedViews = [
+            'construction' => 'pages.divisions.construction',
+            'mining'       => 'pages.divisions.mining',
+            'logistics'    => 'pages.divisions.logistics',
+            'mall'         => 'pages.divisions.mall',
+            'hospitality'  => 'pages.divisions.hospitality',
+            'wellness'     => 'pages.divisions.wellness',
+            'properties'   => 'pages.divisions.properties',
+            'spirits'      => 'pages.divisions.spirits',
+        ];
+
+        if (isset($hardcodedViews[$slug])) {
+            return view($hardcodedViews[$slug], compact('division', 'otherDivisions'));
         }
+
         return view('pages.divisions.show', compact('division', 'otherDivisions'));
     }
 
