@@ -543,7 +543,7 @@ division.head = (args: { slug: string | number } | [slug: string | number ] | st
     division.form = divisionForm
 /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
 export const foundation = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -558,7 +558,7 @@ foundation.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
 foundation.url = (options?: RouteQueryOptions) => {
@@ -567,7 +567,7 @@ foundation.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
 foundation.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -576,7 +576,7 @@ foundation.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
 foundation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -586,7 +586,7 @@ foundation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
     const foundationForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -596,7 +596,7 @@ foundation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
         foundationForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -605,7 +605,7 @@ foundation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::foundation
- * @see app/Http/Controllers/PageController.php:342
+ * @see app/Http/Controllers/PageController.php:356
  * @route '/foundation'
  */
         foundationForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -621,7 +621,7 @@ foundation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     foundation.form = foundationForm
 /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
 export const footprint = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -636,7 +636,7 @@ footprint.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
 footprint.url = (options?: RouteQueryOptions) => {
@@ -645,7 +645,7 @@ footprint.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
 footprint.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -654,7 +654,7 @@ footprint.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
 footprint.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -664,7 +664,7 @@ footprint.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
     const footprintForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -674,7 +674,7 @@ footprint.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
         footprintForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -683,7 +683,7 @@ footprint.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::footprint
- * @see app/Http/Controllers/PageController.php:392
+ * @see app/Http/Controllers/PageController.php:406
  * @route '/global-footprint'
  */
         footprintForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -699,7 +699,7 @@ footprint.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     footprint.form = footprintForm
 /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
 export const leadership = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -714,7 +714,7 @@ leadership.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
 leadership.url = (options?: RouteQueryOptions) => {
@@ -723,7 +723,7 @@ leadership.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
 leadership.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -732,7 +732,7 @@ leadership.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
 leadership.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -742,7 +742,7 @@ leadership.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
     const leadershipForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -752,7 +752,7 @@ leadership.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
         leadershipForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -761,7 +761,7 @@ leadership.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::leadership
- * @see app/Http/Controllers/PageController.php:403
+ * @see app/Http/Controllers/PageController.php:417
  * @route '/leadership'
  */
         leadershipForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -777,7 +777,7 @@ leadership.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     leadership.form = leadershipForm
 /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
 export const projects = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -792,7 +792,7 @@ projects.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
 projects.url = (options?: RouteQueryOptions) => {
@@ -801,7 +801,7 @@ projects.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
 projects.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -810,7 +810,7 @@ projects.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
 projects.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -820,7 +820,7 @@ projects.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
     const projectsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -830,7 +830,7 @@ projects.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
         projectsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -839,7 +839,7 @@ projects.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::projects
- * @see app/Http/Controllers/PageController.php:410
+ * @see app/Http/Controllers/PageController.php:424
  * @route '/projects'
  */
         projectsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -855,7 +855,7 @@ projects.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     projects.form = projectsForm
 /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
 export const news = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -870,7 +870,7 @@ news.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
 news.url = (options?: RouteQueryOptions) => {
@@ -879,7 +879,7 @@ news.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
 news.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -888,7 +888,7 @@ news.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
 news.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -898,7 +898,7 @@ news.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
     const newsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -908,7 +908,7 @@ news.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
         newsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -917,7 +917,7 @@ news.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::news
- * @see app/Http/Controllers/PageController.php:541
+ * @see app/Http/Controllers/PageController.php:570
  * @route '/news'
  */
         newsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -933,7 +933,7 @@ news.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     news.form = newsForm
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
 export const contact = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -948,7 +948,7 @@ contact.definition = {
 
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
 contact.url = (options?: RouteQueryOptions) => {
@@ -957,7 +957,7 @@ contact.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
 contact.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -966,7 +966,7 @@ contact.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
 contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -976,7 +976,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
     const contactForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -986,7 +986,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
         contactForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -995,7 +995,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PageController::contact
- * @see app/Http/Controllers/PageController.php:560
+ * @see app/Http/Controllers/PageController.php:589
  * @route '/contact'
  */
         contactForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

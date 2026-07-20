@@ -54,7 +54,7 @@
         <div class="dk-about-grid">
             <div>
                 <div class="dk-eyebrow reveal">Beneath the Surface</div>
-                <h2 class="reveal reveal-delay-1">Responsible <em class="italic-gold">Extraction</em></h2>
+                <h2 class="reveal reveal-delay-1 text-muted">Responsible <em class="italic-gold">Extraction</em></h2>
                 <p class="reveal reveal-delay-2">{{ $division['description'] }}</p>
                 <p class="reveal reveal-delay-2">{{ $division['body'] }}</p>
                 <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-4);">
@@ -80,7 +80,7 @@
     <div class="container">
         <div style="margin-bottom:var(--space-5);">
             <div class="dk-eyebrow reveal">What We Offer</div>
-            <h2 class="reveal reveal-delay-1">Services &amp; <em class="italic-gold">Offerings</em></h2>
+            <h2 class="reveal reveal-delay-1 text-muted">Services &amp; <em class="italic-gold">Offerings</em></h2>
         </div>
         <div class="grid-4">
             @foreach($division['services'] as $i => $service)
@@ -118,7 +118,7 @@
 <div class="dk-cta">
     <div class="container">
         <div class="dk-line" style="margin:0 auto var(--space-3);"></div>
-        <h2 class="reveal">Partner With <em class="italic-gold">CJ Global Mining</em></h2>
+        <h2 class="reveal text-muted">Partner With <em class="italic-gold">CJ Global Mining</em></h2>
         <p class="reveal reveal-delay-1">Whether you're an exploration partner, off-taker, or supplier — we're building responsible mining partnerships across the region.</p>
         <div style="display:flex;gap:var(--space-2);justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
             <a href="{{ route('contact') }}?division={{ urlencode($division['name']) }}" class="btn btn-primary">Get in Touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
@@ -134,7 +134,7 @@
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-3);">
             <div>
                 <div class="dk-eyebrow">Explore More</div>
-                <h3 style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-top:4px;">Other <em class="italic-gold">Divisions</em></h3>
+                <h3 class="text-muted" style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-top:4px;">Other <em class="italic-gold">Divisions</em></h3>
             </div>
             <a href="{{ route('divisions') }}" class="btn btn-ghost">View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>

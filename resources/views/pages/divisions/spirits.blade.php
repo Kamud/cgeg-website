@@ -311,7 +311,7 @@
         <div class="spirits-about-grid">
             <div>
                 <div class="spirits-eyebrow reveal">The Brand</div>
-                <h2 class="reveal reveal-delay-1">A New Chapter<br><em class="italic-gold">Begins</em></h2>
+                <h2 class="reveal reveal-delay-1 text-muted">A New Chapter<br><em class="italic-gold">Begins</em></h2>
                 <p class="reveal reveal-delay-2">{{ $division['description'] }}</p>
                 <p class="reveal reveal-delay-2">{{ $division['body'] }}</p>
 
@@ -341,7 +341,7 @@
     <div class="container">
         <div style="margin-bottom:var(--space-5);">
             <div class="spirits-eyebrow reveal">What We Offer</div>
-            <h2 class="reveal reveal-delay-1">Services &amp; <em class="italic-gold">Offerings</em></h2>
+            <h2 class="reveal reveal-delay-1 text-muted">Services &amp; <em class="italic-gold">Offerings</em></h2>
         </div>
         <div class="grid-4">
             @foreach($division['services'] as $i => $service)
@@ -390,7 +390,7 @@
 <div class="spirits-cta">
     <div class="container">
         <div class="spirits-line" style="margin:0 auto var(--space-3);"></div>
-        <h2 class="reveal">Partner With <em class="italic-gold">CJ Vodka</em></h2>
+        <h2 class="reveal text-muted">Partner With <em class="italic-gold">CJ Vodka</em></h2>
         <p class="reveal reveal-delay-1">
             Whether you're a distributor, venue, retailer, or brand partner — we're building a global network of premium partnerships. Let's talk.
         </p>
@@ -412,7 +412,7 @@
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-3);">
             <div>
                 <div class="spirits-eyebrow">Explore More</div>
-                <h3 style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-top:4px;">
+                <h3 class="text-muted" style="font-family:var(--font-display);font-size:22px;font-weight:600;margin-top:4px;">
                     Other <em class="italic-gold">Divisions</em>
                 </h3>
             </div>
