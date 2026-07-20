@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'About Us — CJ Global Express Group Unlimited')
-@section('meta_description', 'Founded in 1999 by Prof. Sir Clemence Jaricha Muzenda, CJ Global Express Group Unlimited is a diversified global conglomerate operating across 9 divisions in 32+ countries.')
+@section('meta_description', 'Founded in 1999 by Prof. Sir Clemence Jaricha, CJ Global Express Group Unlimited is a diversified global conglomerate operating across 9 divisions in 32+ countries.')
 
 @section('content')
 
@@ -328,10 +328,10 @@
                 <div class="eyebrow reveal">Who We Are</div>
                 <h2 class="reveal reveal-delay-1">More Than a<br><em class="italic-gold">Business</em></h2>
                 <p class="reveal reveal-delay-2">
-                    CJ Global Express Group Unlimited is a diversified multinational conglomerate headquartered in Ntambanana, KwaZulu-Natal, South Africa, with offices in Zimbabwe, the United Kingdom, and the United States.
+                    CJ Global Express Group Unlimited is a diversified multinational conglomerate headquartered in Durban, South Africa, with offices in Zimbabwe, the United Kingdom, and the United States.
                 </p>
                 <p class="reveal reveal-delay-2">
-                    Founded in 1999 by Prof. Sir Clemence Jaricha Muzenda, CGEG has grown from a single entity into a nine-division powerhouse — spanning construction, mining, logistics, properties, retail, hospitality, wellness, and premium spirits.
+                    Founded in 1999 by Prof. Sir Clemence Jaricha, CGEG has grown from a single entity into a nine-division powerhouse — spanning construction, mining, logistics, properties, retail, hospitality, wellness, and premium spirits.
                 </p>
                 <p class="reveal reveal-delay-2">
                     Our mandate has never changed: to drive economic transformation across Africa and the world, to create meaningful employment, and to build infrastructure that outlasts any single generation.
@@ -389,16 +389,16 @@
 
             <div class="founder-bio">
                 <div class="eyebrow reveal">The Founder</div>
-                <h2 class="reveal reveal-delay-1">Prof. Sir Clemence<br><em class="italic-gold">Jaricha Muzenda</em></h2>
+                <h2 class="reveal reveal-delay-1">Prof. Sir Clemence<br><em class="italic-gold">Jaricha</em></h2>
                 <span class="founder-title reveal reveal-delay-1">Founder &amp; Chief Executive Officer</span>
                 <p class="reveal reveal-delay-2">
-                    Born in Zimbabwe, Prof. Sir Clemence Jaricha Muzenda is a visionary entrepreneur, global business leader, and advocate for African economic empowerment. His journey from a young Zimbabwean with a dream to the founder of a pan-African conglomerate is a testament to the power of vision, perseverance, and integrity.
+                    Born in Zimbabwe, Prof. Sir Clemence Jaricha is a visionary entrepreneur, global business leader, and advocate for African economic empowerment. His journey from a young Zimbabwean with a dream to the founder of a pan-African conglomerate is a testament to the power of vision, perseverance, and integrity.
                 </p>
                 <p class="reveal reveal-delay-2">
                     In 1999, he founded CJ Global Express Group Unlimited with a clear mandate: to build a diversified business that would not only generate commercial value but drive meaningful transformation across the African continent. Under his leadership, CGEG has expanded to 32+ countries and grown from a single division to nine distinct business pillars.
                 </p>
                 <p class="reveal reveal-delay-2">
-                    Prof. Sir Muzenda's philosophy centres on the belief that business is one of the most powerful tools for societal upliftment — and that African entrepreneurs must build at global scale. His landmark return to Zimbabwe through the Sandton Hydon Park Mall project, after nearly 17 years, stands as a symbol of that conviction.
+                    Prof. Sir Jaricha's philosophy centres on the belief that business is one of the most powerful tools for societal upliftment — and that African entrepreneurs must build at global scale. His landmark return to Zimbabwe through the Sandton Hydon Park Mall project, after nearly 17 years, stands as a symbol of that conviction.
                 </p>
                 <div style="margin-top:var(--space-3);" class="reveal reveal-delay-3">
                     <a href="{{ route('contact') }}" class="btn btn-ghost">Contact the Founder's Office</a>
@@ -416,7 +416,7 @@
             Every project, every division, every partnership is a brick in that foundation.
             We do not build for today. We build for the generations that will inherit what we leave behind."
         </blockquote>
-        <cite class="reveal reveal-delay-1">Prof. Sir Clemence Jaricha Muzenda — Founder &amp; CEO, CJ Global Express Group Unlimited</cite>
+        <cite class="reveal reveal-delay-1">Prof. Sir Clemence Jaricha — Founder &amp; CEO, CJ Global Express Group Unlimited</cite>
     </div>
 </div>
 
@@ -434,12 +434,12 @@
             <div class="timeline-item reveal">
                 <div class="timeline-year">1999</div>
                 <div class="timeline-event">Founded in Zimbabwe</div>
-                <div class="timeline-desc">Prof. Sir Clemence Jaricha Muzenda establishes the foundations of what will become CJ Global Express Group Unlimited — beginning with a vision for pan-African economic transformation.</div>
+                <div class="timeline-desc">Prof. Sir Clemence Jaricha establishes the foundations of what will become CJ Global Express Group Unlimited — beginning with a vision for pan-African economic transformation.</div>
             </div>
             <div class="timeline-item reveal reveal-delay-1">
                 <div class="timeline-year">2012</div>
                 <div class="timeline-event">Incorporated in South Africa</div>
-                <div class="timeline-desc">CJ Global Express Group Unlimited formally registered (2012/344459/07). South African headquarters established in Ntambanana, KwaZulu-Natal, anchoring the group's continental operations.</div>
+                <div class="timeline-desc">CJ Global Express Group Unlimited formally registered (2012/344459/07). South African headquarters established in KwaZulu-Natal, anchoring the group's continental operations.</div>
             </div>
             <div class="timeline-item reveal reveal-delay-2">
                 <div class="timeline-year">2014 – 2016</div>

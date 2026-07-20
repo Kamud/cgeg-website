@@ -203,7 +203,7 @@
                 <div class="office-card-body">
                     <div class="office-flag">🇿🇦 South Africa — Headquarters</div>
                     <div class="office-name">KwaZulu-Natal Office</div>
-                    <div class="office-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ntambanana, KwaZulu-Natal, South Africa</div>
+                    <div class="office-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>KwaZulu-Natal, South Africa</div>
                     <div class="office-detail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> enquiries@cjglobalexpressgroup.com</div>
                     <div class="office-detail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> sircj@cjglobalexpressgroup.co.za</div>
                 </div>

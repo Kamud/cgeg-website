@@ -205,7 +205,7 @@
                 <div>
                     <div class="contact-info-label">Headquarters</div>
                     <div class="contact-info-value">KwaZulu-Natal</div>
-                    <div class="contact-info-sub">Ntambanana, South Africa</div>
+                    <div class="contact-info-sub">South Africa</div>
                 </div>
             </div>
             <div class="contact-info-card reveal reveal-delay-1">
@@ -260,7 +260,7 @@
                             <label class="form-label" for="last_name">Last Name <span style="color:var(--error);">*</span></label>
                             <input class="form-input @error('last_name') error @enderror"
                                    type="text" id="last_name" name="last_name"
-                                   value="{{ old('last_name') }}" placeholder="Muzenda" required>
+                                   value="{{ old('last_name') }}" placeholder="Jaricha" required>
                             @error('last_name')<div class="form-error-msg">{{ $message }}</div>@enderror
                         </div>
                     </div>
@@ -340,7 +340,7 @@
                     <div class="address-office">Our Offices</div>
 
                     <div class="address-office-name">🇿🇦 KwaZulu-Natal (HQ)</div>
-                    <div class="address-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ntambanana, KwaZulu-Natal, South Africa</div>
+                    <div class="address-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>KwaZulu-Natal, South Africa</div>
                     <div class="address-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Reg: 2012/344459/07 | Tax: 9225224253</div>
 
                     <div class="address-office-name" style="margin-top:var(--space-2);">🇿🇼 Bulawayo (Zimbabwe)</div>

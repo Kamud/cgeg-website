@@ -266,7 +266,7 @@
             </div>
             <div class="founder-feature-info">
                 <span class="title-tag">Founder &amp; Chief Executive Officer</span>
-                <h2>Prof. Sir Clemence<br><em class="italic-gold">Jaricha Muzenda</em></h2>
+                <h2>Prof. Sir Clemence<br><em class="italic-gold">Jaricha</em></h2>
                 <p>
                     A visionary Zimbabwean-born entrepreneur and global business leader who founded CGEG in 1999 with a mandate to build a diversified conglomerate that would drive economic transformation across Africa and beyond.
                 </p>

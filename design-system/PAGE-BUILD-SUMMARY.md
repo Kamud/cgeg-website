@@ -66,7 +66,7 @@ Phase 5 — Utility
 | 1 | **Page Hero** | Headline: *"A Legacy Built on Integrity"*. Eyebrow: Est. 2012. Subheading. No CTA. | `about-hero` 1920×700 — HQ building or boardroom |
 | 2 | **Who We Are** | Rich text block. CGEG story from founding (2012) to present. BBBEE Level 1, 32+ countries, 9 divisions. Registration + compliance badge strip. | None |
 | 3 | **Vision / Mission / Values** | 3-column cards: Vision / Mission / Core Values (Innovation, Excellence, Community). Each raised card, gold icon, Cormorant heading. | None |
-| 4 | **Founder's Biography** | 2-column: Left — large portrait image. Right — full bio of Prof. Sir Clemence Jaricha Muzenda. Title, credentials, philosophy. | `founder-portrait` 700×900 — formal portrait |
+| 4 | **Founder's Biography** | 2-column: Left — large portrait image. Right — full bio of Prof. Sir Clemence Jaricha. Title, credentials, philosophy. | `founder-portrait` 700×900 — formal portrait |
 | 5 | **Founder's Message** | Full-width blockquote section. Extended quote in italic Cormorant. Gold left-border rule. | None |
 | 6 | **Timeline (optional)** | Horizontal scroll timeline: 2012 founding → 2017 expansion → 2025 return to Zimbabwe / Sandton. | None |
 | 7 | **Footer** | Standard | None |
