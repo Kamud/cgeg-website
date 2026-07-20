@@ -155,7 +155,7 @@
                     <div class="news-card-title">{{ $item['title'] }}</div>
                     <p class="news-card-excerpt">{{ $item['excerpt'] }}</p>
                     <div class="news-card-footer">
-                        <span class="news-card-source">{{ $item['source'] }}</span>
+                        <span class="news-card-source">{{ $item['source'] ?? 'CGEG Newsroom' }}</span>
                         <span class="news-card-link">Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                     </div>
                 </div>

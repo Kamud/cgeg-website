@@ -70,7 +70,12 @@
         <div class="eyebrow reveal reveal-delay-1">{{ $article['category'] }}</div>
         <h1 class="reveal reveal-delay-2">{{ $article['title'] }}</h1>
         <p style="color:var(--text-muted);font-size:var(--text-small);margin-top:var(--space-1);" class="reveal reveal-delay-2">
-            {{ \Illuminate\Support\Carbon::parse($article['date'])->format('d F Y') }} &middot; Originally reported by {{ $article['source'] }}
+            {{ \Illuminate\Support\Carbon::parse($article['date'])->format('d F Y') }}
+            @if($article['source'] ?? null)
+                &middot; Originally reported by {{ $article['source'] }}
+            @else
+                &middot; CGEG Newsroom
+            @endif
         </p>
         {{-- [IMAGE SLOT] news article hero | 1200×700px --}}
         <img src="{{ $article['image'] }}" alt="{{ $article['title'] }}" class="article-hero-img reveal reveal-delay-3">
@@ -85,6 +90,7 @@
             <p>{{ $paragraph }}</p>
             @endforeach
 
+            @if($article['source_url'] ?? null)
             <div class="article-source-box">
                 <div>
                     <div class="article-source-label">Original Reporting</div>
@@ -98,6 +104,18 @@
             <p style="font-size:var(--text-small);color:var(--text-muted);font-style:italic;">
                 This is a summary of external media coverage, provided for informational purposes. For the complete, original report, please visit {{ $article['source'] }} using the link above.
             </p>
+            @else
+            <div class="article-source-box">
+                <div>
+                    <div class="article-source-label">Published By</div>
+                    <div class="article-source-name">CJ Global Express Group Unlimited</div>
+                </div>
+            </div>
+
+            <p style="font-size:var(--text-small);color:var(--text-muted);font-style:italic;">
+                This is an official update from CJ Global Express Group Unlimited.
+            </p>
+            @endif
         </div>
     </div>
 </section>

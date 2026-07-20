@@ -549,6 +549,21 @@ class PageController extends Controller
                     'The announcement reinforces CGEG\'s pattern of pairing international diversification — most recently into premium spirits manufacturing — with continued reinvestment in its home market of Zimbabwe.',
                 ],
             ],
+            'cj-properties-kzn-south-coast-expansion' => [
+                'title'       => 'CJ Properties Expands KwaZulu-Natal South Coast Portfolio',
+                'category'    => 'Portfolio Expansion',
+                'date'        => '2026-07-17',
+                'source'      => null,
+                'source_url'  => null,
+                'image'       => asset('images/pages/news/news-kzn-coastal-portfolio.jpg'),
+                'excerpt'     => 'CGEG has signed agreements to acquire a group of coastal and commercial properties along the KwaZulu-Natal South Coast, extending its property and hospitality footprint close to Group headquarters.',
+                'body'        => [
+                    'CJ Global Express Group Unlimited has signed agreements to acquire a group of properties along the KwaZulu-Natal South Coast, spanning both residential and commercial sites in the Port Shepstone area. The acquisitions, concluded through the Group\'s property and hospitality divisions, represent a combined purchase value of approximately R16.45 million.',
+                    'The properties include a mix of coastal residential sites and a commercial site earmarked for CJ Night Clubs and Restaurants, continuing the Group\'s pattern of pairing property acquisition with hospitality expansion in markets close to its KwaZulu-Natal headquarters.',
+                    'As is standard for property transactions of this nature, the agreements are subject to standard conveyancing and deposit conditions ahead of transfer. Further details will be shared as the transactions are finalised.',
+                    'The expansion follows a period of rapid diversification for CGEG, which has recently entered the London and Chicago markets, and reflects continued investment in the Group\'s home region alongside its international growth.',
+                ],
+            ],
         ];
     }
 
