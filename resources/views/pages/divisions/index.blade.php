@@ -102,12 +102,17 @@
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);">
             @foreach($divisions as $slug => $division)
-            <div class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms; cursor:pointer;" onclick="openDivisionModal('{{ $slug }}')">
+            <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms; text-decoration:none; position:relative;">
+                <button type="button" onclick="event.preventDefault();event.stopPropagation();openDivisionModal('{{ $slug }}')"
+                        aria-label="Quick preview: {{ $division['name'] }}"
+                        style="position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--gold-glow);color:var(--gold-primary);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;">
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                </button>
                 <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
                 <div class="card-title">{{ $division['name'] }}</div>
                 <div class="card-desc">{{ Str::limit($division['description'], 100) }}</div>
-                <div class="card-link">Read Full Overview <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
-            </div>
+                <div class="card-link">View Division Page <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+            </a>
             @endforeach
         </div>
     </div>
@@ -156,10 +161,9 @@
         </div>
         @endif
 
-        <div class="division-modal-note">
-            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-            <span>A dedicated photo gallery for this division is being prepared and will be added soon.</span>
-        </div>
+        <a href="{{ route('division', $slug) }}" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:var(--space-1);">
+            View Full {{ $division['name'] }} Page <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
     </div>
     @endforeach
 </div>
