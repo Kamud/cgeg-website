@@ -45,6 +45,10 @@
 
 /* ── Divisions ── */
 .divisions-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-2); }
+.divisions-grid .card-division-media { padding: 0; overflow: hidden; }
+.divisions-grid .card-division-media .card-division-img { margin: 0; line-height: 0; }
+.divisions-grid .card-division-media .card-division-img img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.divisions-grid .card-division-media .card-division-body { padding: var(--space-3); display: flex; flex-direction: column; flex: 1; }
 
 /* ── Founder band (dark) ── */
 .founder-band { background:var(--gradient-band); padding:var(--space-7) 0; text-align:center; }
@@ -130,11 +134,16 @@
         </div>
         <div class="divisions-grid">
             @foreach($divisions as $slug => $division)
-            <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms;text-decoration:none;">
-                <div class="card-icon"><i class="{{ $division['icon'] }}" aria-hidden="true"></i></div>
-                <div class="card-title">{{ $division['name'] }}</div>
-                <div class="card-desc">{{ Str::limit($division['description'], 88) }}</div>
-                <div class="card-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+            <a href="{{ route('division', $slug) }}" class="card card-division card-division-media reveal" style="transition-delay:{{ $loop->index * 60 }}ms;text-decoration:none;">
+                <div class="card-division-img">
+                    <img src="{{ $division['overview_img'] }}" alt="{{ $division['name'] }}" loading="lazy">
+                </div>
+                <div class="card-division-body">
+                    <div class="card-icon"><i class="{{ $division['icon'] }}" aria-hidden="true"></i></div>
+                    <div class="card-title">{{ $division['name'] }}</div>
+                    <div class="card-desc">{{ Str::limit($division['description'], 88) }}</div>
+                    <div class="card-link">Explore <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                </div>
             </a>
             @endforeach
         </div>

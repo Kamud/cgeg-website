@@ -9,6 +9,12 @@
     div[style*='grid-template-columns:repeat(3,1fr)'] { grid-template-columns: repeat(2,1fr) !important; }
 }
 
+/* Division card media (overview image) */
+.card-division-media { padding: 0; overflow: hidden; }
+.card-division-media .card-division-img { margin: 0; line-height: 0; }
+.card-division-media .card-division-img img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.card-division-media .card-division-body { padding: var(--space-3); display: flex; flex-direction: column; flex: 1; }
+
 /* Division detail modal */
 .division-modal-overlay {
     display: none;
@@ -102,16 +108,21 @@
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);">
             @foreach($divisions as $slug => $division)
-            <a href="{{ route('division', $slug) }}" class="card card-division reveal" style="transition-delay:{{ $loop->index * 60 }}ms; text-decoration:none; position:relative;">
+            <a href="{{ route('division', $slug) }}" class="card card-division card-division-media reveal" style="transition-delay:{{ $loop->index * 60 }}ms; text-decoration:none; position:relative;">
                 <button type="button" onclick="event.preventDefault();event.stopPropagation();openDivisionModal('{{ $slug }}')"
                         aria-label="Quick preview: {{ $division['name'] }}"
-                        style="position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--gold-glow);color:var(--gold-primary);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;">
+                        style="position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(20,16,10,0.55);color:#F1EBDF;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;z-index:2;">
                     <i class="fa-solid fa-eye" aria-hidden="true"></i>
                 </button>
-                <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
-                <div class="card-title">{{ $division['name'] }}</div>
-                <div class="card-desc">{{ Str::limit($division['description'], 100) }}</div>
-                <div class="card-link">View Division Page <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                <div class="card-division-img">
+                    <img src="{{ $division['overview_img'] }}" alt="{{ $division['name'] }}" loading="lazy">
+                </div>
+                <div class="card-division-body">
+                    <div class="card-icon"><i class="{{ $division['icon'] }}"></i></div>
+                    <div class="card-title">{{ $division['name'] }}</div>
+                    <div class="card-desc">{{ Str::limit($division['description'], 100) }}</div>
+                    <div class="card-link">View Division Page <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+                </div>
             </a>
             @endforeach
         </div>
