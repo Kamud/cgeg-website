@@ -12,6 +12,9 @@
     --spirits-raised: #181512;
     --spirits-gold:   #C9A84C;
     --spirits-silver: #A8A8A8;
+    --spirits-text-primary:   #F1EBDF;
+    --spirits-text-secondary: #C7BEAF;
+    --spirits-text-muted:     #948A7A;
 }
 
 .spirits-hero {
@@ -46,10 +49,10 @@
     letter-spacing: -0.01em;
 }
 .spirits-tagline-word.gold { color: var(--spirits-gold); font-style: italic; }
-.spirits-tagline-word.white { color: var(--text-primary); }
+.spirits-tagline-word.white { color: var(--spirits-text-primary); }
 .spirits-hero p {
     font-size: clamp(15px, 1.8vw, 18px);
-    color: var(--text-secondary);
+    color: var(--spirits-text-secondary);
     line-height: 1.75;
     max-width: 480px;
     margin: var(--space-3) 0 var(--space-4);
@@ -89,7 +92,7 @@
 }
 .spirits-stat .stat-label {
     font-size: var(--text-label);
-    color: var(--text-muted);
+    color: var(--spirits-text-muted);
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -106,7 +109,7 @@
     align-items: center;
 }
 .spirits-about p {
-    color: var(--text-secondary);
+    color: var(--spirits-text-secondary);
     line-height: 1.85;
     margin-bottom: var(--space-2);
 }
@@ -132,12 +135,12 @@
 .spirits-highlight h4 {
     font-family: var(--font-display);
     font-size: 18px; font-weight: 600;
-    color: var(--text-primary);
+    color: var(--spirits-text-primary);
     margin-bottom: 4px;
 }
 .spirits-highlight p {
     font-size: var(--text-body);
-    color: var(--text-secondary);
+    color: var(--spirits-text-secondary);
     line-height: 1.65;
     margin: 0;
 }
@@ -171,12 +174,12 @@
 .spirits-service-title {
     font-family: var(--font-display);
     font-size: 17px; font-weight: 600;
-    color: var(--text-primary);
+    color: var(--spirits-text-primary);
     margin-bottom: 4px;
 }
 .spirits-service-desc {
     font-size: var(--text-body);
-    color: var(--text-secondary);
+    color: var(--spirits-text-secondary);
     line-height: 1.6;
 }
 
@@ -202,7 +205,7 @@
     font-family: var(--font-display);
     font-size: clamp(22px, 3vw, 36px);
     font-style: italic;
-    color: var(--text-primary);
+    color: var(--spirits-text-primary);
     max-width: 720px;
     margin: 0 auto var(--space-3);
     line-height: 1.4;
@@ -228,7 +231,7 @@
 }
 .spirits-cta h2 { margin-bottom: var(--space-2); }
 .spirits-cta p {
-    color: var(--text-secondary);
+    color: var(--spirits-text-secondary);
     max-width: 520px;
     margin: 0 auto var(--space-4);
     line-height: 1.75;
@@ -250,6 +253,9 @@
 @media (max-width: 480px) {
     .spirits-tagline-word { font-size: clamp(28px, 10vw, 44px) !important; }
 }
+
+.spirits-other .card-division .card-title { color: var(--spirits-text-primary); }
+.spirits-other .card-division .card-desc  { color: var(--spirits-text-secondary); }
 </style>
 
 {{-- ══════════════════════════════════════════════
@@ -401,7 +407,7 @@
      OTHER DIVISIONS
 ══════════════════════════════════════════════ --}}
 @if(count($otherDivisions) > 0)
-<section class="section-sm" style="background:var(--spirits-raised);border-top:1px solid rgba(201,168,76,0.08);">
+<section class="section-sm spirits-other" style="background:var(--spirits-raised);border-top:1px solid rgba(201,168,76,0.08);">
     <div class="container">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-3);">
             <div>
